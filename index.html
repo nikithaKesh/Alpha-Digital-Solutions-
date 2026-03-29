@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alpha Digital Solutions - Premium web systems, IT automation, and digital infrastructure.">
     <title>Alpha Digital Solutions | Premium IT & Web Services</title>
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230071e3'/><path d='M30 70 L50 30 L70 70 M40 60 L60 60' stroke='%23ffffff' stroke-width='8' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
@@ -22,7 +23,6 @@
            1. CSS VARIABLES & DESIGN SYSTEM
            ========================================================================== */
         :root {
-            /* Light Mode (Base) */
             --bg-main: #fbfbfd;
             --bg-card: #ffffff;
             --bg-dark: #1d1d1f; 
@@ -36,18 +36,15 @@
             --glow-1: rgba(0, 113, 227, 0.12);
             --glow-2: rgba(142, 142, 147, 0.08);
             
-            /* Geometry */
             --radius-sm: 12px;
             --radius-md: 18px;
             --radius-lg: 30px;
             --radius-pill: 980px;
             
-            /* Elevation */
             --shadow-subtle: 0 4px 14px rgba(0, 0, 0, 0.03);
             --shadow-float: 0 14px 40px rgba(0, 0, 0, 0.08);
             --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.05);
             
-            /* Motion */
             --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);
             --transition-fast: all 0.2s var(--ease-apple);
             --transition-base: all 0.4s var(--ease-apple);
@@ -55,7 +52,6 @@
         }
 
         [data-theme="dark"] {
-            /* Dark Mode Overrides */
             --bg-main: #000000;
             --bg-card: #1c1c1e;
             --bg-dark: #000000;
@@ -82,14 +78,9 @@
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--text-main);
-            background-color: var(--bg-main);
-            line-height: 1.47059;
-            letter-spacing: -0.015em;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            transition: background-color 0.5s ease, color 0.5s ease;
-            position: relative;
+            color: var(--text-main); background-color: var(--bg-main);
+            line-height: 1.47059; letter-spacing: -0.015em; overflow-x: hidden;
+            -webkit-font-smoothing: antialiased; transition: background-color 0.5s ease, color 0.5s ease;
         }
 
         h1, h2, h3, h4 { color: var(--text-main); font-weight: 600; letter-spacing: -0.04em; }
@@ -98,11 +89,8 @@
         img { max-width: 100%; height: auto; display: block; }
         button { font-family: inherit; border: none; background: none; outline: none; }
 
-        /* Accessibility Focus Rings */
-        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
-            box-shadow: 0 0 0 3px var(--bg-main), 0 0 0 5px var(--accent) !important;
-            border-radius: var(--radius-sm);
-        }
+        /* Focus Accessibility */
+        :focus-visible { box-shadow: 0 0 0 3px var(--bg-main), 0 0 0 5px var(--accent) !important; border-radius: var(--radius-sm); }
 
         /* Global Texture */
         body::before {
@@ -111,28 +99,29 @@
         }
 
         /* Ambient Glows */
-        .ambient-glow-1, .ambient-glow-2 {
-            position: absolute; border-radius: 50%; filter: blur(100px); z-index: -1; pointer-events: none; transition: var(--transition-base);
-        }
+        .ambient-glow { position: absolute; border-radius: 50%; filter: blur(100px); z-index: -1; pointer-events: none; transition: var(--transition-base); }
         .ambient-glow-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: var(--glow-1); }
         .ambient-glow-2 { top: 40%; right: -10%; width: 60vw; height: 60vw; background: var(--glow-2); }
+
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed; top: 0; left: 0; height: 3px; background: var(--accent);
+            width: 0%; z-index: 9999; transition: width 0.1s ease;
+        }
 
         /* ==========================================================================
            3. LAYOUT & GRID
            ========================================================================== */
         .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 5%; position: relative; z-index: 1; }
         section { padding: 140px 0; position: relative; }
-        
         .section-header { text-align: center; max-width: 800px; margin: 0 auto 80px; }
         .section-header h2 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.1; }
         .section-header p { color: var(--text-muted); font-size: 1.3rem; letter-spacing: -0.01em; }
-        
         .grid { display: grid; gap: 30px; }
 
         /* ==========================================================================
            4. COMPONENTS
            ========================================================================== */
-        /* Buttons */
         .btn {
             display: inline-flex; align-items: center; justify-content: center;
             padding: 14px 28px; font-size: 1.05rem; font-weight: 500;
@@ -140,14 +129,11 @@
             border: 1px solid transparent; letter-spacing: -0.01em;
         }
         .btn:active { transform: scale(0.97); }
-        
         .btn-primary { background-color: var(--accent); color: #fff; }
         .btn-primary:hover { background-color: var(--accent-hover); box-shadow: 0 8px 20px rgba(0, 113, 227, 0.3); transform: translateY(-2px); }
-        
         .btn-outline { background-color: transparent; border-color: var(--accent); color: var(--accent); }
         .btn-outline:hover { background-color: var(--accent); color: #fff; transform: translateY(-2px); }
 
-        /* Forms */
         .form-group { margin-bottom: 32px; }
         .form-group label { display: block; margin-bottom: 12px; font-weight: 500; font-size: 0.95rem; color: var(--text-main); }
         .form-control {
@@ -157,26 +143,31 @@
         .form-control:focus { outline: none; border-color: var(--accent); background: var(--bg-card); box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.15); }
         textarea.form-control { height: 160px; resize: vertical; }
 
-        /* Portfolio Filter System */
-        .portfolio-filters {
-            display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-bottom: 50px;
-        }
+        .portfolio-filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-bottom: 50px; }
         .filter-btn {
             padding: 10px 20px; font-size: 0.95rem; font-weight: 500; color: var(--text-muted);
-            border-radius: var(--radius-pill); border: 1px solid var(--border-light);
-            cursor: pointer; transition: var(--transition-fast); background: var(--glass-panel);
-            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            border-radius: var(--radius-pill); border: 1px solid var(--border-light); cursor: pointer;
+            transition: var(--transition-fast); background: var(--glass-panel); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
         }
         .filter-btn:hover { border-color: var(--text-muted); color: var(--text-main); }
         .filter-btn.active { background: var(--text-main); color: var(--bg-card); border-color: var(--text-main); }
+
+        /* Custom Toast Notification */
+        .toast {
+            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px);
+            background: var(--bg-dark); color: #fff; padding: 16px 32px; border-radius: var(--radius-pill);
+            box-shadow: var(--shadow-float); font-weight: 500; display: flex; align-items: center; gap: 12px;
+            opacity: 0; visibility: hidden; transition: var(--transition-base); z-index: 10000;
+        }
+        .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; visibility: visible; }
+        .toast svg { width: 20px; height: 20px; fill: #34c759; }
 
         /* ==========================================================================
            5. HEADER & NAVIGATION
            ========================================================================== */
         header {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-            background: transparent; border-bottom: 1px solid transparent;
-            transition: background 0.4s var(--ease-apple), border-bottom 0.4s var(--ease-apple);
+            background: transparent; border-bottom: 1px solid transparent; transition: background 0.4s var(--ease-apple), border-bottom 0.4s var(--ease-apple);
         }
         header.scrolled {
             background: var(--nav-bg); backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%);
@@ -189,7 +180,7 @@
         
         .nav-right { display: flex; align-items: center; gap: 32px; }
         .nav-links { display: flex; gap: 32px; }
-        .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); transition: var(--transition-fast); }
+        .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); transition: var(--transition-fast); position: relative;}
         .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
         
         .theme-toggle {
@@ -218,7 +209,7 @@
             backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: var(--radius-lg);
             box-shadow: var(--shadow-float); border: 1px solid var(--border-light); position: relative;
             overflow: hidden; display: flex; align-items: center; justify-content: center;
-            animation: floatMockup 6s ease-in-out infinite;
+            animation: floatMockup 6s ease-in-out infinite; will-change: transform;
         }
         .hero-mockup::before {
             content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
@@ -240,25 +231,15 @@
         .about-image { background: var(--bg-card); border-radius: var(--radius-lg); height: 500px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-light); box-shadow: var(--shadow-glass); position: relative; overflow: hidden; }
         .about-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, transparent, rgba(0, 113, 227, 0.05)); }
 
-        /* Services */
-        .services-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
-        .service-card {
-            background: var(--glass-panel); backdrop-filter: blur(10px); padding: 40px; border-radius: var(--radius-md);
-            box-shadow: var(--shadow-subtle); border: 1px solid var(--border-light); transition: var(--transition-base); position: relative;
-        }
+        /* Dynamic Cards (Services, Portfolio, Team) */
+        .service-card { background: var(--glass-panel); backdrop-filter: blur(10px); padding: 40px; border-radius: var(--radius-md); box-shadow: var(--shadow-subtle); border: 1px solid var(--border-light); transition: var(--transition-base); position: relative; }
         .service-card:hover { transform: translateY(-8px) scale(1.01); box-shadow: var(--shadow-float); border-color: var(--accent); }
         .service-icon { width: 48px; height: 48px; margin-bottom: 24px; display: flex; align-items: center; color: var(--accent); font-size: 1.5rem; font-weight: 600; }
         .service-card h4 { font-size: 1.3rem; margin-bottom: 12px; }
         .service-card p { color: var(--text-muted); font-size: 1rem; line-height: 1.6; }
 
-        /* Portfolio */
-        .portfolio-grid { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px; }
-        .portfolio-card {
-            background: var(--bg-card); border-radius: var(--radius-lg); overflow: hidden;
-            box-shadow: var(--shadow-subtle); transition: var(--transition-base); cursor: pointer; border: 1px solid var(--border-light);
-        }
+        .portfolio-card { background: var(--bg-card); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-subtle); transition: var(--transition-base); cursor: pointer; border: 1px solid var(--border-light); }
         .portfolio-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-float); }
-        .portfolio-card.hidden { display: none; } /* For filtering */
         .portfolio-img { height: 280px; background: var(--bg-main); display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-weight: 500; border-bottom: 1px solid var(--border-light); position: relative; }
         .portfolio-img::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at center, transparent, rgba(0,0,0,0.02)); }
         .portfolio-info { padding: 32px; }
@@ -266,23 +247,20 @@
         .portfolio-info h4 { font-size: 1.5rem; margin-bottom: 12px; }
         .portfolio-info p { font-size: 1.05rem; color: var(--text-muted); }
 
-        /* Credibility */
-        .credibility { background-color: var(--bg-dark); color: #f5f5f7; padding: 160px 0; overflow: hidden; }
-        .credibility .section-header h2 { color: #ffffff; }
-        .credibility .section-header p { color: #a1a1a6; }
-        .cred-grid { grid-template-columns: repeat(3, 1fr); gap: 40px; }
-        .cred-item { padding: 40px; background: rgba(255, 255, 255, 0.04); border-radius: var(--radius-md); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); transition: var(--transition-base); }
-        .cred-item:hover { background: rgba(255, 255, 255, 0.07); transform: translateY(-5px); }
-        .cred-item h4 { color: #ffffff; font-size: 1.5rem; margin-bottom: 16px; }
-        .cred-item p { color: #a1a1a6; font-size: 1.05rem; line-height: 1.6; }
-
-        /* Team */
-        .team-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); max-width: 1000px; margin: 0 auto; gap: 40px; }
         .team-card { text-align: center; transition: var(--transition-base); padding: 20px; border-radius: var(--radius-md); }
         .team-card:hover { transform: translateY(-8px); background: var(--glass-panel); box-shadow: var(--shadow-subtle); border: 1px solid var(--border-light); }
         .team-avatar { width: 140px; height: 140px; background: var(--border-light); border-radius: 50%; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: var(--text-main); font-weight: 500; border: 2px solid var(--bg-card); box-shadow: var(--shadow-subtle); }
         .team-card h4 { font-size: 1.4rem; margin-bottom: 8px; }
         .team-card p { color: var(--accent); font-size: 1.05rem; font-weight: 500; }
+
+        /* Credibility */
+        .credibility { background-color: var(--bg-dark); color: #f5f5f7; padding: 160px 0; overflow: hidden; }
+        .credibility .section-header h2 { color: #ffffff; }
+        .credibility .section-header p { color: #a1a1a6; }
+        .cred-item { padding: 40px; background: rgba(255, 255, 255, 0.04); border-radius: var(--radius-md); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); transition: var(--transition-base); }
+        .cred-item:hover { background: rgba(255, 255, 255, 0.07); transform: translateY(-5px); }
+        .cred-item h4 { color: #ffffff; font-size: 1.5rem; margin-bottom: 16px; }
+        .cred-item p { color: #a1a1a6; font-size: 1.05rem; line-height: 1.6; }
 
         /* Contact */
         .contact-container { display: grid; grid-template-columns: 1fr 1fr; background-color: var(--glass-panel); backdrop-filter: blur(20px); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-float); border: 1px solid var(--border-light); }
@@ -309,22 +287,14 @@
         /* ==========================================================================
            7. ANIMATIONS
            ========================================================================== */
-        @keyframes floatMockup {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0); }
-        }
+        @keyframes floatMockup { 0% { transform: translateY(0); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0); } }
         @keyframes rotate { 100% { transform: rotate(360deg); } }
         
-        /* Scroll Reveal System */
-        .reveal { opacity: 0; transform: translateY(30px); transition: var(--transition-slow); }
+        .reveal { opacity: 0; transform: translateY(30px); transition: var(--transition-slow); will-change: transform, opacity; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
-
+        
         /* ==========================================================================
-           8. RESPONSIVE MEDIA QUERIES
+           8. RESPONSIVE
            ========================================================================== */
         @media (max-width: 992px) {
             .hero h1 { font-size: 4rem; }
@@ -336,8 +306,6 @@
 
         @media (max-width: 768px) {
             .nav-right { gap: 16px; }
-            
-            /* Enhanced Fullscreen Mobile Menu Overlay */
             .nav-links {
                 position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
                 background: var(--nav-bg); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
@@ -363,18 +331,19 @@
 </head>
 <body>
 
-    <div class="ambient-glow-1"></div>
-    <div class="ambient-glow-2"></div>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="ambient-glow ambient-glow-1"></div>
+    <div class="ambient-glow ambient-glow-2"></div>
 
     <header id="header">
         <div class="container nav-container">
-            <a href="#" class="logo">
+            <a href="#" class="logo" aria-label="Alpha Digital Home">
                 <svg viewBox='0 0 100 100'><rect width='100' height='100' rx='24'/><path d='M30 70 L50 30 L70 70 M40 60 L60 60' stroke='#fff' stroke-width='8' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>
                 Alpha <span>Digital</span>
             </a>
             
             <div class="nav-right">
-                <nav class="nav-links" id="navLinks">
+                <nav class="nav-links" id="navLinks" aria-label="Main Navigation">
                     <a href="#home" class="nav-item">Home</a>
                     <a href="#about" class="nav-item">About</a>
                     <a href="#services" class="nav-item">Services</a>
@@ -388,252 +357,162 @@
                     <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </button>
 
-                <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu" aria-expanded="false">
                     <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
     </header>
 
-    <section id="home" class="hero reveal">
-        <div class="container">
-            <h1>Empowering Your Business with Next-Generation Digital Solutions</h1>
-            <p>We build premium web systems, automation tools, and tailored IT services for modern enterprises aiming to scale securely and efficiently.</p>
-            <div class="hero-btns">
-                <a href="#contact" class="btn btn-primary">Get Started</a>
-                <a href="#services" class="btn btn-outline">View Services</a>
-            </div>
-            <div class="hero-mockup">
-                <div class="mockup-inner">
-                    <div class="mockup-header">
-                        <div class="mockup-dot"></div>
-                        <div class="mockup-dot"></div>
-                        <div class="mockup-dot"></div>
-                    </div>
-                    <div class="mockup-body">Product UI Showcase</div>
+    <main>
+        <section id="home" class="hero reveal">
+            <div class="container">
+                <h1>Empowering Your Business with Next-Generation Digital Solutions</h1>
+                <p>We build premium web systems, automation tools, and tailored IT services for modern enterprises aiming to scale securely and efficiently.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                    <a href="#services" class="btn btn-outline">View Services</a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <div class="container about-content reveal">
-            <div class="about-text">
-                <h3>Architecting Digital Excellence</h3>
-                <p>At Alpha Digital Solutions, we bridge the gap between complex IT infrastructure and intuitive user experiences. We are a dedicated team of digital specialists focused on elevating your operational capabilities.</p>
-                <p>Whether you need robust internal business tools, seamless system automation, or a complete digital overhaul, our solutions are engineered to be reliable, scalable, and beautifully designed.</p>
-                <br>
-                <a href="#team" class="btn btn-outline">Meet the Team</a>
-            </div>
-            <div class="about-image">
-                <span style="color:var(--text-muted); font-weight:500;">Alpha Workspace Vision</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>Our Core Services</h2>
-                <p>Comprehensive IT and digital solutions designed to streamline your workflow and accelerate growth.</p>
-            </div>
-            
-            <div class="grid services-grid">
-                <div class="service-card reveal delay-1">
-                    <div class="service-icon">01</div>
-                    <h4>Web Systems & Applications</h4>
-                    <p>Custom-built web applications engineered for performance, security, and scalability to handle your unique business logic.</p>
-                </div>
-                <div class="service-card reveal delay-2">
-                    <div class="service-icon">02</div>
-                    <h4>System Automation</h4>
-                    <p>Replace manual data entry and repetitive tasks with intelligent, automated workflows that save time and reduce human error.</p>
-                </div>
-                <div class="service-card reveal delay-3">
-                    <div class="service-icon">03</div>
-                    <h4>Internal Business Tools</h4>
-                    <p>Bespoke portals and software designed exclusively for your team to manage operations, HR, or inventory efficiently.</p>
-                </div>
-                <div class="service-card reveal delay-1">
-                    <div class="service-icon">04</div>
-                    <h4>Dashboards & Reporting</h4>
-                    <p>Transform raw data into actionable insights with real-time, interactive reporting dashboards tailored to key metrics.</p>
-                </div>
-                <div class="service-card reveal delay-2">
-                    <div class="service-icon">05</div>
-                    <h4>Web Development</h4>
-                    <p>Corporate websites and landing pages that look professional, load instantly, and drive meaningful lead generation.</p>
-                </div>
-                <div class="service-card reveal delay-3">
-                    <div class="service-icon">06</div>
-                    <h4>AI Agent Systems</h4>
-                    <p>Integration of modern AI capabilities to handle customer support, data parsing, and intelligent routing within your apps.</p>
-                </div>
-                <div class="service-card reveal delay-1">
-                    <div class="service-icon">07</div>
-                    <h4>UI/UX Creation</h4>
-                    <p>User-centric design processes ensuring that every digital touchpoint is intuitive, accessible, and aligned with your brand.</p>
-                </div>
-                <div class="service-card reveal delay-2">
-                    <div class="service-icon">08</div>
-                    <h4>Maintenance & Optimization</h4>
-                    <p>Ongoing technical support, performance tuning, and security updates to keep your digital infrastructure running flawlessly.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>Featured Projects</h2>
-                <p>A selection of systems, dashboards, and digital experiences we've crafted.</p>
-            </div>
-
-            <div class="portfolio-filters reveal">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="tools">Internal Tools</button>
-                <button class="filter-btn" data-filter="automation">Automation</button>
-                <button class="filter-btn" data-filter="web">Web Development</button>
-            </div>
-
-            <div class="grid portfolio-grid" id="portfolioGrid">
-                <div class="portfolio-card reveal delay-1" data-category="tools">
-                    <div class="portfolio-img">Dashboard UI Preview</div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">Internal Tools</span>
-                        <h4>Enterprise Resource Dashboard</h4>
-                        <p>A centralized system for tracking logistics and real-time inventory metrics across multiple warehouses.</p>
-                    </div>
-                </div>
-                <div class="portfolio-card reveal delay-2" data-category="automation">
-                    <div class="portfolio-img">Automation Flow Preview</div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">System Automation</span>
-                        <h4>Client Onboarding Automator</h4>
-                        <p>An end-to-end automated workflow that reduced client setup time from days to minutes.</p>
-                    </div>
-                </div>
-                <div class="portfolio-card reveal delay-3" data-category="web">
-                    <div class="portfolio-img">Web Platform Preview</div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-tag">Web Development</span>
-                        <h4>Corporate FinTech Portal</h4>
-                        <p>A highly secure, responsive web platform designed for B2B financial service offerings.</p>
+                <div class="hero-mockup">
+                    <div class="mockup-inner">
+                        <div class="mockup-header">
+                            <div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div>
+                        </div>
+                        <div class="mockup-body">Product UI Showcase</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="credibility">
-        <div class="container reveal">
-            <div class="section-header">
-                <h2>Why Partner With Alpha?</h2>
-                <p>We don't just write code; we build reliable digital foundations for your business.</p>
-            </div>
-
-            <div class="grid cred-grid">
-                <div class="cred-item reveal delay-1">
-                    <h4>Our Methodology</h4>
-                    <p>We follow an agile, transparent development process. From initial architecture planning to final deployment, you have complete visibility and input into the product life cycle.</p>
+        <section id="about" class="about">
+            <div class="container about-content reveal">
+                <div class="about-text">
+                    <h3>Architecting Digital Excellence</h3>
+                    <p>At Alpha Digital Solutions, we bridge the gap between complex IT infrastructure and intuitive user experiences. We are a dedicated team of digital specialists focused on elevating your operational capabilities.</p>
+                    <p>Whether you need robust internal business tools, seamless system automation, or a complete digital overhaul, our solutions are engineered to be reliable, scalable, and beautifully designed.</p>
+                    <br>
+                    <a href="#team" class="btn btn-outline">Meet the Team</a>
                 </div>
-                <div class="cred-item reveal delay-2">
-                    <h4>Technical Excellence</h4>
-                    <p>Our systems are built on modern, secure stacks. We prioritize clean architecture, ensuring that the software we hand over is easy to scale, maintain, and audit.</p>
-                </div>
-                <div class="cred-item reveal delay-3">
-                    <h4>Client Trust</h4>
-                    <p>"Alpha transformed our operational bottleneck into a streamlined automated dashboard. Their blend of IT capability and design thinking is exactly what we needed."<br><br>— <em>Placeholder Client Note</em></p>
+                <div class="about-image">
+                    <span style="color:var(--text-muted); font-weight:500;">Alpha Workspace Vision</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="team" class="team">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>The Minds Behind the Tech</h2>
-                <p>Meet the core leadership driving Alpha Digital Solutions.</p>
-            </div>
-
-            <div class="grid team-grid">
-                <div class="team-card reveal delay-1">
-                    <div class="team-avatar">NG</div>
-                    <h4>Nikitha Gomez</h4>
-                    <p>IT Specialist</p>
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Our Core Services</h2>
+                    <p>Comprehensive IT and digital solutions designed to streamline your workflow and accelerate growth.</p>
                 </div>
-                <div class="team-card reveal delay-2">
-                    <div class="team-avatar">AG</div>
-                    <h4>Akalanka Gomez</h4>
-                    <p>Founder & Graphic</p>
-                </div>
-                <div class="team-card reveal delay-3">
-                    <div class="team-avatar">EH</div>
-                    <h4>Eranda Hettiarachchi</h4>
-                    <p>IT Specialist</p>
-                </div>
+                <div class="grid services-grid" id="servicesGrid">
+                    </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="contact">
-        <div class="container reveal">
-            <div class="section-header">
-                <h2>Ready to Upgrade Your Systems?</h2>
-                <p>Reach out to discuss your project requirements or to request a technical consultation.</p>
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Featured Projects</h2>
+                    <p>A selection of systems, dashboards, and digital experiences we've crafted.</p>
+                </div>
+                <div class="portfolio-filters reveal" id="portfolioFilters">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="tools">Internal Tools</button>
+                    <button class="filter-btn" data-filter="automation">Automation</button>
+                    <button class="filter-btn" data-filter="web">Web Development</button>
+                </div>
+                <div class="grid portfolio-grid" id="portfolioGrid">
+                    </div>
             </div>
+        </section>
 
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Let's Build Something Great.</h3>
-                    <p>Whether you need a complete web system overhaul, a custom dashboard, or ongoing maintenance, our team is ready to deliver.</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <h5>Email Us</h5>
-                            <span>hello@alphadigitalsolutions.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <h5>Call / WhatsApp</h5>
-                            <span>+94 77 000 0000</span>
-                        </div>
-                        <div class="contact-item">
-                            <h5>Location</h5>
-                            <span>Colombo, Sri Lanka</span>
-                        </div>
+        <section class="credibility">
+            <div class="container reveal">
+                <div class="section-header">
+                    <h2>Why Partner With Alpha?</h2>
+                    <p>We don't just write code; we build reliable digital foundations for your business.</p>
+                </div>
+                <div class="grid cred-grid">
+                    <div class="cred-item">
+                        <h4>Our Methodology</h4>
+                        <p>We follow an agile, transparent development process. From initial architecture planning to final deployment, you have complete visibility and input into the product life cycle.</p>
+                    </div>
+                    <div class="cred-item">
+                        <h4>Technical Excellence</h4>
+                        <p>Our systems are built on modern, secure stacks. We prioritize clean architecture, ensuring that the software we hand over is easy to scale, maintain, and audit.</p>
+                    </div>
+                    <div class="cred-item">
+                        <h4>Client Trust</h4>
+                        <p>"Alpha transformed our operational bottleneck into a streamlined automated dashboard. Their blend of IT capability and design thinking is exactly what we needed."<br><br>— <em>Placeholder Client Note</em></p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="contact-form">
-                    <form onsubmit="event.preventDefault(); alert('This is a UI placeholder. Backend integration required to send messages.');">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+        <section id="team" class="team">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>The Minds Behind the Tech</h2>
+                    <p>Meet the core leadership driving Alpha Digital Solutions.</p>
+                </div>
+                <div class="grid team-grid" id="teamGrid">
+                    </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container reveal">
+                <div class="section-header">
+                    <h2>Ready to Upgrade Your Systems?</h2>
+                    <p>Reach out to discuss your project requirements or to request a technical consultation.</p>
+                </div>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Let's Build Something Great.</h3>
+                        <p>Whether you need a complete web system overhaul, a custom dashboard, or ongoing maintenance, our team is ready to deliver.</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <h5>Email Us</h5><span>hello@alphadigitalsolutions.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <h5>Call / WhatsApp</h5><span>+94 77 000 0000</span>
+                            </div>
+                            <div class="contact-item">
+                                <h5>Location</h5><span>Colombo, Sri Lanka</span>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Business Email</label>
-                            <input type="email" id="email" class="form-control" placeholder="john@company.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service of Interest</label>
-                            <select id="service" class="form-control">
-                                <option>Web Systems & Applications</option>
-                                <option>System Automation</option>
-                                <option>Dashboards & Reporting</option>
-                                <option>Other / General Inquiry</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Project Details</label>
-                            <textarea id="message" class="form-control" placeholder="Tell us briefly about your current systems and what you want to achieve..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-                    </form>
+                    </div>
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Business Email</label>
+                                <input type="email" id="email" class="form-control" placeholder="john@company.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Service of Interest</label>
+                                <select id="service" class="form-control">
+                                    <option>Web Systems & Applications</option>
+                                    <option>System Automation</option>
+                                    <option>Dashboards & Reporting</option>
+                                    <option>Other / General Inquiry</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Project Details</label>
+                                <textarea id="message" class="form-control" placeholder="Tell us briefly about your current systems and what you want to achieve..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <div class="container reveal">
@@ -670,122 +549,193 @@
         </div>
     </footer>
 
+    <div class="toast" id="toastMessage" role="alert" aria-live="assertive">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        <span>Message sent successfully. We will be in touch!</span>
+    </div>
+
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // 1. THEME TOGGLE LOGIC
-            const themeToggleBtn = document.getElementById('themeToggle');
-            themeToggleBtn.addEventListener('click', () => {
-                const currentTheme = document.documentElement.getAttribute('data-theme');
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                document.documentElement.setAttribute('data-theme', newTheme);
-                localStorage.setItem('alpha-theme', newTheme);
-            });
+        /* ==========================================================================
+           1. DATA MANAGEMENT (CMS)
+           Edit your content easily here without touching HTML structures.
+           ========================================================================== */
+        const AlphaData = {
+            services: [
+                { id: '01', title: 'Web Systems & Applications', desc: 'Custom-built web applications engineered for performance, security, and scalability to handle your unique business logic.' },
+                { id: '02', title: 'System Automation', desc: 'Replace manual data entry and repetitive tasks with intelligent, automated workflows that save time and reduce human error.' },
+                { id: '03', title: 'Internal Business Tools', desc: 'Bespoke portals and software designed exclusively for your team to manage operations, HR, or inventory efficiently.' },
+                { id: '04', title: 'Dashboards & Reporting', desc: 'Transform raw data into actionable insights with real-time, interactive reporting dashboards tailored to key metrics.' },
+                { id: '05', title: 'Web Development', desc: 'Corporate websites and landing pages that look professional, load instantly, and drive meaningful lead generation.' },
+                { id: '06', title: 'AI Agent Systems', desc: 'Integration of modern AI capabilities to handle customer support, data parsing, and intelligent routing within your apps.' },
+                { id: '07', title: 'UI/UX Creation', desc: 'User-centric design processes ensuring that every digital touchpoint is intuitive, accessible, and aligned with your brand.' },
+                { id: '08', title: 'Maintenance & Optimization', desc: 'Ongoing technical support, performance tuning, and security updates to keep your digital infrastructure running flawlessly.' }
+            ],
+            portfolio: [
+                { category: 'tools', tag: 'Internal Tools', title: 'Enterprise Resource Dashboard', desc: 'A centralized system for tracking logistics and real-time inventory metrics across multiple warehouses.', imgText: 'Dashboard UI Preview' },
+                { category: 'automation', tag: 'System Automation', title: 'Client Onboarding Automator', desc: 'An end-to-end automated workflow that reduced client setup time from days to minutes.', imgText: 'Automation Flow Preview' },
+                { category: 'web', tag: 'Web Development', title: 'Corporate FinTech Portal', desc: 'A highly secure, responsive web platform designed for B2B financial service offerings.', imgText: 'Web Platform Preview' }
+            ],
+            team: [
+                { initials: 'NG', name: 'Nikitha Gomez', role: 'IT Specialist' },
+                { initials: 'AG', name: 'Akalanka Gomez', role: 'Founder & Graphic' },
+                { initials: 'EH', name: 'Eranda Hettiarachchi', role: 'IT Specialist' }
+            ]
+        };
 
-            // 2. MOBILE MENU & OVERLAY
-            const mobileToggle = document.getElementById('mobileToggle');
-            const navLinks = document.getElementById('navLinks');
-            const navItems = navLinks.querySelectorAll('a');
+        /* ==========================================================================
+           2. RENDER ENGINE
+           ========================================================================== */
+        class AlphaApp {
+            constructor() {
+                this.initRender();
+                this.initUI();
+                this.initInteractions();
+            }
 
-            mobileToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                mobileToggle.classList.toggle('active');
-                // Prevent scrolling when menu is open
-                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-            });
+            // --- Render Content from Data ---
+            initRender() {
+                // Render Services
+                const servicesGrid = document.getElementById('servicesGrid');
+                servicesGrid.innerHTML = AlphaData.services.map((srv, index) => `
+                    <div class="service-card reveal" style="transition-delay: ${index * 0.05}s">
+                        <div class="service-icon">${srv.id}</div>
+                        <h4>${srv.title}</h4>
+                        <p>${srv.desc}</p>
+                    </div>
+                `).join('');
 
-            navItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    mobileToggle.classList.remove('active');
-                    document.body.style.overflow = '';
+                // Render Portfolio
+                this.renderPortfolio('all');
+
+                // Render Team
+                const teamGrid = document.getElementById('teamGrid');
+                teamGrid.innerHTML = AlphaData.team.map((member, index) => `
+                    <div class="team-card reveal" style="transition-delay: ${index * 0.1}s">
+                        <div class="team-avatar">${member.initials}</div>
+                        <h4>${member.name}</h4>
+                        <p>${member.role}</p>
+                    </div>
+                `).join('');
+            }
+
+            renderPortfolio(filter) {
+                const grid = document.getElementById('portfolioGrid');
+                const filteredData = filter === 'all' 
+                    ? AlphaData.portfolio 
+                    : AlphaData.portfolio.filter(p => p.category === filter);
+
+                grid.innerHTML = filteredData.map((project, index) => `
+                    <div class="portfolio-card reveal active" style="animation: fadeUp 0.5s ease forwards; opacity:0; transform:translateY(20px); animation-delay: ${index * 0.1}s">
+                        <div class="portfolio-img">${project.imgText}</div>
+                        <div class="portfolio-info">
+                            <span class="portfolio-tag">${project.tag}</span>
+                            <h4>${project.title}</h4>
+                            <p>${project.desc}</p>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // --- UI Setup (Theme, Menu, Scroll) ---
+            initUI() {
+                // Theme Toggle
+                document.getElementById('themeToggle').addEventListener('click', () => {
+                    const current = document.documentElement.getAttribute('data-theme');
+                    const next = current === 'dark' ? 'light' : 'dark';
+                    document.documentElement.setAttribute('data-theme', next);
+                    localStorage.setItem('alpha-theme', next);
                 });
-            });
 
-            // 3. STICKY HEADER & SCROLLSPY (ACTIVE NAV LINKS)
-            const header = document.getElementById('header');
-            const sections = document.querySelectorAll('section');
-            const navLinkEls = document.querySelectorAll('.nav-item');
+                // Mobile Menu
+                const mobileToggle = document.getElementById('mobileToggle');
+                const navLinks = document.getElementById('navLinks');
+                
+                const toggleMenu = () => {
+                    const isActive = navLinks.classList.toggle('active');
+                    mobileToggle.classList.toggle('active');
+                    mobileToggle.setAttribute('aria-expanded', isActive);
+                    document.body.style.overflow = isActive ? 'hidden' : ''; // Prevent scroll
+                };
 
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 20) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-
-                let currentSection = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (scrollY >= (sectionTop - 250)) {
-                        currentSection = section.getAttribute('id');
-                    }
-                });
-
-                navLinkEls.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').includes(currentSection) && currentSection !== '') {
-                        link.classList.add('active');
-                    }
-                });
-            });
-
-            // 4. PORTFOLIO FILTERING SYSTEM (Sort Properly)
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const portfolioCards = document.querySelectorAll('.portfolio-card');
-
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Update Active Button
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-
-                    const filterValue = btn.getAttribute('data-filter');
-
-                    // Filter Cards
-                    portfolioCards.forEach(card => {
-                        const cardCategory = card.getAttribute('data-category');
-                        
-                        if (filterValue === 'all' || filterValue === cardCategory) {
-                            card.style.display = 'block';
-                            setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 50);
-                        } else {
-                            card.style.opacity = '0';
-                            card.style.transform = 'translateY(20px)';
-                            setTimeout(() => { card.style.display = 'none'; }, 300); // Wait for transition
-                        }
+                mobileToggle.addEventListener('click', toggleMenu);
+                document.querySelectorAll('.nav-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        if(navLinks.classList.contains('active')) toggleMenu();
                     });
                 });
-            });
 
-            // 5. INTERSECTION OBSERVER (SCROLL REVEALS)
-            const revealElements = document.querySelectorAll('.reveal');
-            const revealObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target);
-                    }
+                // Scroll Events (Progress Bar & Sticky Header)
+                const header = document.getElementById('header');
+                const progressBar = document.getElementById('scrollProgress');
+                const sections = document.querySelectorAll('section');
+                const navItems = document.querySelectorAll('.nav-item');
+
+                window.addEventListener('scroll', () => {
+                    // Header Glass
+                    window.scrollY > 20 ? header.classList.add('scrolled') : header.classList.remove('scrolled');
+                    
+                    // Progress Bar
+                    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    progressBar.style.width = (winScroll / height) * 100 + "%";
+
+                    // Scrollspy
+                    let current = '';
+                    sections.forEach(sec => {
+                        if (scrollY >= (sec.offsetTop - 250)) current = sec.getAttribute('id');
+                    });
+                    navItems.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').includes(current) && current) link.classList.add('active');
+                    });
                 });
-            }, {
-                root: null,
-                threshold: 0.1, 
-                rootMargin: "0px 0px -50px 0px" 
-            });
+            }
 
-            revealElements.forEach(el => revealObserver.observe(el));
-            
-            // Check viewport on initial load
-            setTimeout(() => {
-                revealElements.forEach(el => {
-                    const rect = el.getBoundingClientRect();
-                    if (rect.top < window.innerHeight) {
-                        el.classList.add('active');
-                    }
+            // --- Interactions (Forms, Filters, Reveals) ---
+            initInteractions() {
+                // Portfolio Filters
+                const filterBtns = document.querySelectorAll('.filter-btn');
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        filterBtns.forEach(b => b.classList.remove('active'));
+                        e.target.classList.add('active');
+                        this.renderPortfolio(e.target.dataset.filter);
+                    });
                 });
-            }, 100);
 
-        });
+                // Form Submit -> Premium Toast
+                document.getElementById('contactForm').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const toast = document.getElementById('toastMessage');
+                    toast.classList.add('show');
+                    e.target.reset(); // Clear form
+                    setTimeout(() => toast.classList.remove('show'), 4000); // Hide after 4s
+                });
+
+                // Scroll Reveal Observer
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+                // Observe elements (need slight delay for dynamically rendered items)
+                setTimeout(() => {
+                    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+                }, 100);
+            }
+        }
+
+        // Initialize App
+        document.addEventListener('DOMContentLoaded', () => new AlphaApp());
+
+        // Add dynamic animation keyframe for portfolio filtering
+        const styleSheet = document.createElement("style");
+        styleSheet.innerText = `@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }`;
+        document.head.appendChild(styleSheet);
     </script>
 </body>
 </html>
