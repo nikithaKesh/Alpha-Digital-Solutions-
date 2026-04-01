@@ -42,7 +42,8 @@
       --button-gradient-start: var(--primary-blue);
       --button-gradient-end: var(--primary-cyan);
 
-      /* Ambient Lighting & Glows (Slightly boosted opacity for visibility) */
+      /* Ambient Lighting & Glows */
+      /* SWAPPED: Left is Yellow, Right is Blue */
       --hero-glow-left: rgba(255, 204, 0, 0.18);   /* Saturated Yellow Glow */
       --hero-glow-right: rgba(0, 85, 255, 0.18);   /* Saturated Blue Glow */
       
@@ -347,16 +348,9 @@
     }
     .hero-copy { display: grid; gap: 24px; position: relative; z-index: 1; }
     .hero-copy p.lead { max-width: 58ch; }
-    .hero-badges, .trust-strip { display: flex; flex-wrap: wrap; gap: 10px; }
-    .pill, .trust-item {
-      border: 1px solid var(--border-soft);
-      background: var(--surface-glass);
-      padding: 10px 14px;
-      border-radius: 999px;
-      color: var(--text-muted);
-      backdrop-filter: blur(14px);
-      box-shadow: var(--shadow-sm);
-    }
+    
+    /* REMOVED .hero-badges as requested */
+
     .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 4px; }
     .btn {
       display: inline-flex;
@@ -531,6 +525,31 @@
       top: -40px;
       pointer-events: none;
     }
+    
+    /* REPLACED "What clients can expect" with a dynamic metrics panel */
+    .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    .metric-box {
+        padding: 20px;
+        border-radius: 16px;
+        background: linear-gradient(145deg, var(--surface-soft), transparent);
+        border: 1px solid var(--border-soft);
+        text-align: center;
+    }
+    .metric-box .number {
+        display: block;
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: var(--text-main);
+        margin-bottom: 4px;
+        background: linear-gradient(135deg, var(--text-main), var(--text-muted));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
     .bullet-list { display: grid; gap: 12px; padding: 0; margin: 0; list-style: none; }
     .bullet-list li { display: flex; gap: 12px; align-items: flex-start; color: var(--text-muted); }
     .bullet-list li::before {
@@ -711,47 +730,132 @@
       font-size: .84rem;
     }
 
-    /* Team */
-    .team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-    .team-card { overflow: hidden; }
-    .team-card:hover { transform: translateY(-6px); border-color: var(--border-glow); }
-    .team-media {
-      min-height: 200px;
+    /* NEW TEAM SECTION STYLES */
+    .team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+    
+    .team-card-new {
       position: relative;
-      background:
-        radial-gradient(circle at 28% 20%, var(--hero-glow-right), transparent 30%),
-        radial-gradient(circle at 78% 22%, var(--hero-glow-left), transparent 30%),
-        linear-gradient(180deg, var(--surface-soft), transparent);
+      border-radius: var(--radius-md);
+      background: var(--surface-strong);
+      border: 1px solid var(--border-soft);
+      overflow: hidden;
+      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .team-card-new:hover {
+      transform: translateY(-8px);
+      border-color: var(--border-glow);
+      box-shadow: 0 20px 40px var(--shadow-color);
+    }
+    
+    .team-card-new:hover .team-photo-container img {
+      transform: scale(1.05);
+    }
+
+    .team-photo-container {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: var(--surface-glass);
+      position: relative;
+      overflow: hidden;
       border-bottom: 1px solid var(--border-soft);
     }
-    .team-media::before {
-      content: attr(data-initials);
+    
+    .team-photo-container::before {
+      /* Subtle gradient overlay to ensure text contrast if image doesn't load */
+      content: "";
       position: absolute;
-      inset: auto 20px 18px auto;
-      width: 76px;
-      height: 76px;
-      border-radius: 26px;
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      letter-spacing: -0.06em;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(4,8,18,0.8) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .team-photo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform .5s var(--ease);
+      display: block;
+    }
+    
+    /* Placeholder for missing images */
+    .team-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--surface-soft), var(--surface-glass));
+      color: var(--text-muted);
+    }
+    .team-placeholder svg {
+      width: 48px;
+      height: 48px;
+      opacity: 0.5;
+    }
+
+    .team-info-new {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-grow: 1;
+      position: relative;
+      z-index: 2;
+    }
+
+    .team-role {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+    }
+    
+    /* Color code roles to match the theme */
+    .role-it { color: var(--primary-cyan); }
+    .role-graphic { color: var(--accent-yellow); }
+
+    .team-info-new h3 {
       font-size: 1.4rem;
-      border: 1px solid var(--border-soft);
-      background: linear-gradient(135deg, color-mix(in srgb, var(--primary-cyan) 22%, transparent), color-mix(in srgb, var(--accent-yellow) 22%, transparent));
-      box-shadow: var(--shadow-md);
+      margin: 0;
       color: var(--text-main);
     }
-    .team-body { padding: 22px; display: grid; gap: 12px; }
-    .socials { display: flex; gap: 10px; flex-wrap: wrap; }
-    .socials a {
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--border-soft);
+
+    .team-desc {
       color: var(--text-muted);
-      background: var(--surface-soft);
-      transition: border-color 0.3s, color 0.3s;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-top: 8px;
+      margin-bottom: 16px;
     }
-    .socials a:hover { border-color: var(--border-glow); color: var(--text-main); }
+
+    .team-socials-new {
+      display: flex;
+      gap: 12px;
+      margin-top: auto;
+      border-top: 1px solid var(--border-soft);
+      padding-top: 16px;
+    }
+
+    .team-social-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--surface-soft);
+      display: grid;
+      place-items: center;
+      color: var(--text-muted);
+      transition: background-color .2s, color .2s;
+    }
+
+    .team-social-icon:hover {
+      background: var(--primary-blue);
+      color: white;
+    }
 
     /* Contact */
     .contact-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 24px; align-items: start; }
@@ -913,7 +1017,7 @@
       .btn { width: 100%; }
       .pill, .trust-item { width: 100%; justify-content: center; text-align: center; }
       .about-points, .form-row, .panel-foot { grid-template-columns: 1fr; }
-      .glass-card, .contact-card, .info-panel, .banner, .portfolio-body, .team-body, .testimonial, .service-card { padding: 20px; }
+      .glass-card, .contact-card, .info-panel, .banner, .portfolio-body, .team-info-new, .testimonial, .service-card { padding: 20px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -983,20 +1087,12 @@
           automation systems, reporting dashboards, and refined visual content built to look sharp and work hard.
         </p>
 
-        <div class="hero-badges">
-          <span class="pill">Websites</span>
-          <span class="pill">Automation</span>
-          <span class="pill">Internal Tools</span>
-          <span class="pill">Dashboards</span>
-          <span class="pill">Creative Visuals</span>
-        </div>
-
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary">Book a Discovery Call</a>
           <a href="#portfolio" class="btn btn-secondary">View Our Work</a>
         </div>
 
-        <div class="trust-strip">
+        <div class="trust-strip" style="margin-top: 16px;">
           <span class="trust-item">Business-first execution</span>
           <span class="trust-item">Responsive support</span>
           <span class="trust-item">Custom-built systems</span>
@@ -1043,19 +1139,19 @@
 
             <div class="stack">
               <div class="info-card">
-                <span class="badge">Web Systems</span>
+                <span class="badge" style="color: var(--primary-cyan);">Web Systems</span>
                 <div class="metric">Fast, polished, scalable</div>
                 <p class="muted">Modern websites and applications shaped for credibility, performance, and conversion.</p>
               </div>
 
               <div class="info-card">
-                <span class="badge">Automation</span>
+                <span class="badge" style="color: var(--primary-cyan);">Automation</span>
                 <div class="metric">Less manual work</div>
                 <p class="muted">Internal workflows, reporting pipelines, and operational systems that reduce friction.</p>
               </div>
 
               <div class="info-card">
-                <span class="badge">Creative Studio</span>
+                <span class="badge" style="color: var(--accent-yellow);">Creative Studio</span>
                 <div class="metric">Clear, premium visuals</div>
                 <p class="muted">Photography, motion, design, and visual assets that elevate brand perception.</p>
               </div>
@@ -1108,13 +1204,27 @@
         </article>
 
         <aside class="info-panel reveal">
-          <h3>What clients can expect</h3>
-          <ul class="bullet-list">
-            <li>Premium design direction with calm, modern presentation.</li>
-            <li>Technical systems built for speed, structure, and maintainability.</li>
-            <li>Creative services that strengthen brand quality across digital touchpoints.</li>
-            <li>Clear communication, reliable support, and careful project handling.</li>
-          </ul>
+          <h3>Driven by Metrics</h3>
+          <p class="muted" style="margin-bottom: 20px;">We measure success by the efficiency we create and the clarity we bring to your brand.</p>
+          
+          <div class="metrics-grid">
+            <div class="metric-box">
+              <span class="number">99%</span>
+              <span class="muted" style="font-size: 0.85rem;">Uptime Target</span>
+            </div>
+            <div class="metric-box">
+              <span class="number">10x</span>
+              <span class="muted" style="font-size: 0.85rem;">Faster Workflows</span>
+            </div>
+            <div class="metric-box">
+              <span class="number">24h</span>
+              <span class="muted" style="font-size: 0.85rem;">Response Time</span>
+            </div>
+            <div class="metric-box">
+              <span class="number">100%</span>
+              <span class="muted" style="font-size: 0.85rem;">Custom Built</span>
+            </div>
+          </div>
         </aside>
       </div>
     </div>
@@ -1534,41 +1644,68 @@
       </div>
 
       <div class="team-grid">
-        <article class="team-card reveal">
-          <div class="team-media" data-initials="AG"></div>
-          <div class="team-body">
-            <span class="badge">Founder & Graphic</span>
+        <article class="team-card-new reveal">
+          <div class="team-photo-container">
+            <div class="team-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <img src="" alt="Akalanka Gomez" loading="lazy" style="opacity: 0;" onload="this.style.opacity=1; this.previousElementSibling.style.display='none';">
+          </div>
+          <div class="team-info-new">
+            <span class="team-role role-graphic">Founder & Graphic</span>
             <h3>Akalanka Gomez</h3>
-            <p class="muted">Leads visual direction, creative assets, and polished design execution across brand touchpoints.</p>
-            <div class="socials">
-              <a href="#contact">Portfolio</a>
-              <a href="#contact">Email</a>
+            <p class="team-desc">Leads visual direction, creative assets, and polished design execution across brand touchpoints.</p>
+            <div class="team-socials-new">
+              <a href="#contact" class="team-social-icon" aria-label="Portfolio">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+              </a>
+              <a href="#contact" class="team-social-icon" aria-label="Email">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              </a>
             </div>
           </div>
         </article>
 
-        <article class="team-card reveal">
-          <div class="team-media" data-initials="NG"></div>
-          <div class="team-body">
-            <span class="badge">IT</span>
+        <article class="team-card-new reveal" style="transition-delay: 0.1s;">
+          <div class="team-photo-container">
+            <div class="team-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <img src="" alt="Nikitha Gomez" loading="lazy" style="opacity: 0;" onload="this.style.opacity=1; this.previousElementSibling.style.display='none';">
+          </div>
+          <div class="team-info-new">
+            <span class="team-role role-it">IT</span>
             <h3>Nikitha Gomez</h3>
-            <p class="muted">Focuses on web systems, automation, internal tools, reporting, and practical digital problem-solving.</p>
-            <div class="socials">
-              <a href="#contact">LinkedIn</a>
-              <a href="#contact">Email</a>
+            <p class="team-desc">Focuses on web systems, automation, internal tools, reporting, and practical digital problem-solving.</p>
+            <div class="team-socials-new">
+              <a href="#contact" class="team-social-icon" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+              <a href="#contact" class="team-social-icon" aria-label="Email">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              </a>
             </div>
           </div>
         </article>
 
-        <article class="team-card reveal">
-          <div class="team-media" data-initials="EH"></div>
-          <div class="team-body">
-            <span class="badge">IT</span>
+        <article class="team-card-new reveal" style="transition-delay: 0.2s;">
+          <div class="team-photo-container">
+            <div class="team-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <img src="" alt="Eranda Hettiarachchi" loading="lazy" style="opacity: 0;" onload="this.style.opacity=1; this.previousElementSibling.style.display='none';">
+          </div>
+          <div class="team-info-new">
+            <span class="team-role role-it">IT</span>
             <h3>Eranda Hettiarachchi</h3>
-            <p class="muted">Supports technical execution with a focus on development quality, structured builds, and delivery support.</p>
-            <div class="socials">
-              <a href="#contact">LinkedIn</a>
-              <a href="#contact">Email</a>
+            <p class="team-desc">Supports technical execution with a focus on development quality, structured builds, and delivery support.</p>
+            <div class="team-socials-new">
+              <a href="#contact" class="team-social-icon" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+              <a href="#contact" class="team-social-icon" aria-label="Email">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              </a>
             </div>
           </div>
         </article>
