@@ -494,9 +494,8 @@
     
     .trust-roster { padding: 24px; background: var(--surface-glass); border: 1px solid var(--border-soft); border-radius: 24px; box-shadow: var(--shadow-md); }
     .trust-roster h4 { margin: 0 0 16px; font-size: 1rem; color: var(--text-main); font-weight: 600; }
-    .logo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    .logo-chip { height: 74px; display: grid; place-items: center; color: var(--text-muted); background: rgba(255,255,255,0.02); border: 1px solid var(--border-soft); border-radius: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .8rem; cursor: pointer; transition: all 0.3s ease; }
-    .logo-chip:hover { border-color: var(--primary-cyan); color: var(--text-main); background: rgba(0, 153, 255, 0.05); transform: translateY(-2px);}
+    .logo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; pointer-events: none; }
+    .logo-chip { height: 74px; display: grid; place-items: center; color: var(--text-muted); background: rgba(255,255,255,0.02); border: 1px solid var(--border-soft); border-radius: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .8rem; }
     .logo-chip svg { width: 32px; height: 32px; fill: currentColor; opacity: 0.8;}
 
     .testimonial-track { display: flex; flex-direction: column; gap: 20px; }
@@ -1436,26 +1435,25 @@
           </div>
 
           <div class="trust-roster">
-            <h4>Brands we've upgraded</h4>
-            <div class="logo-grid">
-              <div class="logo-chip" title="TechFlow Inc." data-brand="TechFlow Inc." data-tags="digital,graphic" data-desc="Complete digital transformation including custom internal dashboards and a total brand identity refresh." onclick="openModal(this.dataset)">
+            <h4>Trusted by 12+ Brands Across Industries</h4>
+            <div class="logo-grid" style="pointer-events: none;"> <div class="logo-chip">
                 <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                <span style="display:block; margin-top:6px;">TechFlow</span>
+                <span style="display:block; margin-top:6px;">SaaS & Tech</span>
               </div>
-              <div class="logo-chip" title="Studio Alpha" data-brand="Studio Alpha" data-tags="graphic" data-desc="Produced a high-fidelity motion graphics kit and editorial photography suite for their Q3 launch campaign." onclick="openModal(this.dataset)">
+              <div class="logo-chip">
                 <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
-                <span style="display:block; margin-top:6px;">Studio Alpha</span>
+                <span style="display:block; margin-top:6px;">Corporate</span>
               </div>
-              <div class="logo-chip" title="Nexus Systems" data-brand="Nexus Systems" data-tags="digital" data-desc="Built a fully automated reporting pipeline and employee portal to reduce manual operations by 80%." onclick="openModal(this.dataset)">
+              <div class="logo-chip">
                 <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M9 3v18M15 3v18"/></svg>
-                <span style="display:block; margin-top:6px;">Nexus</span>
+                <span style="display:block; margin-top:6px;">E-Commerce</span>
               </div>
-              <div class="logo-chip" title="Aura Health" data-brand="Aura Health" data-tags="digital,graphic" data-desc="Designed and developed a premium front-end web experience paired with customized 3D product renders." onclick="openModal(this.dataset)">
+              <div class="logo-chip">
                 <svg viewBox="0 0 24 24"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/></svg>
-                <span style="display:block; margin-top:6px;">Aura Health</span>
+                <span style="display:block; margin-top:6px;">Healthcare</span>
               </div>
             </div>
-            <p class="muted" style="font-size: 0.8rem; margin-top: 14px; text-align: center;">Click any brand to view project details.</p>
+            <p class="muted" style="font-size: 0.85rem; margin-top: 14px; text-align: center; line-height: 1.5;">We maintain strict confidentiality for our clients. Above are the core sectors we engineer solutions for.</p>
           </div>
         </div>
 
@@ -1536,8 +1534,11 @@
             </div>
             <p class="team-desc">Leads visual direction, creative assets, and polished design execution across all visual touchpoints.</p>
             <div class="team-socials-new">
-              <a href="mailto:akalanka@alphadigitalsolutions.com" class="team-social-icon" aria-label="Email Akalanka">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              <a href="https://www.linkedin.com/in/akalankagomes?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="team-social-icon" aria-label="LinkedIn Profile">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+              <a href="https://www.facebook.com/share/17avus3feU/" target="_blank" class="team-social-icon" aria-label="Facebook Profile">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
               </a>
             </div>
           </div>
@@ -1548,22 +1549,22 @@
             <div class="team-placeholder">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
             </div>
-            <img src="https://via.placeholder.com/400x500/0a0e16/ffffff?text=NG" alt="Nikitha Gomez" loading="lazy" style="opacity: 0;" onload="this.style.opacity=1; this.previousElementSibling.style.display='none';">
+            <img src="https://via.placeholder.com/400x500/0a0e16/ffffff?text=NG" alt="Nikitha Keshan Gomes" loading="lazy" style="opacity: 0;" onload="this.style.opacity=1; this.previousElementSibling.style.display='none';">
           </div>
           <div class="team-info-new">
             <span class="team-role role-digital">Co-Founder & Digital Lead</span>
-            <h3>Nikitha Keshan</h3>
+            <h3>Nikitha Keshan Gomes</h3>
             <div class="team-tags">
               <span class="team-tag">Systems Architecture</span>
               <span class="team-tag">Automation</span>
             </div>
             <p class="team-desc">Focuses on web systems, automation, internal tools, reporting, and practical digital problem-solving.</p>
             <div class="team-socials-new">
-              <a href="#" class="team-social-icon" aria-label="LinkedIn Profile">
+              <a href="https://www.linkedin.com/in/nikitha-keshan-640927325/" target="_blank" class="team-social-icon" aria-label="LinkedIn Profile">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
               </a>
-              <a href="mailto:nikitha@alphadigitalsolutions.com" class="team-social-icon" aria-label="Email Nikitha">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              <a href="https://nikithakeshan.netlify.app/" target="_blank" class="team-social-icon" aria-label="Portfolio">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
               </a>
             </div>
           </div>
@@ -1585,11 +1586,8 @@
             </div>
             <p class="team-desc">Supports technical execution with a focus on code quality, robust backend structures, and delivery scaling.</p>
             <div class="team-socials-new">
-              <a href="#" class="team-social-icon" aria-label="LinkedIn Profile">
+              <a href="https://www.linkedin.com/in/eranda-hettiarachchi-a9b912273?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="team-social-icon" aria-label="LinkedIn Profile">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-              </a>
-              <a href="mailto:eranda@alphadigitalsolutions.com" class="team-social-icon" aria-label="Email Eranda">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
               </a>
             </div>
           </div>
@@ -1852,7 +1850,7 @@
     });
 
     /* =========================================
-       MODAL LOGIC FOR CASE STUDIES & LOGOS
+       MODAL LOGIC FOR CASE STUDIES
        ========================================= */
     const caseStudyCards = document.querySelectorAll('.portfolio-card');
     const modalOverlay = document.getElementById('brandModalOverlay');
@@ -1865,7 +1863,6 @@
     const mOutcome = document.getElementById('modalOutcome');
     const mTools = document.getElementById('modalTools');
 
-    // Make openModal globally available for the onclick events on logos
     window.openModal = function(data) {
       mBrand.textContent = data.brand;
       mChallenge.textContent = data.challenge || "Project scope defined during initial discovery.";
