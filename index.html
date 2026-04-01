@@ -43,9 +43,10 @@
       --button-gradient-start: var(--primary-blue);
       --button-gradient-end: var(--primary-cyan);
 
-      /* Ambient Lighting & Glows (Left = Yellow/Graphic, Right = Blue/Digital) */
-      --hero-glow-left: rgba(255, 204, 0, 0.22);   
-      --hero-glow-right: rgba(0, 110, 255, 0.22);  
+      /* Ambient Lighting & Glows 
+         Placed far apart (10% and 90%) to absolutely prevent color mixing */
+      --hero-glow-left: rgba(255, 204, 0, 0.15);   
+      --hero-glow-right: rgba(0, 110, 255, 0.15);  
       
       /* Utilities */
       --shadow-color: rgba(0, 0, 0, 0.6);
@@ -88,9 +89,10 @@
       text-rendering: optimizeLegibility;
       overflow-x: hidden;
       color: var(--text-main);
+      /* Anchoring the background glows far out to prevent them turning green in the middle */
       background:
-        radial-gradient(circle at 15% 30%, var(--hero-glow-left), transparent 45%),
-        radial-gradient(circle at 85% 30%, var(--hero-glow-right), transparent 45%),
+        radial-gradient(circle at 10% 40%, var(--hero-glow-left), transparent 40%),
+        radial-gradient(circle at 90% 40%, var(--hero-glow-right), transparent 40%),
         linear-gradient(180deg, var(--bg-main), var(--bg-secondary));
       background-size: 150% 150%;
       animation: pulse-bg 15s ease infinite;
@@ -278,65 +280,131 @@
       backdrop-filter: blur(14px); box-shadow: var(--shadow-sm); font-size: 0.9rem;
     }
 
-    /* CREATIVE ABSTRACT VISUAL REPLACING DASHBOARD */
-    .hero-visual { position: relative; min-height: 620px; display: grid; place-items: center; perspective: 1000px;}
+    /* CREATIVE INTERACTIVE DUAL PANEL REPLACING ABSTRACT ORBS */
+    .hero-visual { position: relative; min-height: 620px; display: grid; place-items: center; }
     
-    .abstract-composition {
+    .hero-dual-panel {
       position: relative;
-      width: 400px;
-      height: 400px;
-      transform-style: preserve-3d;
-      animation: float 8s ease-in-out infinite;
+      width: 100%;
+      max-width: 540px;
+      height: 440px;
+      display: flex;
+      border-radius: 32px;
+      border: 1px solid var(--border-soft);
+      background: var(--surface-glass);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(24px);
+      overflow: hidden;
+      transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.6s ease;
     }
 
-    /* Digital Orb (Blue) */
-    .orb-digital {
-      position: absolute;
-      width: 180px; height: 180px;
-      right: 10%; top: 10%;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, var(--primary-cyan), var(--primary-blue), transparent);
-      box-shadow: 0 0 60px var(--primary-blue), inset -20px -20px 40px rgba(0,0,0,0.5);
-      animation: orbit-digital 12s linear infinite;
+    .hero-dual-panel:hover {
+      transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+      box-shadow: 0 40px 100px rgba(0,0,0,0.8);
     }
 
-    /* Graphic Orb (Yellow) */
-    .orb-graphic {
-      position: absolute;
-      width: 140px; height: 140px;
-      left: 10%; bottom: 10%;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, var(--accent-gold), var(--accent-yellow), transparent);
-      box-shadow: 0 0 60px var(--accent-yellow), inset -20px -20px 40px rgba(0,0,0,0.5);
-      animation: orbit-graphic 12s linear infinite reverse;
+    .panel-side {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      transition: flex 0.5s cubic-bezier(0.22, 1, 0.36, 1), background 0.5s ease;
     }
 
-    /* Glass Synergy Ring */
-    .glass-ring {
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      border: 2px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.02);
-      backdrop-filter: blur(8px);
-      box-shadow: inset 0 0 30px rgba(255,255,255,0.05), 0 20px 50px rgba(0,0,0,0.5);
-      transform: rotateX(60deg) rotateY(10deg);
-      animation: spin-ring 20s linear infinite;
+    /* Hover Expansion Logic */
+    .panel-side:hover {
+      flex: 1.6;
     }
 
-    @keyframes orbit-digital {
-      0% { transform: translateY(0) scale(1) rotateZ(0deg); z-index: 2;}
-      50% { transform: translateY(40px) scale(0.9) rotateZ(180deg); z-index: 0;}
-      100% { transform: translateY(0) scale(1) rotateZ(360deg); z-index: 2;}
+    .panel-digital {
+      background: linear-gradient(135deg, rgba(0, 153, 255, 0.03), transparent);
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
     }
-    @keyframes orbit-graphic {
-      0% { transform: translateY(0) scale(1) rotateZ(0deg); z-index: 0;}
-      50% { transform: translateY(-40px) scale(1.1) rotateZ(180deg); z-index: 2;}
-      100% { transform: translateY(0) scale(1) rotateZ(360deg); z-index: 0;}
+    .panel-digital:hover {
+      background: linear-gradient(135deg, rgba(0, 153, 255, 0.12), rgba(0, 68, 255, 0.05));
     }
-    @keyframes spin-ring {
-      0% { transform: rotateX(60deg) rotateY(10deg) rotateZ(0deg); }
-      100% { transform: rotateX(60deg) rotateY(10deg) rotateZ(360deg); }
+
+    .panel-graphic {
+      background: linear-gradient(135deg, transparent, rgba(255, 204, 0, 0.03));
+    }
+    .panel-graphic:hover {
+      background: linear-gradient(135deg, rgba(255, 170, 0, 0.05), rgba(255, 204, 0, 0.12));
+    }
+
+    .panel-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      z-index: 2;
+    }
+
+    .panel-label {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: transform 0.4s ease;
+    }
+    .panel-side:hover .panel-label { transform: translateY(-10px); }
+
+    .panel-digital .panel-label { color: var(--primary-cyan); }
+    .panel-graphic .panel-label { color: var(--accent-yellow); }
+
+    .panel-graphics {
+      width: 120px;
+      height: 120px;
+      position: relative;
+      opacity: 0.6;
+      transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .panel-side:hover .panel-graphics {
+      opacity: 1;
+      transform: scale(1.15) translateY(-5px);
+    }
+
+    /* Code Block Visual for Digital */
+    .code-graphic {
+      background: rgba(0,0,0,0.4);
+      border: 1px solid var(--border-glow-blue);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      justify-content: center;
+      box-shadow: 0 10px 30px rgba(0, 153, 255, 0.2);
+    }
+    .code-graphic .line { height: 8px; background: var(--primary-cyan); border-radius: 4px; width: 100%; opacity: 0.8;}
+    .code-graphic .line.short { width: 60%; background: var(--primary-blue); }
+    .code-graphic .line.medium { width: 80%; background: var(--text-muted); opacity: 0.5;}
+
+    /* Design Shapes Visual for Graphic */
+    .design-graphic {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .shape-circle {
+      width: 70px; height: 70px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-yellow), var(--accent-gold));
+      position: absolute; left: 10px; top: 10px;
+      box-shadow: 0 10px 30px rgba(255, 204, 0, 0.3);
+      z-index: 2;
+    }
+    .shape-square {
+      width: 70px; height: 70px; border-radius: 16px;
+      border: 3px solid var(--accent-gold);
+      background: rgba(255, 204, 0, 0.1);
+      position: absolute; right: 10px; bottom: 10px;
+      transform: rotate(15deg);
+      backdrop-filter: blur(4px);
+      z-index: 1;
     }
 
     /* Premium Glass Cards */
@@ -556,7 +624,6 @@
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
     
-    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
     /* Media Queries */
@@ -577,6 +644,8 @@
       .hero-visual { min-height: auto; }
       .services-grid, .portfolio-grid, .team-grid, .testimonials, .logo-grid, .stats-grid { grid-template-columns: 1fr; }
       .timeline { grid-template-columns: 1fr; }
+      .hero-dual-panel { flex-direction: column; height: 500px; }
+      .panel-digital { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
     }
     @media (max-width: 600px) {
       .container { width: min(100% - 20px, var(--max)); }
@@ -590,7 +659,6 @@
       .pill, .trust-item { width: 100%; justify-content: center; text-align: center; }
       .about-points, .form-row, .metrics-grid { grid-template-columns: 1fr; }
       .glass-card, .contact-card, .info-panel, .banner, .portfolio-body, .team-info-new, .testimonial, .service-card { padding: 20px; }
-      .abstract-composition { transform: scale(0.7); }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -681,10 +749,29 @@
       </div>
 
       <div class="hero-visual reveal" aria-hidden="true">
-        <div class="abstract-composition">
-           <div class="orb-digital"></div>
-           <div class="orb-graphic"></div>
-           <div class="glass-ring"></div>
+        <div class="hero-dual-panel">
+          
+          <div class="panel-side panel-digital">
+            <div class="panel-content">
+              <span class="panel-label">Digital</span>
+              <div class="panel-graphics code-graphic">
+                <div class="line"></div>
+                <div class="line short"></div>
+                <div class="line medium"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="panel-side panel-graphic">
+            <div class="panel-content">
+              <span class="panel-label">Graphic</span>
+              <div class="panel-graphics design-graphic">
+                <div class="shape-circle"></div>
+                <div class="shape-square"></div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
