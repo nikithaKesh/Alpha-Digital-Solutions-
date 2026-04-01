@@ -483,38 +483,36 @@
     .portfolio-metrics { margin-top: auto; border-top: 1px solid var(--border-soft); padding-top: 12px; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; color: var(--text-muted); }
     .portfolio-metrics strong { color: var(--primary-cyan); }
 
-    /* Credibility Stats & Quotes */
-    .cred-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 24px; align-items: start; }
-    .stats-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-    .stat-card { padding: 22px; display: grid; gap: 8px; }
-    .stat-card strong { font-size: clamp(1.8rem, 3vw, 2.8rem); letter-spacing: -0.04em; color: var(--primary-cyan); }
+    /* NEW CREDIBILITY STYLING */
+    .credibility-container { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; align-items: stretch; }
+    .cred-left-col { display: flex; flex-direction: column; gap: 24px; }
     
-    /* Redesigned Testimonials */
-    .testimonials { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 18px; }
-    .testimonial { 
-      padding: 26px; display: flex; flex-direction: column; gap: 16px; min-height: 260px; 
-      position: relative;
-    }
-    .testimonial-header { display: flex; gap: 12px; align-items: center; }
-    .testimonial-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--surface-soft); display: grid; place-items: center; color: var(--text-muted); border: 1px solid var(--border-soft); }
-    .testimonial::before {
-      content: '"'; position: absolute; top: 10px; right: 20px; font-size: 4rem; color: rgba(255,255,255,0.05); font-family: Georgia, serif; line-height: 1; pointer-events: none;
-    }
-    .testimonial p { font-size: 1.05rem; font-style: italic; z-index: 1; position: relative; margin-top: 5px; flex-grow: 1;}
-    .testimonial footer { 
-      display: flex; flex-direction: column; gap: 4px; color: var(--text-muted); margin-top: auto; 
-    }
-    .testimonial footer strong { color: var(--text-main); font-size: 0.95rem;}
+    .stats-dashboard { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 24px; background: var(--surface-glass); border: 1px solid var(--border-soft); border-radius: 24px; box-shadow: var(--shadow-md); }
+    .dash-stat { display: flex; flex-direction: column; gap: 8px; padding: 16px; background: rgba(255,255,255,0.02); border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); }
+    .dash-stat-val { font-size: 2.4rem; font-weight: 800; line-height: 1; background: linear-gradient(135deg, #ffffff, #a3d4ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .dash-stat-label { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
+    
+    .trust-roster { padding: 24px; background: var(--surface-glass); border: 1px solid var(--border-soft); border-radius: 24px; box-shadow: var(--shadow-md); }
+    .trust-roster h4 { margin: 0 0 16px; font-size: 1rem; color: var(--text-main); font-weight: 600; }
+    .logo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .logo-chip { height: 74px; display: grid; place-items: center; color: var(--text-muted); background: rgba(255,255,255,0.02); border: 1px solid var(--border-soft); border-radius: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .8rem; cursor: pointer; transition: all 0.3s ease; }
+    .logo-chip:hover { border-color: var(--primary-cyan); color: var(--text-main); background: rgba(0, 153, 255, 0.05); transform: translateY(-2px);}
+    .logo-chip svg { width: 32px; height: 32px; fill: currentColor; opacity: 0.8;}
 
-    /* Interactive Logos Grid */
-    .logo-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 18px; }
-    .logo-chip {
-      min-height: 86px; display: grid; place-items: center; color: var(--text-muted);
-      font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .84rem;
-      cursor: pointer; text-align: center; padding: 10px;
-    }
-    .logo-chip:hover { border-color: var(--border-glow-blue); color: var(--text-main); transform: translateY(-3px);}
-    .logo-chip svg { width: 40px; height: 40px; fill: currentColor; opacity: 0.7;}
+    .testimonial-track { display: flex; flex-direction: column; gap: 20px; }
+    .testimonial { padding: 30px; display: flex; flex-direction: column; gap: 16px; position: relative; background: var(--surface-glass); border: 1px solid var(--border-soft); border-radius: 24px; box-shadow: var(--shadow-md); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .testimonial:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+    .testimonial:nth-child(even) { transform: translateX(20px); }
+    .testimonial:nth-child(even):hover { transform: translateX(20px) translateY(-4px); }
+    
+    .testimonial-header { display: flex; gap: 16px; align-items: center; }
+    .testimonial-avatar { width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, var(--surface-soft), rgba(255,255,255,0.08)); display: grid; place-items: center; color: var(--text-main); font-weight: 600; font-size: 1.1rem; border: 1px solid var(--border-soft); }
+    .testimonial::before { content: '"'; position: absolute; top: 16px; right: 24px; font-size: 5rem; color: rgba(255,255,255,0.03); font-family: Georgia, serif; line-height: 1; pointer-events: none; }
+    .testimonial p { font-size: 1.05rem; font-style: italic; z-index: 1; position: relative; margin-top: 5px; color: #e2e8f0; line-height: 1.6;}
+    .testimonial footer { margin-top: 10px; display: flex; justify-content: space-between; align-items: flex-end;}
+    .testimonial footer strong { color: var(--text-main); font-size: 1rem; display: block; margin-bottom: 2px;}
+    .testimonial footer span { font-size: 0.85rem; color: var(--text-muted); }
+    .testimonial-rating { color: var(--accent-yellow); font-size: 0.9rem; letter-spacing: 2px; }
 
     /* TEAM SECTION STYLES */
     .team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
@@ -557,6 +555,7 @@
       border-color: var(--border-glow-blue); background: var(--surface-soft);
       box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary-cyan) 10%, transparent); outline: none;
     }
+    .input-hint { font-size: 0.75rem; color: var(--text-muted); font-weight: normal; margin-top: -2px; }
     select { appearance: none; cursor: pointer;}
     textarea { min-height: 160px; resize: vertical; }
     .form-status { padding: 16px; border-radius: 12px; display: none; margin-top: 10px; font-weight: 600; text-align: center; }
@@ -593,23 +592,29 @@
     .modal-tools span { font-size: 0.75rem; padding: 4px 10px; background: var(--surface-soft); border: 1px solid var(--border-soft); border-radius: 6px; color: var(--text-muted); }
     .modal-footer { margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--border-soft); display: flex; justify-content: space-between; align-items: center; }
 
-    /* FAQ Separate Page Overlay styling */
-    .faq-page-overlay {
+    /* Legal & FAQ Separate Page Overlays */
+    .legal-page-overlay {
       position: fixed; inset: 0; background: var(--bg-main); z-index: 3000; overflow-y: auto;
       opacity: 0; visibility: hidden; transition: opacity 0.4s ease, visibility 0.4s ease;
     }
-    .faq-page-overlay.active { opacity: 1; visibility: visible; }
-    .faq-page-header {
+    .legal-page-overlay.active { opacity: 1; visibility: visible; }
+    .legal-page-header {
       padding: 40px 0; text-align: center; border-bottom: 1px solid var(--border-soft);
       background: var(--bg-secondary); position: relative;
     }
-    .faq-back-btn {
+    .legal-back-btn {
       position: absolute; left: 20px; top: 50%; transform: translateY(-50%);
       display: flex; align-items: center; gap: 8px; color: var(--text-muted); font-weight: 600;
     }
-    .faq-back-btn:hover { color: var(--text-main); }
+    .legal-back-btn:hover { color: var(--text-main); }
     
-    .faq-grid { display: grid; gap: 14px; max-width: 800px; margin: 60px auto; padding: 0 20px;}
+    .legal-content-area { max-width: 800px; margin: 60px auto; padding: 0 20px; color: var(--text-muted); line-height: 1.7; }
+    .legal-content-area h3 { color: var(--text-main); margin: 30px 0 12px; font-size: 1.4rem; }
+    .legal-content-area p, .legal-content-area ul { margin-bottom: 20px; font-size: 1.05rem; }
+    .legal-content-area li { margin-bottom: 8px; }
+
+    /* FAQ Grid (reused within legal overlay style) */
+    .faq-grid { display: grid; gap: 14px; }
     .faq-item { padding: 0 24px; background: var(--surface-glass); border: 1px solid var(--border-soft); border-radius: 16px;}
     .faq-item summary { font-weight: 600; font-size: 1.1rem; padding: 24px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; color: var(--text-main); }
     .faq-item summary::-webkit-details-marker { display: none; }
@@ -639,12 +644,14 @@
 
     /* Media Queries */
     @media (max-width: 1120px) {
-      .hero-grid, .about-grid, .cred-grid, .contact-grid, .footer-top { grid-template-columns: 1fr; }
+      .hero-grid, .about-grid, .credibility-container, .contact-grid, .footer-top { grid-template-columns: 1fr; }
       .hero-grid { min-height: auto; }
       .services-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .portfolio-grid, .testimonials, .team-grid, .packages-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .portfolio-grid, .team-grid, .packages-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .timeline { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .timeline::before { display: none; }
+      .testimonial:nth-child(even) { transform: none; }
+      .testimonial:nth-child(even):hover { transform: translateY(-4px); }
     }
     @media (max-width: 840px) {
       .topbar { top: 10px; }
@@ -653,7 +660,7 @@
       .menu-btn { display: grid; }
       .hero { padding-top: 118px; }
       .hero-visual { min-height: auto; }
-      .services-grid, .portfolio-grid, .team-grid, .testimonials, .logo-grid, .stats-grid, .packages-grid { grid-template-columns: 1fr; }
+      .services-grid, .portfolio-grid, .team-grid, .logo-grid, .stats-dashboard, .packages-grid { grid-template-columns: 1fr; }
       .timeline { grid-template-columns: 1fr; }
       .hero-dual-panel { flex-direction: column; height: 500px; }
       .panel-digital { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
@@ -698,7 +705,7 @@
     body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -2; background: radial-gradient(52vw 68vh at 14% 18%, rgba(48, 133, 255, 0.22), transparent 62%), radial-gradient(34vw 58vh at 18% 74%, rgba(18, 186, 255, 0.10), transparent 65%), linear-gradient(90deg, transparent 41%, rgba(4, 6, 10, 0.94) 46%, rgba(4, 6, 10, 0.98) 54%, transparent 59%), radial-gradient(52vw 68vh at 86% 18%, rgba(255, 199, 42, 0.21), transparent 62%), radial-gradient(34vw 58vh at 82% 74%, rgba(255, 154, 16, 0.11), transparent 65%); filter: saturate(112%); }
     
     /* Ensuring all complex gradients apply gracefully */
-    .glass-card, .info-panel, .timeline-card, .portfolio-card, .testimonial, .team-card-new, .contact-card, .logo-chip, .stat-card, .banner, .service-card, .package-card {
+    .glass-card, .info-panel, .timeline-card, .portfolio-card, .testimonial, .team-card-new, .contact-card, .logo-chip, .stat-card, .banner, .service-card, .package-card, .stats-dashboard, .trust-roster, .faq-item {
         background: linear-gradient(180deg, rgba(10, 14, 21, 0.78), rgba(8, 11, 17, 0.68)); border-color: rgba(255, 255, 255, 0.08); box-shadow: 0 22px 52px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255,255,255,0.03);
     }
     
@@ -753,44 +760,114 @@
     </div>
   </div>
 
-  <div class="faq-page-overlay" id="faqPageOverlay">
-    <header class="faq-page-header">
-      <button class="faq-back-btn" id="closeFaqPageBtn">
+  <div class="legal-page-overlay" id="faqPageOverlay">
+    <header class="legal-page-header">
+      <button class="legal-back-btn closeOverlayBtn" data-target="faqPageOverlay">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
         Back to Site
       </button>
       <h2 style="margin:0; font-size: 1.8rem;">Frequently Asked Questions</h2>
     </header>
     
-    <div class="faq-grid">
-      <details class="faq-item">
-        <summary>Can I hire only digital services or only graphic services?</summary>
-        <p>Yes. While we highly recommend combining both for the strongest result, you can engage strictly with Alpha Digital for development/systems, or Alpha Graphic for purely visual and motion deliverables.</p>
-      </details>
-      <div class="divider" style="margin:0; opacity:0.3"></div>
-      
-      <details class="faq-item">
-        <summary>What types of businesses do you work with?</summary>
-        <p>We work primarily with established B2B and ambitious B2C companies looking to scale. This includes tech startups, healthcare providers, real estate firms, and retail brands needing robust digital operations and premium branding.</p>
-      </details>
-      <div class="divider" style="margin:0; opacity:0.3"></div>
-      
-      <details class="faq-item">
-        <summary>How long does a typical website project take?</summary>
-        <p>A standard informational business website takes 4 to 6 weeks from discovery to launch. Complex web applications, automated dashboards, or heavy e-commerce builds typically range from 8 to 12 weeks.</p>
-      </details>
-      <div class="divider" style="margin:0; opacity:0.3"></div>
+    <div class="legal-content-area">
+      <div class="faq-grid">
+        <details class="faq-item">
+          <summary>Can I hire only digital services or only graphic services?</summary>
+          <p>Yes. While we highly recommend combining both for the strongest result, you can engage strictly with Alpha Digital for development/systems, or Alpha Graphic for purely visual and motion deliverables.</p>
+        </details>
+        <div class="divider" style="margin:0; opacity:0.3"></div>
+        
+        <details class="faq-item">
+          <summary>What types of businesses do you work with?</summary>
+          <p>We work primarily with established B2B and ambitious B2C companies looking to scale. This includes tech startups, healthcare providers, real estate firms, and retail brands needing robust digital operations and premium branding.</p>
+        </details>
+        <div class="divider" style="margin:0; opacity:0.3"></div>
+        
+        <details class="faq-item">
+          <summary>How long does a typical website project take?</summary>
+          <p>A standard informational business website takes 4 to 6 weeks from discovery to launch. Complex web applications, automated dashboards, or heavy e-commerce builds typically range from 8 to 12 weeks.</p>
+        </details>
+        <div class="divider" style="margin:0; opacity:0.3"></div>
 
-      <details class="faq-item">
-        <summary>Do you offer ongoing support after launch?</summary>
-        <p>Absolutely. We don't believe in handing over a complex system and disappearing. We offer monthly retainer packages for priority hosting, security patches, system updates, and ongoing visual asset creation.</p>
-      </details>
-      <div class="divider" style="margin:0; opacity:0.3"></div>
+        <details class="faq-item">
+          <summary>Do you offer ongoing support after launch?</summary>
+          <p>Absolutely. We don't believe in handing over a complex system and disappearing. We offer monthly retainer packages for priority hosting, security patches, system updates, and ongoing visual asset creation.</p>
+        </details>
+        <div class="divider" style="margin:0; opacity:0.3"></div>
 
-      <details class="faq-item">
-        <summary>Can you improve an existing website instead of rebuilding it?</summary>
-        <p>It depends on the current codebase. If your site is built on a modern, scalable stack, we can audit and improve it. If the underlying code is outdated, bloated, or structurally flawed, we will recommend a rebuild to ensure performance and security.</p>
-      </details>
+        <details class="faq-item">
+          <summary>Can you improve an existing website instead of rebuilding it?</summary>
+          <p>It depends on the current codebase. If your site is built on a modern, scalable stack, we can audit and improve it. If the underlying code is outdated, bloated, or structurally flawed, we will recommend a rebuild to ensure performance and security.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <div class="legal-page-overlay" id="privacyPageOverlay">
+    <header class="legal-page-header">
+      <button class="legal-back-btn closeOverlayBtn" data-target="privacyPageOverlay">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Back to Site
+      </button>
+      <h2 style="margin:0; font-size: 1.8rem;">Privacy Policy</h2>
+    </header>
+    
+    <div class="legal-content-area">
+      <p>At Alpha Digital Solutions, we respect your privacy and are committed to protecting the personal information you share with us while navigating our website or inquiring about our Digital and Graphic services.</p>
+      
+      <h3>1. Information We Collect</h3>
+      <p>Because we offer custom agency services, the information we collect is strictly related to providing those services. We may collect:</p>
+      <ul>
+        <li><strong>Contact Information:</strong> Name, email address, phone number, and company details provided via our inquiry forms.</li>
+        <li><strong>Project Details:</strong> Information regarding your budget, timeline, and business goals.</li>
+        <li><strong>Usage Data:</strong> Basic analytics such as browser type, pages visited, and interaction depth to help us improve our site experience.</li>
+      </ul>
+
+      <h3>2. How We Use Your Information</h3>
+      <p>We use the collected information exclusively to:</p>
+      <ul>
+        <li>Respond to your project inquiries and provide accurate quotes.</li>
+        <li>Deliver the requested Alpha Digital (software, hosting, web) or Alpha Graphic (design, video, 3D) services.</li>
+        <li>Improve our website's performance and usability.</li>
+      </ul>
+
+      <h3>3. Data Sharing and Protection</h3>
+      <p>We do not sell, trade, or rent your personal information to third parties. We may share necessary data only with trusted third-party service providers (such as secure hosting providers or email routing services) strictly for the purpose of operating our business and delivering your project.</p>
+
+      <h3>4. Your Rights</h3>
+      <p>You have the right to request access to the personal data we hold about you, or to ask us to delete your information from our active inquiry records. To do so, please contact us directly at <a href="mailto:hello@alphadigitalsolutions.com" style="color: var(--primary-cyan);">hello@alphadigitalsolutions.com</a>.</p>
+    </div>
+  </div>
+
+  <div class="legal-page-overlay" id="termsPageOverlay">
+    <header class="legal-page-header">
+      <button class="legal-back-btn closeOverlayBtn" data-target="termsPageOverlay">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Back to Site
+      </button>
+      <h2 style="margin:0; font-size: 1.8rem;">Terms & Conditions</h2>
+    </header>
+    
+    <div class="legal-content-area">
+      <p>Welcome to Alpha Digital Solutions. Because our services range from complex software engineering (Alpha Digital) to creative brand identity and motion (Alpha Graphic), specific project rules and deliverables will always be defined in your individual project proposal. However, these general terms apply to our engagements.</p>
+      
+      <h3>1. General Project Scope</h3>
+      <p>The exact scope of work, deliverables, timeline, and cost will be outlined in a custom Statement of Work (SOW) or Proposal before any work begins. Any requests outside of the agreed scope will be subject to additional estimates.</p>
+
+      <h3>2. Alpha Digital Services (Web & Systems)</h3>
+      <ul>
+        <li><strong>Testing & Approval:</strong> Digital products are delivered with a testing period. Clients must report bugs within this timeframe.</li>
+        <li><strong>Maintenance:</strong> Post-launch support, security updates, and hosting management require a separate, ongoing maintenance agreement. Without this, Alpha Digital is not liable for future server or software degradation.</li>
+      </ul>
+
+      <h3>3. Alpha Graphic Services (Design & Content)</h3>
+      <ul>
+        <li><strong>Revisions:</strong> Graphic design and video projects include a set number of revision rounds as defined in the proposal. Further changes will be billed at an hourly rate.</li>
+        <li><strong>Asset Ownership:</strong> Upon final and full payment, intellectual property rights for the finalized visual assets are transferred to the client. Alpha Digital Solutions retains the right to display the work in our portfolio.</li>
+      </ul>
+
+      <h3>4. Payment Terms</h3>
+      <p>Custom projects require a non-refundable deposit to secure scheduling and commence work. The remaining balance is tied to project milestones or final delivery, as outlined in your specific agreement. Final assets or code deployment will not occur until the final invoice is cleared.</p>
     </div>
   </div>
 
@@ -1326,95 +1403,106 @@
   </section>
 
   <section id="credibility" class="section">
-    <div class="container section-grid">
+    <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">Credibility</span>
-        <h2>Designed to earn trust through quality, clarity, and consistency.</h2>
+        <h2>Proven execution across Digital & Graphic.</h2>
         <p class="lead">
-          We partner with ambitious companies to build the systems that support their growth. 
+          We partner with ambitious companies to build systems that scale and creative that stands out. Our approach is measurable, reliable, and designed to earn trust.
         </p>
         <div class="divider"></div>
       </div>
 
-      <div class="cred-grid">
-        <div class="section-grid reveal">
-          <div class="stats-grid">
-            <article class="stat-card glass-card">
-              <strong><span data-count="24">0</span>h</strong>
-              <p class="muted">Responsive project communication rhythm guaranteed.</p>
-            </article>
-            <article class="stat-card glass-card">
-              <strong><span data-count="100">0</span>%</strong>
-              <p class="muted">Custom-built architecture tailored to business needs.</p>
-            </article>
-            <article class="stat-card glass-card">
-              <strong><span data-count="6">0</span>+</strong>
-              <p class="muted">Structured milestone stages from discovery to support.</p>
-            </article>
-            <article class="stat-card glass-card">
-              <strong><span data-count="2">0</span>x</strong>
-              <p class="muted">Technical logic and creative design merged in one workflow.</p>
-            </article>
-          </div>
-
-          <div class="logo-grid">
-            <div class="logo-chip glass-card" title="TechFlow Inc.">
-              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      <div class="credibility-container">
+        
+        <div class="cred-left-col reveal">
+          <div class="stats-dashboard">
+            <div class="dash-stat">
+              <span class="dash-stat-val" data-count="24">0</span>
+              <span class="dash-stat-label">Hours max to get a responsive project update.</span>
             </div>
-            <div class="logo-chip glass-card" title="Studio Alpha">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+            <div class="dash-stat">
+              <span class="dash-stat-val" data-count="100">0</span>
+              <span class="dash-stat-label">Percent custom-built around your specific needs.</span>
             </div>
-            <div class="logo-chip glass-card" title="Nexus Systems">
-              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M9 3v18M15 3v18"/></svg>
+            <div class="dash-stat">
+              <span class="dash-stat-val" data-count="6">0</span>
+              <span class="dash-stat-label">Structured stages from discovery to final delivery.</span>
             </div>
-            <div class="logo-chip glass-card" title="Aura Health">
-              <svg viewBox="0 0 24 24"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/></svg>
+            <div class="dash-stat">
+              <span class="dash-stat-val" data-count="2">0</span>
+              <span class="dash-stat-label">Disciplines (Tech & Creative) in one seamless workflow.</span>
             </div>
           </div>
-        </div>
 
-        <div class="section-grid reveal">
-          <div class="testimonials">
-            <article class="testimonial glass-card">
-              <p>The mix of technical depth and creative polish made the final output feel far more complete than a standard agency handoff. They actually understood our business model.</p>
-              <footer>
-                <div class="testimonial-header">
-                  <div class="testimonial-avatar">SJ</div>
-                  <div>
-                    <strong>Sarah Jenkins</strong><br>
-                    <span style="font-size: 0.85rem;">Brand Lead, Aura Health</span>
-                  </div>
-                </div>
-              </footer>
-            </article>
-
-            <article class="testimonial glass-card">
-              <p>Communication was structured, the workflow felt controlled, and the delivery quality gave our brand a much stronger digital presence to compete enterprise-level.</p>
-              <footer>
-                <div class="testimonial-header">
-                  <div class="testimonial-avatar">DC</div>
-                  <div>
-                    <strong>David Chen</strong><br>
-                    <span style="font-size: 0.85rem;">Operations Director, Nexus</span>
-                  </div>
-                </div>
-              </footer>
-            </article>
-
-            <article class="testimonial glass-card">
-              <p>The result was clean, modern, and practical. It looked premium to our clients and dramatically improved how our internal process actually worked behind the scenes.</p>
-              <footer>
-                <div class="testimonial-header">
-                  <div class="testimonial-avatar">MW</div>
-                  <div>
-                    <strong>Marcus Wright</strong><br>
-                    <span style="font-size: 0.85rem;">Founder, TechFlow Inc.</span>
-                  </div>
-                </div>
-              </footer>
-            </article>
+          <div class="trust-roster">
+            <h4>Brands we've upgraded</h4>
+            <div class="logo-grid">
+              <div class="logo-chip" title="TechFlow Inc." data-brand="TechFlow Inc." data-tags="digital,graphic" data-desc="Complete digital transformation including custom internal dashboards and a total brand identity refresh." onclick="openModal(this.dataset)">
+                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <span style="display:block; margin-top:6px;">TechFlow</span>
+              </div>
+              <div class="logo-chip" title="Studio Alpha" data-brand="Studio Alpha" data-tags="graphic" data-desc="Produced a high-fidelity motion graphics kit and editorial photography suite for their Q3 launch campaign." onclick="openModal(this.dataset)">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+                <span style="display:block; margin-top:6px;">Studio Alpha</span>
+              </div>
+              <div class="logo-chip" title="Nexus Systems" data-brand="Nexus Systems" data-tags="digital" data-desc="Built a fully automated reporting pipeline and employee portal to reduce manual operations by 80%." onclick="openModal(this.dataset)">
+                <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M9 3v18M15 3v18"/></svg>
+                <span style="display:block; margin-top:6px;">Nexus</span>
+              </div>
+              <div class="logo-chip" title="Aura Health" data-brand="Aura Health" data-tags="digital,graphic" data-desc="Designed and developed a premium front-end web experience paired with customized 3D product renders." onclick="openModal(this.dataset)">
+                <svg viewBox="0 0 24 24"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/></svg>
+                <span style="display:block; margin-top:6px;">Aura Health</span>
+              </div>
+            </div>
+            <p class="muted" style="font-size: 0.8rem; margin-top: 14px; text-align: center;">Click any brand to view project details.</p>
           </div>
         </div>
+
+        <div class="testimonial-track reveal" style="transition-delay: 0.1s;">
+          <article class="testimonial">
+            <p>The mix of technical depth and creative polish made the final output feel far more complete than a standard agency handoff. They actually understood our business model before writing a single line of code.</p>
+            <footer>
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">SJ</div>
+                <div>
+                  <strong>Sarah Jenkins</strong>
+                  <span>Brand Lead, Aura Health</span>
+                </div>
+              </div>
+              <div class="testimonial-rating">★★★★★</div>
+            </footer>
+          </article>
+
+          <article class="testimonial">
+            <p>Communication was structured, the workflow felt controlled, and the delivery quality gave our brand a much stronger digital presence to compete on an enterprise level. Truly a game-changer for our internal reporting.</p>
+            <footer>
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">DC</div>
+                <div>
+                  <strong>David Chen</strong>
+                  <span>Operations Director, Nexus</span>
+                </div>
+              </div>
+              <div class="testimonial-rating">★★★★★</div>
+            </footer>
+          </article>
+
+          <article class="testimonial">
+            <p>The result was clean, modern, and practical. It looked premium to our clients and dramatically improved how our internal process actually worked behind the scenes. Best agency investment we've made.</p>
+            <footer>
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">MW</div>
+                <div>
+                  <strong>Marcus Wright</strong>
+                  <span>Founder, TechFlow Inc.</span>
+                </div>
+              </div>
+              <div class="testimonial-rating">★★★★★</div>
+            </footer>
+          </article>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1579,10 +1667,12 @@
               <label>
                 Timeline Expectation
                 <input type="text" name="timeline" placeholder="e.g., 2 months, ASAP, Flexible" />
+                <span class="input-hint">You set the pace. Tell us your ideal deadline.</span>
               </label>
               <label>
                 Budget Range
                 <input type="text" name="budget" placeholder="e.g., $5,000, Custom Quote" />
+                <span class="input-hint">Open field. We tailor solutions to your reality.</span>
               </label>
             </div>
 
@@ -1615,15 +1705,15 @@
           </div>
 
           <div class="footer-links">
-            <a href="#" id="openFaqFooterBtn">FAQ</a>
+            <a href="#" class="openOverlayBtn" data-target="faqPageOverlay">FAQ</a>
           </div>
         </div>
 
         <div class="footer-bottom">
           <span>© <span id="year"></span> Alpha Digital Solutions. All rights reserved.</span>
           <div style="display: flex; gap: 16px;">
-            <a href="#" style="text-decoration: underline; text-decoration-color: var(--border-soft); text-underline-offset: 4px;">Privacy Policy</a>
-            <a href="#" style="text-decoration: underline; text-decoration-color: var(--border-soft); text-underline-offset: 4px;">Terms of Service</a>
+            <a href="#" class="openOverlayBtn" data-target="privacyPageOverlay" style="text-decoration: underline; text-decoration-color: var(--border-soft); text-underline-offset: 4px;">Privacy Policy</a>
+            <a href="#" class="openOverlayBtn" data-target="termsPageOverlay" style="text-decoration: underline; text-decoration-color: var(--border-soft); text-underline-offset: 4px;">Terms of Service</a>
           </div>
         </div>
       </div>
@@ -1762,7 +1852,7 @@
     });
 
     /* =========================================
-       MODAL LOGIC FOR CASE STUDIES
+       MODAL LOGIC FOR CASE STUDIES & LOGOS
        ========================================= */
     const caseStudyCards = document.querySelectorAll('.portfolio-card');
     const modalOverlay = document.getElementById('brandModalOverlay');
@@ -1775,11 +1865,12 @@
     const mOutcome = document.getElementById('modalOutcome');
     const mTools = document.getElementById('modalTools');
 
-    function openModal(data) {
+    // Make openModal globally available for the onclick events on logos
+    window.openModal = function(data) {
       mBrand.textContent = data.brand;
-      mChallenge.textContent = data.challenge;
-      mApproach.textContent = data.approach;
-      mOutcome.textContent = data.outcome;
+      mChallenge.textContent = data.challenge || "Project scope defined during initial discovery.";
+      mApproach.textContent = data.approach || data.desc || "Custom execution strategy applied.";
+      mOutcome.textContent = data.outcome || "Delivered on schedule and within parameters.";
       
       mTags.innerHTML = '';
       if(data.tags) {
@@ -1804,7 +1895,7 @@
 
       modalOverlay.classList.add('active');
       document.body.style.overflow = 'hidden'; 
-    }
+    };
 
     function closeModal() {
       modalOverlay.classList.remove('active');
@@ -1826,22 +1917,33 @@
     });
 
     /* =========================================
-       FAQ OVERLAY LOGIC (Separate Page Feel)
+       LEGAL / FAQ OVERLAY LOGIC (Separate Page Feel)
        ========================================= */
-    const openFaqFooterBtn = document.getElementById('openFaqFooterBtn');
-    const faqPageOverlay = document.getElementById('faqPageOverlay');
-    const closeFaqPageBtn = document.getElementById('closeFaqPageBtn');
+    const openOverlayBtns = document.querySelectorAll('.openOverlayBtn');
+    const closeOverlayBtns = document.querySelectorAll('.closeOverlayBtn');
 
-    openFaqFooterBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      faqPageOverlay.classList.add('active');
-      document.body.style.overflow = 'hidden'; // Stop main body scroll
-      faqPageOverlay.scrollTop = 0; // Reset scroll position
+    openOverlayBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = btn.getAttribute('data-target');
+        const overlay = document.getElementById(targetId);
+        if (overlay) {
+          overlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          overlay.scrollTop = 0; 
+        }
+      });
     });
 
-    closeFaqPageBtn.addEventListener('click', () => {
-      faqPageOverlay.classList.remove('active');
-      document.body.style.overflow = ''; 
+    closeOverlayBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-target');
+        const overlay = document.getElementById(targetId);
+        if (overlay) {
+          overlay.classList.remove('active');
+          document.body.style.overflow = ''; 
+        }
+      });
     });
 
 
