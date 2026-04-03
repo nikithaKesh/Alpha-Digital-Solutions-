@@ -220,33 +220,42 @@
       background: linear-gradient(90deg, transparent, var(--border-soft), var(--border-soft), transparent);
     }
 
-    /* Navbar */
+    /* Full-Width to Floating Navbar Transitions */
     .topbar {
-      position: fixed; top: 16px; left: 50%; transform: translateX(-50%);
-      width: min(calc(100% - 20px), var(--max)); z-index: 900;
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 900;
+      transition: padding 0.35s var(--ease);
+      padding: 16px 0;
     }
+    
     .nav {
       display: flex; align-items: center; justify-content: space-between;
-      min-height: var(--nav-h); padding: 12px 16px;
-      border: 1px solid var(--border-soft); border-radius: 22px;
-      background: var(--surface-strong); box-shadow: 0 12px 30px var(--shadow-color);
-      backdrop-filter: blur(18px); transition: transform .35s var(--ease), background-color .35s ease, border-color .35s ease;
+      min-height: var(--nav-h); padding: 12px 32px;
+      background: transparent; border: 1px solid transparent; border-radius: 0;
+      transition: all .35s var(--ease); margin: 0 auto; width: 100%; max-width: var(--max);
     }
-    .nav.scrolled { background: color-mix(in srgb, var(--bg-main) 95%, transparent); border-color: var(--border-soft); }
+    
+    /* Scrolled state becomes the floating pill */
+    .topbar.scrolled { padding: 16px; top: 0; }
+    .nav.scrolled {
+      background: var(--surface-strong); box-shadow: 0 12px 30px var(--shadow-color);
+      backdrop-filter: blur(18px); border-color: var(--border-soft); border-radius: 22px;
+      padding: 12px 16px; width: min(calc(100% - 32px), var(--max));
+    }
+    
     .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: -0.03em; min-width: 0; color: var(--text-main); }
     .brand-mark {
       width: 42px; height: 42px; border-radius: 14px; display: grid; place-items: center;
       background: linear-gradient(145deg, color-mix(in srgb, var(--primary-cyan) 18%, transparent), color-mix(in srgb, var(--accent-yellow) 22%, transparent));
       border: 1px solid var(--border-soft);
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 12px 32px color-mix(in srgb, var(--primary-cyan) 12%, transparent);
-      position: relative; overflow: hidden;
+      position: relative; overflow: hidden; flex-shrink: 0;
     }
     .brand-mark::before {
       content: ""; width: 18px; height: 18px; transform: rotate(45deg); border-radius: 5px;
       background: linear-gradient(135deg, var(--primary-cyan), var(--accent-yellow));
       box-shadow: 0 0 18px color-mix(in srgb, var(--primary-cyan) 30%, transparent);
     }
-    .brand span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .brand span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.1rem; }
     .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; padding: 0; margin: 0; }
     .nav-link {
       position: relative; padding: 10px 14px; border-radius: 999px;
@@ -268,7 +277,7 @@
       border: 1px solid transparent;
     }
     .mobile-panel {
-      position: absolute; top: calc(100% + 12px); left: 0; right: 0;
+      position: absolute; top: calc(100% + 12px); left: 16px; right: 16px; width: auto;
       padding: 10px; border-radius: 24px; border: 1px solid var(--border-soft);
       background: var(--surface-strong); box-shadow: var(--shadow-lg); backdrop-filter: blur(18px);
       display: grid; gap: 6px; opacity: 0; visibility: hidden;
@@ -370,7 +379,7 @@
 
     /* Premium Glass Cards */
     .glass-card, .info-panel, .timeline-card, .portfolio-card, 
-    .testimonial, .team-card-new, .contact-card, .logo-chip, .stat-card, 
+    .testimonial, .team-card-new, .contact-card, .stat-card, 
     .banner, .service-card, .faq-item {
       background: var(--surface-glass); border: 1px solid var(--border-soft);
       border-radius: var(--radius-md); box-shadow: var(--shadow-md);
@@ -649,28 +658,59 @@
       .testimonial:nth-child(even) { transform: none; }
       .testimonial:nth-child(even):hover { transform: translateY(-4px); }
     }
+    
     @media (max-width: 840px) {
-      .topbar { top: 10px; }
-      .nav { min-height: 68px; }
+      .topbar { padding: 10px 0; }
+      .nav { padding: 10px 20px; }
+      .nav.scrolled { padding: 10px 16px; }
       .nav-links, .cta-mini.desktop-only { display: none; }
       .menu-btn { display: grid; }
       .hero { padding-top: 118px; }
       .hero-visual { min-height: auto; }
-      .services-grid, .portfolio-grid, .team-grid, .logo-grid, .stats-dashboard { grid-template-columns: 1fr; }
-      .timeline { grid-template-columns: 1fr; }
       .hero-dual-panel { flex-direction: column; height: 500px; }
       .panel-digital { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
       .modal-content-grid { grid-template-columns: 1fr; }
       
-      /* On mobile, make the logo grid 2 columns instead of 1 so it's not too long */
       .logo-grid { grid-template-columns: repeat(2, 1fr); }
+      
+      /* Mobile Horizontal Scrolling Implementation */
+      .mobile-horizontal-scroll {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 24px; /* Space for scrollbar */
+        gap: 16px;
+        margin: 0 -20px; /* Bleed to edge of screen */
+        padding: 0 20px 24px 20px;
+      }
+      
+      /* Hide standard scrollbar for cleaner look */
+      .mobile-horizontal-scroll::-webkit-scrollbar { height: 6px; }
+      .mobile-horizontal-scroll::-webkit-scrollbar-track { background: var(--surface-soft); border-radius: 4px; }
+      .mobile-horizontal-scroll::-webkit-scrollbar-thumb { background: var(--border-soft); border-radius: 4px; }
+      
+      .mobile-horizontal-scroll > * {
+        flex: 0 0 85%; /* Cards take up 85% of screen width */
+        scroll-snap-align: center;
+        max-width: 320px;
+      }
+
+      /* Apply the scroll class to specific grids */
+      .services-grid, .timeline, .portfolio-grid, .team-grid {
+        display: flex; /* Override grid */
+      }
+      
+      .stats-dashboard { grid-template-columns: 1fr; }
     }
+    
     @media (max-width: 600px) {
       .container { width: min(100% - 20px, var(--max)); }
       .section { padding: 84px 0; }
-      .nav { padding: 10px 12px; border-radius: 18px; }
       .brand-mark { width: 38px; height: 38px; border-radius: 12px; }
-      .brand span { font-size: .95rem; }
+      .brand span { font-size: 1rem; }
       .hero-copy, .section-head { gap: 18px; }
       .hero-actions { flex-direction: column; align-items: stretch; }
       .btn { width: 100%; }
@@ -679,7 +719,11 @@
       .about-points, .form-row, .metrics-grid { grid-template-columns: 1fr; }
       .glass-card, .contact-card, .info-panel, .banner, .portfolio-body, .team-info-new, .testimonial, .service-card { padding: 20px; }
       .modal-box { padding: 20px; }
+      
+      /* Adjust mobile horizontal scroll children width for smaller screens */
+      .mobile-horizontal-scroll > * { flex: 0 0 90%; max-width: none; }
     }
+    
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -719,7 +763,7 @@
   <div class="preloader" id="preloader" aria-hidden="true">
     <div class="loader-mark">
       <div class="loader-logo"></div>
-      <div class="loader-text">Alpha Digital Solutions</div>
+      <div class="loader-text">Alpha Solutions</div>
     </div>
   </div>
 
@@ -876,11 +920,11 @@
     </svg>
   </a>
 
-  <header class="topbar">
+  <header class="topbar" id="mainHeader">
     <nav class="nav" id="navbar" aria-label="Main navigation">
-      <a href="#home" class="brand" aria-label="Alpha Digital Solutions home">
+      <a href="#home" class="brand" aria-label="Alpha Solutions home">
         <span class="brand-mark" aria-hidden="true"></span>
-        <span>Alpha Digital Solutions</span>
+        <span id="navBrandName">Alpha Solutions</span>
       </a>
 
       <ul class="nav-links" id="navLinks">
@@ -1052,7 +1096,7 @@
         </div>
 
         <div class="services-panel active" id="digital-services">
-          <div class="services-grid">
+          <div class="services-grid mobile-horizontal-scroll">
             <article class="service-card glass-card">
               <div class="service-icon">
                 <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 19h8M9 9l3-3 3 3M12 6v8"/></svg>
@@ -1122,7 +1166,7 @@
         </div>
 
         <div class="services-panel" id="graphic-services">
-          <div class="services-grid">
+          <div class="services-grid mobile-horizontal-scroll">
             <article class="service-card glass-card">
               <div class="service-icon">
                 <svg viewBox="0 0 24 24"><path d="M4 6h16M6 18h12M8 10h8M9 14h6"/></svg>
@@ -1214,33 +1258,33 @@
         <div class="divider"></div>
       </div>
 
-      <div class="timeline">
-        <article class="timeline-card glass-card reveal">
+      <div class="timeline mobile-horizontal-scroll reveal">
+        <article class="timeline-card glass-card">
           <div class="step-num">01</div>
           <h3>Discover</h3>
           <p class="muted" style="margin-top: 10px;">We audit your business goals, target audience, operational pain points, and define project KPIs.</p>
         </article>
-        <article class="timeline-card glass-card reveal">
+        <article class="timeline-card glass-card">
           <div class="step-num">02</div>
           <h3>Plan</h3>
           <p class="muted" style="margin-top: 10px;">We define the exact structure, scope, deliverables, timeline, and the smartest route to execution.</p>
         </article>
-        <article class="timeline-card glass-card reveal">
+        <article class="timeline-card glass-card">
           <div class="step-num">03</div>
           <h3>Design</h3>
           <p class="muted" style="margin-top: 10px;">We present high-fidelity concepts to establish visual hierarchy, interaction logic, and brand tone.</p>
         </article>
-        <article class="timeline-card glass-card reveal">
+        <article class="timeline-card glass-card">
           <div class="step-num">04</div>
           <h3>Build</h3>
           <p class="muted" style="margin-top: 10px;">Development and production begin, turning approved designs into robust code and finalized media.</p>
         </article>
-        <article class="timeline-card glass-card reveal">
+        <article class="timeline-card glass-card">
           <div class="step-num">05</div>
           <h3>Test</h3>
           <p class="muted" style="margin-top: 10px;">Rigorous QA for responsiveness, accessibility, performance speed, and operational logic.</p>
         </article>
-        <article class="timeline-card glass-card reveal">
+        <article class="timeline-card glass-card">
           <div class="step-num">06</div>
           <h3>Launch</h3>
           <p class="muted" style="margin-top: 10px;">Secure deployment followed by ongoing monitoring, refinement, and post-launch technical support.</p>
@@ -1268,7 +1312,7 @@
           <button class="chip" data-filter="hybrid">Hybrid Delivery</button>
         </div>
 
-        <div class="portfolio-grid" id="portfolioGrid">
+        <div class="portfolio-grid mobile-horizontal-scroll" id="portfolioGrid">
           <article class="portfolio-card glass-card" data-category="digital" tabindex="0"
             data-brand="Nexus Systems Dashboard"
             data-tags="digital"
@@ -1495,7 +1539,7 @@
         <div class="divider"></div>
       </div>
 
-      <div class="team-grid">
+      <div class="team-grid mobile-horizontal-scroll">
         <article class="team-card-new glass-card reveal">
           <div class="team-photo-container">
             <div class="team-placeholder">
@@ -1527,11 +1571,11 @@
             <div class="team-placeholder">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
             </div>
-            <img src="https://via.placeholder.com/400x500/0a0e16/ffffff?text=NG" alt="Nikitha Gomes" loading="lazy" style="opacity: 0;" onload="this.style.opacity=1; this.previousElementSibling.style.display='none';">
+            <img src="https://via.placeholder.com/400x500/0a0e16/ffffff?text=NG" alt="Nikitha Keshan Gomes" loading="lazy" style="opacity: 0;" onload="this.style.opacity=1; this.previousElementSibling.style.display='none';">
           </div>
           <div class="team-info-new">
             <span class="team-role role-digital">Co-Founder & Digital Lead</span>
-            <h3>Nikitha Gomes</h3>
+            <h3>Nikitha Keshan Gomes</h3>
             <div class="team-tags">
               <span class="team-tag">Systems Architecture</span>
               <span class="team-tag">Automation</span>
@@ -1707,6 +1751,8 @@
     const preloader = document.getElementById('preloader');
     const progressBar = document.getElementById('progressBar');
     const navbar = document.getElementById('navbar');
+    const mainHeader = document.getElementById('mainHeader');
+    const navBrandName = document.getElementById('navBrandName');
     const menuToggle = document.getElementById('menuToggle');
     const mobilePanel = document.getElementById('mobilePanel');
     const toTop = document.getElementById('toTop');
@@ -1723,7 +1769,16 @@
       const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
       progressBar.style.width = progress + '%';
 
-      navbar.classList.toggle('scrolled', scrollTop > 20);
+      if (scrollTop > 20) {
+        navbar.classList.add('scrolled');
+        mainHeader.classList.add('scrolled');
+        navBrandName.textContent = "Alpha Digital Solutions"; 
+      } else {
+        navbar.classList.remove('scrolled');
+        mainHeader.classList.remove('scrolled');
+        navBrandName.textContent = "Alpha Solutions";
+      }
+      
       toTop.classList.toggle('show', scrollTop > 500);
     };
 
@@ -1841,7 +1896,6 @@
     const mOutcome = document.getElementById('modalOutcome');
     const mTools = document.getElementById('modalTools');
 
-    // Make openModal globally available for the onclick events on logos
     window.openModal = function(data) {
       mBrand.textContent = data.brand;
       mChallenge.textContent = data.challenge || "Project scope defined during initial discovery.";
@@ -1921,7 +1975,6 @@
         }
       });
     });
-
 
     /* =========================================
        REAL FORM FUNCTIONALITY (AJAX SUBMISSION)
