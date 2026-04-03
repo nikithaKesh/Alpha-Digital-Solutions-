@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <title>Alpha Digital Solutions | Premium Digital & Graphic Agency</title>
+  <title>Alpha Solutions | Premium Digital & Graphic Agency</title>
   
   <meta name="description" content="Alpha Digital Solutions is a premium Digital x Graphic agency delivering high-performance websites, internal automation tools, reporting dashboards, and sharp creative visual systems." />
   <meta name="keywords" content="web development, graphic design, automation systems, business dashboards, digital agency, creative agency, motion graphics, Sri Lanka agency" />
-  <meta name="author" content="Alpha Digital Solutions" />
+  <meta name="author" content="Alpha Solutions" />
   <meta name="theme-color" content="#040812" />
   <link rel="canonical" href="https://www.alphadigitalsolutions.com/" />
   
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.alphadigitalsolutions.com/" />
-  <meta property="og:title" content="Alpha Digital Solutions | Premium Digital & Graphic Agency" />
+  <meta property="og:title" content="Alpha Solutions | Premium Digital & Graphic Agency" />
   <meta property="og:description" content="Premium digital systems and creative execution for modern brands. We build websites, automation tools, and visual identities." />
   <meta property="og:image" content="https://www.alphadigitalsolutions.com/og-image.jpg" />
 
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://www.alphadigitalsolutions.com/" />
-  <meta property="twitter:title" content="Alpha Digital Solutions | Premium Digital & Graphic Agency" />
+  <meta property="twitter:title" content="Alpha Solutions | Premium Digital & Graphic Agency" />
   <meta property="twitter:description" content="Premium digital systems and creative execution for modern brands." />
   <meta property="twitter:image" content="https://www.alphadigitalsolutions.com/twitter-image.jpg" />
 
@@ -27,7 +27,7 @@
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Alpha Digital Solutions",
+    "name": "Alpha Solutions",
     "image": "https://www.alphadigitalsolutions.com/logo.png",
     "url": "https://www.alphadigitalsolutions.com/",
     "telephone": "+94000000000",
@@ -36,7 +36,7 @@
       "addressLocality": "Colombo",
       "addressCountry": "LK"
     },
-    "description": "Alpha Digital Solutions helps businesses grow through high-performance websites, internal business tools, automation systems, reporting dashboards, and refined visual content.",
+    "description": "Alpha Solutions helps businesses grow through high-performance websites, internal business tools, automation systems, reporting dashboards, and refined visual content.",
     "priceRange": "$$"
   }
   </script>
@@ -106,7 +106,6 @@
     html {
       scroll-behavior: smooth;
       background-color: var(--bg-main);
-      /* Prevent horizontal scroll issues globally */
       overflow-x: hidden;
       width: 100%;
     }
@@ -235,15 +234,19 @@
     .nav {
       position: relative;
       display: flex; align-items: center; justify-content: space-between;
-      margin: 0 auto; width: 100%; max-width: 100%;
-      min-height: var(--nav-h); padding: 12px max(16px, calc((100% - var(--max)) / 2));
+      margin: 0 auto; 
+      width: 100%; 
+      min-height: var(--nav-h); 
+      /* Dynamically match the page container padding */
+      padding: 12px max(16px, calc((100vw - var(--max)) / 2));
       border: 1px solid transparent; border-radius: 0;
       background: transparent;
       box-shadow: none; backdrop-filter: none; 
       transition: all .4s var(--ease);
     }
     .nav.scrolled {
-      max-width: var(--max); padding: 12px 16px;
+      width: min(calc(100% - 32px), var(--max)); 
+      padding: 12px 16px;
       border-color: var(--border-soft); border-radius: 22px;
       background: rgba(8, 13, 22, 0.85); 
       backdrop-filter: blur(18px); 
@@ -284,12 +287,19 @@
       color: #fff; font-weight: 600; box-shadow: 0 12px 28px color-mix(in srgb, var(--primary-cyan) 24%, transparent);
       border: 1px solid transparent;
     }
+    
     .mobile-panel {
-      position: absolute; top: calc(100% + 12px); left: 0; right: 0;
+      position: absolute; top: calc(100% + 12px); 
+      /* Dynamically align mobile panel dropdown with contents */
+      left: max(16px, calc((100vw - var(--max)) / 2)); 
+      right: max(16px, calc((100vw - var(--max)) / 2));
       padding: 10px; border-radius: 24px; border: 1px solid var(--border-soft);
       background: var(--surface-strong); box-shadow: var(--shadow-lg); backdrop-filter: blur(18px);
       display: grid; gap: 6px; opacity: 0; visibility: hidden;
       transform: translateY(-6px); transition: opacity .28s ease, transform .28s ease, visibility .28s ease;
+    }
+    .nav.scrolled .mobile-panel {
+      left: 0; right: 0; /* Snap back to pill borders when scrolled */
     }
     .mobile-panel.open { opacity: 1; visibility: visible; transform: translateY(0); }
     .mobile-panel a { padding: 13px 14px; border-radius: 16px; color: var(--text-muted); }
@@ -305,10 +315,10 @@
     .whatsapp-float:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4); }
 
     /* Hero Section */
-    .hero { padding-top: 142px; overflow: clip; min-height: 100vh; min-height: 100dvh; display: flex; align-items: center;}
+    .hero { padding-top: 142px; overflow: clip; min-height: 100vh; display: block; }
     .hero-grid {
       display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(24px, 4vw, 36px);
-      align-items: center; width: 100%;
+      align-items: center; width: 100%; min-height: calc(100vh - 142px);
     }
     .hero-copy { display: grid; gap: clamp(16px, 3vw, 24px); position: relative; z-index: 1; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 4px; }
@@ -423,7 +433,7 @@
     .service-tabs {
       display: inline-flex; gap: 10px; padding: 8px; border-radius: 999px;
       background: var(--surface-glass); border: 1px solid var(--border-soft);
-      margin-bottom: 24px; flex-wrap: wrap;
+      margin-bottom: 24px; flex-wrap: wrap; /* Allows normal wrapping to prevent broken pills */
     }
     .tab-btn {
       padding: 12px 16px; border-radius: 999px; color: var(--text-muted); font-size: clamp(0.85rem, 2vw, 1rem);
@@ -727,16 +737,6 @@
         scroll-snap-align: start;
       }
 
-      /* Horizontal Tabs */
-      .service-tabs {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        white-space: nowrap;
-        scrollbar-width: none;
-        padding-bottom: 4px;
-      }
-      .service-tabs::-webkit-scrollbar { display: none; }
-      
       /* Avoid hover jumping on mobile */
       .testimonial:nth-child(even) { transform: none; }
       .testimonial:nth-child(even):hover { transform: none; }
