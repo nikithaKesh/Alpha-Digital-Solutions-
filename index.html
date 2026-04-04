@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alpha Digital Solutions | Premium Digital & Graphic Agency</title>
+  <title>Alpha Solutions | Premium Digital & Graphic Agency</title>
   
-  <meta name="description" content="Alpha Digital Solutions is a premium Digital x Graphic agency delivering high-performance websites, internal automation tools, reporting dashboards, and sharp creative visual systems." />
+  <meta name="description" content="Alpha Solutions is a premium Digital x Graphic agency delivering high-performance websites, internal automation tools, reporting dashboards, and sharp creative visual systems." />
   <meta name="keywords" content="web development, graphic design, automation systems, business dashboards, digital agency, creative agency, motion graphics, Sri Lanka agency" />
-  <meta name="author" content="Alpha Digital Solutions" />
+  <meta name="author" content="Alpha Solutions" />
   <meta name="theme-color" content="#040812" />
   <link rel="canonical" href="https://www.alphadigitalsolutions.com/" />
   
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.alphadigitalsolutions.com/" />
-  <meta property="og:title" content="Alpha Digital Solutions | Premium Digital & Graphic Agency" />
+  <meta property="og:title" content="Alpha Solutions | Premium Digital & Graphic Agency" />
   <meta property="og:description" content="Premium digital systems and creative execution for modern brands. We build websites, automation tools, and visual identities." />
   <meta property="og:image" content="https://www.alphadigitalsolutions.com/og-image.jpg" />
 
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://www.alphadigitalsolutions.com/" />
-  <meta property="twitter:title" content="Alpha Digital Solutions | Premium Digital & Graphic Agency" />
+  <meta property="twitter:title" content="Alpha Solutions | Premium Digital & Graphic Agency" />
   <meta property="twitter:description" content="Premium digital systems and creative execution for modern brands." />
   <meta property="twitter:image" content="https://www.alphadigitalsolutions.com/twitter-image.jpg" />
 
@@ -27,7 +27,7 @@
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Alpha Digital Solutions",
+    "name": "Alpha Solutions",
     "image": "https://www.alphadigitalsolutions.com/logo.png",
     "url": "https://www.alphadigitalsolutions.com/",
     "telephone": "+94000000000",
@@ -36,7 +36,7 @@
       "addressLocality": "Colombo",
       "addressCountry": "LK"
     },
-    "description": "Alpha Digital Solutions helps businesses grow through high-performance websites, internal business tools, automation systems, reporting dashboards, and refined visual content.",
+    "description": "Alpha Solutions helps businesses grow through high-performance websites, internal business tools, automation systems, reporting dashboards, and refined visual content.",
     "priceRange": "$$"
   }
   </script>
@@ -191,8 +191,8 @@
 
     /* Layout & Typography */
     .container { width: min(100% - 32px, var(--max)); margin: 0 auto; }
-    .section { padding: 120px 0; position: relative; }
-    .section-head { display: flex; flex-direction: column; gap: 16px; margin-bottom: 48px; max-width: 760px; }
+    .section { padding: 110px 0; position: relative; }
+    .section-head { display: grid; gap: 14px; margin-bottom: 34px; max-width: 720px; }
     
     .eyebrow {
       display: inline-flex; align-items: center; gap: 8px; width: fit-content;
@@ -208,45 +208,31 @@
     }
 
     h1, h2, h3, h4, p { margin: 0; }
-    h1 { font-size: clamp(2.8rem, 5vw, 4.8rem); line-height: 1.1; letter-spacing: -0.04em; font-weight: 800; }
-    h2 { font-size: clamp(2rem, 3.5vw, 3.2rem); line-height: 1.15; letter-spacing: -0.03em; }
-    h3 { font-size: clamp(1.1rem, 2vw, 1.38rem); line-height: 1.3; letter-spacing: -0.02em; }
+    h1 { font-size: clamp(2.8rem, 6vw, 5.9rem); line-height: .96; letter-spacing: -0.05em; }
+    h2 { font-size: clamp(2rem, 3vw, 3.4rem); line-height: 1.02; letter-spacing: -0.04em; }
+    h3 { font-size: clamp(1.1rem, 2vw, 1.38rem); line-height: 1.2; letter-spacing: -0.02em; }
     
-    .lead { font-size: clamp(1.05rem, 1.3vw, 1.15rem); color: var(--text-muted); max-width: 66ch; line-height: 1.6; }
+    .lead { font-size: clamp(1rem, 1.3vw, 1.15rem); color: var(--text-muted); max-width: 66ch; }
     .muted { color: var(--text-muted); }
     
     .divider {
-      height: 1px; margin-top: 16px; opacity: .9;
+      height: 1px; margin-top: 36px; opacity: .9;
       background: linear-gradient(90deg, transparent, var(--border-soft), var(--border-soft), transparent);
     }
 
     /* Navbar */
     .topbar {
-      position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 900;
-      padding: 0; transition: padding .4s var(--ease);
-    }
-    .topbar.scrolled {
-      padding: 16px 10px 0;
+      position: fixed; top: 16px; left: 50%; transform: translateX(-50%);
+      width: min(calc(100% - 20px), var(--max)); z-index: 900;
     }
     .nav {
-      position: relative;
       display: flex; align-items: center; justify-content: space-between;
-      margin: 0 auto; width: 100%; max-width: 100%;
-      min-height: var(--nav-h); padding: 12px max(16px, calc((100% - var(--max)) / 2));
-      border: 1px solid transparent; border-radius: 0;
-      background: transparent; 
-      box-shadow: none;
-      backdrop-filter: none; 
-      transition: all .4s var(--ease);
+      min-height: var(--nav-h); padding: 12px 16px;
+      border: 1px solid var(--border-soft); border-radius: 22px;
+      background: var(--surface-strong); box-shadow: 0 12px 30px var(--shadow-color);
+      backdrop-filter: blur(18px); transition: transform .35s var(--ease), background-color .35s ease, border-color .35s ease;
     }
-    .nav.scrolled {
-      max-width: var(--max); padding: 12px 16px;
-      border-color: var(--border-soft); border-radius: 22px;
-      background: rgba(8, 13, 22, 0.85); 
-      backdrop-filter: blur(18px); 
-      box-shadow: 0 12px 30px var(--shadow-color);
-    }
-    
+    .nav.scrolled { background: color-mix(in srgb, var(--bg-main) 95%, transparent); border-color: var(--border-soft); }
     .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: -0.03em; min-width: 0; color: var(--text-main); }
     .brand-mark {
       width: 42px; height: 42px; border-radius: 14px; display: grid; place-items: center;
@@ -301,53 +287,19 @@
     }
     .whatsapp-float:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4); }
 
-    /* =========================================
-       FIXED HERO SECTION (Desktop Alignment)
-       ========================================= */
-    .hero { 
-      position: relative;
-      padding-top: var(--nav-h); 
-      min-height: 100vh; 
-      display: grid; /* Grid centering provides perfect vertical balance without flex-crushing */
-      place-items: center; 
-      overflow-x: clip; /* Safely contain horizontal bleeds while letting vertical shadows show */
-      overflow-y: visible;
-    }
-    
+    /* Hero Section */
+    .hero { padding-top: 142px; overflow: clip; min-height: 100vh;}
     .hero-grid {
-      display: grid; 
-      grid-template-columns: 1.1fr 0.9fr; /* Rebalanced to give text safe breathing room */
-      gap: clamp(40px, 6vw, 80px); /* Dynamic gap to prevent crushing on narrower desktops */
-      align-items: center; 
-      width: 100%;
-      padding: 60px 0; /* Stable vertical padding */
+      display: grid; grid-template-columns: 1.05fr .95fr; gap: 36px;
+      align-items: center; min-height: calc(100vh - 110px);
     }
-    
-    .hero-copy { 
-      display: flex; 
-      flex-direction: column; 
-      gap: 28px; 
-      position: relative; 
-      z-index: 1; 
-      padding-right: 20px; /* Small buffer against the center gap */
-    }
-    
-    .hero-copy p.lead { 
-      max-width: 56ch; 
-      font-size: clamp(1.05rem, 1.2vw, 1.15rem);
-      line-height: 1.6;
-    }
-    
-    .hero-actions { 
-      display: flex; 
-      flex-wrap: wrap; 
-      gap: 16px; 
-      margin-top: 4px; 
-    }
+    .hero-copy { display: grid; gap: 24px; position: relative; z-index: 1; }
+    .hero-copy p.lead { max-width: 58ch; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 4px; }
     
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      padding: 14px 22px; border-radius: 999px; font-weight: 700;
+      padding: 14px 18px; border-radius: 999px; font-weight: 700;
       transition: transform .28s ease, box-shadow .28s ease, background-color .28s ease, color .28s ease, border-color .28s ease;
       border: 1px solid transparent; min-height: 52px;
     }
@@ -362,54 +314,27 @@
     }
     .btn-secondary:hover { border-color: var(--border-glow-blue); background: var(--surface-strong); }
 
-    .trust-strip { 
-      display: flex; 
-      flex-wrap: wrap; 
-      gap: 16px; 
-      margin-top: 16px; 
-      align-items: center;
-      padding-top: 32px;
-      border-top: 1px solid var(--border-soft);
-    }
-    
+    .trust-strip { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; align-items: center;}
     .trust-item {
       border: 1px solid var(--border-soft); background: var(--surface-glass);
-      padding: 10px 16px; border-radius: 999px; color: var(--text-muted);
+      padding: 10px 14px; border-radius: 999px; color: var(--text-muted);
       backdrop-filter: blur(14px); box-shadow: var(--shadow-sm); font-size: 0.9rem;
-      display: inline-flex; align-items: center; gap: 8px;
-      font-weight: 500;
+      display: inline-flex; align-items: center; gap: 6px;
     }
     .trust-item svg { width: 16px; height: 16px; stroke: var(--primary-cyan); }
-    .trust-label { font-size: 0.85rem; color: var(--text-muted); margin-right: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+    .trust-label { font-size: 0.85rem; color: var(--text-muted); margin-right: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
 
-    .hero-visual { 
-      position: relative; 
-      width: 100%; 
-      display: flex; 
-      justify-content: flex-end; /* Pull right to keep container rhythm and clear text */
-      align-items: center; 
-    }
-    
+    /* Interactive Dual Panel */
+    .hero-visual { position: relative; min-height: 620px; display: grid; place-items: center; }
     .hero-dual-panel {
-      position: relative; 
-      width: 100%; 
-      max-width: 520px; /* Controlled scale to lock perfectly within the grid column */
-      height: 480px; 
-      display: flex; 
-      border-radius: 32px; 
-      border: 1px solid var(--border-soft);
-      background: var(--surface-glass); 
-      box-shadow: var(--shadow-lg);
-      backdrop-filter: blur(24px); 
-      overflow: hidden;
-      transform: perspective(1000px) rotateY(-8deg) rotateX(4deg);
-      transform-origin: center right; /* Pivots from the right, preventing left-edge crushing */
+      position: relative; width: 100%; max-width: 540px; height: 440px;
+      display: flex; border-radius: 32px; border: 1px solid var(--border-soft);
+      background: var(--surface-glass); box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(24px); overflow: hidden;
+      transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
       transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.6s ease;
     }
-    .hero-dual-panel:hover { 
-      transform: perspective(1000px) rotateY(0deg) rotateX(0deg); 
-      box-shadow: 0 40px 100px rgba(0,0,0,0.8); 
-    }
+    .hero-dual-panel:hover { transform: perspective(1000px) rotateY(0deg) rotateX(0deg); box-shadow: 0 40px 100px rgba(0,0,0,0.8); }
 
     .panel-side {
       flex: 1; display: flex; flex-direction: column; justify-content: center;
@@ -433,6 +358,7 @@
     .panel-graphics { width: 120px; height: 120px; position: relative; opacity: 0.6; transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
     .panel-side:hover .panel-graphics { opacity: 1; transform: scale(1.15) translateY(-5px); }
 
+    /* Visuals inside panels */
     .code-graphic { background: rgba(0,0,0,0.4); border: 1px solid var(--border-glow-blue); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px; justify-content: center; box-shadow: 0 10px 30px rgba(0, 153, 255, 0.2); }
     .code-graphic .line { height: 8px; background: var(--primary-cyan); border-radius: 4px; width: 100%; opacity: 0.8;}
     .code-graphic .line.short { width: 60%; background: var(--primary-blue); }
@@ -442,9 +368,7 @@
     .shape-circle { width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-yellow), var(--accent-gold)); position: absolute; left: 10px; top: 10px; box-shadow: 0 10px 30px rgba(255, 204, 0, 0.3); z-index: 2; }
     .shape-square { width: 70px; height: 70px; border-radius: 16px; border: 3px solid var(--accent-gold); background: rgba(255, 204, 0, 0.1); position: absolute; right: 10px; bottom: 10px; transform: rotate(15deg); backdrop-filter: blur(4px); z-index: 1; }
 
-    /* =========================================
-       Premium Glass Cards & Structural Grids
-       ========================================= */
+    /* Premium Glass Cards */
     .glass-card, .info-panel, .timeline-card, .portfolio-card, 
     .testimonial, .team-card-new, .contact-card, .logo-chip, .stat-card, 
     .banner, .service-card, .faq-item {
@@ -453,14 +377,15 @@
       backdrop-filter: blur(18px); transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
     }
 
-    .section-grid { display: grid; gap: 32px; }
-    .about-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; }
-    .glass-card { padding: 32px; }
-    .about-points { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 20px; }
-    .point { padding: 20px; border-radius: 20px; border: 1px solid var(--border-soft); background: var(--surface-soft); }
-    .point strong { display: block; margin-bottom: 8px; font-size: 1.05rem; color: var(--primary-cyan); }
+    /* Layout Grids */
+    .section-grid { display: grid; gap: 24px; }
+    .about-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 24px; }
+    .glass-card { padding: 26px; }
+    .about-points { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 20px; }
+    .point { padding: 18px; border-radius: 20px; border: 1px solid var(--border-soft); background: var(--surface-soft); }
+    .point strong { display: block; margin-bottom: 8px; font-size: 1rem; color: var(--primary-cyan); }
     
-    .info-panel { padding: 32px; display: flex; flex-direction: column; justify-content: center; gap: 24px; position: relative; overflow: hidden; }
+    .info-panel { padding: 24px; display: grid; gap: 16px; position: relative; overflow: hidden; }
     .info-panel::after {
       content: ""; position: absolute; width: 180px; height: 180px;
       background: radial-gradient(circle, var(--hero-glow-right), transparent 70%);
@@ -469,11 +394,11 @@
     
     .metrics-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
     .metric-box {
-        padding: 24px 20px; border-radius: 16px; background: linear-gradient(145deg, var(--surface-soft), transparent);
-        border: 1px solid var(--border-soft); text-align: center; display: flex; flex-direction: column; justify-content: center;
+        padding: 20px; border-radius: 16px; background: linear-gradient(145deg, var(--surface-soft), transparent);
+        border: 1px solid var(--border-soft); text-align: center;
     }
     .metric-box .number {
-        display: block; font-size: 2.4rem; font-weight: 800; color: var(--text-main); margin-bottom: 4px;
+        display: block; font-size: 2.2rem; font-weight: 800; color: var(--text-main); margin-bottom: 4px;
         background: linear-gradient(135deg, var(--text-main), var(--text-muted));
         -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
@@ -482,153 +407,153 @@
     .service-tabs {
       display: inline-flex; gap: 10px; padding: 8px; border-radius: 999px;
       background: var(--surface-glass); border: 1px solid var(--border-soft);
-      margin-bottom: 32px; flex-wrap: wrap;
+      margin-bottom: 24px; flex-wrap: wrap;
     }
     .tab-btn {
-      padding: 12px 20px; border-radius: 999px; color: var(--text-muted); font-weight: 500;
+      padding: 12px 16px; border-radius: 999px; color: var(--text-muted);
       transition: background-color .26s ease, color .26s ease, transform .26s ease;
     }
     .tab-btn.active, .tab-btn:hover { color: var(--text-main); background: var(--surface-soft); }
     .services-panel { display: none; }
     .services-panel.active { display: block; animation: fadeIn .35s ease; }
-    .services-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+    .services-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
     
-    .service-card { padding: 28px; display: flex; flex-direction: column; gap: 18px; min-height: 240px; position: relative; }
-    .service-ideal { font-size: 0.8rem; color: var(--text-muted); margin-top: auto; font-style: italic; border-top: 1px solid var(--border-soft); padding-top: 14px;}
+    .service-card { padding: 22px; display: grid; gap: 16px; min-height: 220px; position: relative; }
+    .service-ideal { font-size: 0.75rem; color: var(--text-muted); margin-top: auto; font-style: italic; border-top: 1px solid var(--border-soft); padding-top: 10px;}
     #digital-services .service-card:hover { transform: translateY(-6px); border-color: var(--border-glow-blue); box-shadow: 0 12px 40px rgba(0, 153, 255, 0.15); }
     #graphic-services .service-card:hover { transform: translateY(-6px); border-color: var(--border-glow-yellow); box-shadow: 0 12px 40px rgba(255, 204, 0, 0.15); }
     
     .service-icon {
-      width: 58px; height: 58px; border-radius: 18px; display: grid; place-items: center;
+      width: 54px; height: 54px; border-radius: 18px; display: grid; place-items: center;
       border: 1px solid var(--border-soft); color: var(--text-main);
     }
     #digital-services .service-icon { background: linear-gradient(135deg, color-mix(in srgb, var(--primary-cyan) 20%, transparent), transparent); }
     #graphic-services .service-icon { background: linear-gradient(135deg, color-mix(in srgb, var(--accent-yellow) 20%, transparent), transparent); color: var(--accent-yellow);}
-    .service-icon svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .service-icon svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
     /* Timeline */
-    .timeline { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 24px; position: relative; }
+    .timeline { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 18px; position: relative; }
     .timeline::before {
-      content: ""; position: absolute; top: 46px; left: 4%; right: 4%; height: 1px;
+      content: ""; position: absolute; top: 40px; left: 4%; right: 4%; height: 1px;
       background: linear-gradient(90deg, transparent, var(--border-soft), transparent); z-index: 0;
     }
-    .timeline-card { padding: 28px 20px; position: relative; z-index: 1; min-height: 210px; }
+    .timeline-card { padding: 22px 18px; position: relative; z-index: 1; min-height: 190px; }
     .timeline-card:hover { transform: translateY(-6px); border-color: var(--border-glow-blue); }
     .step-num {
-      width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; margin-bottom: 20px;
+      width: 40px; height: 40px; border-radius: 14px; display: grid; place-items: center; margin-bottom: 16px;
       background: linear-gradient(135deg, color-mix(in srgb, var(--primary-cyan) 22%, transparent), color-mix(in srgb, var(--accent-yellow) 26%, transparent));
-      border: 1px solid var(--border-soft); font-weight: 800; font-size: 1.1rem;
+      border: 1px solid var(--border-soft); font-weight: 800;
     }
 
     /* Banners */
-    .banner { padding: 36px 40px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px; overflow: hidden; position: relative; }
+    .banner { padding: 26px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 16px; overflow: hidden; position: relative; }
     .banner::after {
-      content: ""; position: absolute; inset: auto -30px -60px auto; width: 300px; height: 300px;
+      content: ""; position: absolute; inset: auto -30px -60px auto; width: 240px; height: 240px;
       background: radial-gradient(circle, var(--hero-glow-left), transparent 70%); pointer-events: none;
     }
 
     /* Portfolio Tags */
-    .filters { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; }
-    .chip { padding: 12px 20px; border-radius: 999px; border: 1px solid var(--border-soft); color: var(--text-muted); background: var(--surface-glass); transition: background-color .26s ease, color .26s ease, border-color .26s ease, transform .26s ease; font-weight: 500;}
+    .filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
+    .chip { padding: 10px 14px; border-radius: 999px; border: 1px solid var(--border-soft); color: var(--text-muted); background: var(--surface-glass); transition: background-color .26s ease, color .26s ease, border-color .26s ease, transform .26s ease; }
     .chip.active, .chip:hover { color: var(--text-main); border-color: var(--border-glow-blue); background: var(--surface-soft); transform: translateY(-1px); }
     
-    .portfolio-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
-    .portfolio-card { overflow: hidden; display: flex; flex-direction: column; min-height: 460px; cursor: pointer; padding: 0;}
+    .portfolio-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .portfolio-card { overflow: hidden; display: grid; min-height: 440px; cursor: pointer; }
     .portfolio-card.hidden { display: none; }
     .portfolio-card:hover { transform: translateY(-8px); border-color: var(--border-glow-blue); box-shadow: 0 28px 60px var(--shadow-color); }
-    .portfolio-visual { flex: 1; min-height: 240px; position: relative; border-bottom: 1px solid var(--border-soft); overflow: hidden; background: linear-gradient(180deg, var(--surface-soft), transparent); display: grid; place-items: center; color: var(--text-muted); font-size: 0.95rem;}
+    .portfolio-visual { min-height: 220px; position: relative; border-bottom: 1px solid var(--border-soft); overflow: hidden; background: linear-gradient(180deg, var(--surface-soft), transparent); display: grid; place-items: center; color: var(--text-muted); font-size: 0.9rem;}
     .portfolio-visual img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; opacity: 0; transition: opacity 0.3s; }
-    .portfolio-body { padding: 28px; display: flex; flex-direction: column; gap: 14px; flex-grow: 0;}
+    .portfolio-body { padding: 22px; display: flex; flex-direction: column; gap: 12px; }
     .tag-row { display: flex; flex-wrap: wrap; gap: 10px; }
-    .tag { padding: 6px 12px; border-radius: 999px; font-size: .75rem; border: 1px solid var(--border-soft); background: var(--surface-soft); font-weight: 600;}
+    .tag { padding: 6px 10px; border-radius: 999px; font-size: .75rem; border: 1px solid var(--border-soft); background: var(--surface-soft); font-weight: 600;}
     .tag.digital { color: var(--primary-cyan); border-color: color-mix(in srgb, var(--primary-cyan) 30%, transparent); }
     .tag.graphic { color: var(--accent-yellow); border-color: color-mix(in srgb, var(--accent-yellow) 30%, transparent);}
-    .portfolio-metrics { margin-top: auto; border-top: 1px solid var(--border-soft); padding-top: 16px; font-size: 0.9rem; display: flex; justify-content: space-between; align-items: center; color: var(--text-muted); }
-    .portfolio-metrics strong { color: var(--primary-cyan); font-size: 1rem;}
+    .portfolio-metrics { margin-top: auto; border-top: 1px solid var(--border-soft); padding-top: 12px; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; color: var(--text-muted); }
+    .portfolio-metrics strong { color: var(--primary-cyan); }
 
-    /* CREDIBILITY STYLING */
-    .credibility-container { display: grid; grid-template-columns: 1fr 1.3fr; gap: 56px; align-items: stretch; }
-    .cred-left-col { display: flex; flex-direction: column; gap: 32px; }
+    /* NEW CREDIBILITY STYLING */
+    .credibility-container { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; align-items: stretch; }
+    .cred-left-col { display: flex; flex-direction: column; gap: 24px; }
     
-    .stats-dashboard { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 32px; background: var(--surface-glass); border: 1px solid var(--border-soft); border-radius: 24px; box-shadow: var(--shadow-md); }
-    .dash-stat { display: flex; flex-direction: column; gap: 10px; padding: 20px; background: rgba(255,255,255,0.02); border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); }
-    .dash-stat-val { font-size: 2.8rem; font-weight: 800; line-height: 1; background: linear-gradient(135deg, #ffffff, #a3d4ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .dash-stat-label { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
+    .stats-dashboard { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 24px; background: var(--surface-glass); border: 1px solid var(--border-soft); border-radius: 24px; box-shadow: var(--shadow-md); }
+    .dash-stat { display: flex; flex-direction: column; gap: 8px; padding: 16px; background: rgba(255,255,255,0.02); border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); }
+    .dash-stat-val { font-size: 2.4rem; font-weight: 800; line-height: 1; background: linear-gradient(135deg, #ffffff, #a3d4ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .dash-stat-label { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
     
-    .trust-roster { padding: 32px; background: var(--surface-glass); border: 1px solid var(--border-soft); border-radius: 24px; box-shadow: var(--shadow-md); }
-    .trust-roster h4 { margin: 0 0 20px; font-size: 1.1rem; color: var(--text-main); font-weight: 600; }
+    .trust-roster { padding: 24px; background: var(--surface-glass); border: 1px solid var(--border-soft); border-radius: 24px; box-shadow: var(--shadow-md); }
+    .trust-roster h4 { margin: 0 0 16px; font-size: 1rem; color: var(--text-main); font-weight: 600; }
     
     /* 12 Logo Grid Area */
-    .logo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; pointer-events: auto; }
+    .logo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; pointer-events: auto; }
     .logo-chip { 
-      height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; 
+      height: 68px; display: flex; flex-direction: column; align-items: center; justify-content: center; 
       color: var(--text-muted); background: rgba(255,255,255,0.02); border: 1px solid var(--border-soft); 
-      border-radius: 16px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; 
-      font-size: 0.7rem; cursor: pointer; transition: all 0.3s ease; text-align: center; padding: 8px;
+      border-radius: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; 
+      font-size: 0.65rem; cursor: pointer; transition: all 0.3s ease; text-align: center; padding: 6px;
     }
-    .logo-chip:hover { border-color: var(--primary-cyan); color: var(--text-main); background: rgba(0, 153, 255, 0.05); transform: translateY(-3px);}
-    .logo-chip svg { width: 26px; height: 26px; fill: currentColor; opacity: 0.8;}
-    .logo-chip span { margin-top: 8px; }
+    .logo-chip:hover { border-color: var(--primary-cyan); color: var(--text-main); background: rgba(0, 153, 255, 0.05); transform: translateY(-2px);}
+    .logo-chip svg { width: 22px; height: 22px; fill: currentColor; opacity: 0.8;}
+    .logo-chip span { margin-top: 6px; }
 
-    .testimonial-track { display: flex; flex-direction: column; gap: 24px; }
-    .testimonial { padding: 36px; display: flex; flex-direction: column; gap: 20px; position: relative; background: var(--surface-glass); border: 1px solid var(--border-soft); border-radius: 24px; box-shadow: var(--shadow-md); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .testimonial-track { display: flex; flex-direction: column; gap: 20px; }
+    .testimonial { padding: 30px; display: flex; flex-direction: column; gap: 16px; position: relative; background: var(--surface-glass); border: 1px solid var(--border-soft); border-radius: 24px; box-shadow: var(--shadow-md); transition: transform 0.3s ease, box-shadow 0.3s ease; }
     .testimonial:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
-    .testimonial:nth-child(even) { transform: translateX(24px); }
-    .testimonial:nth-child(even):hover { transform: translateX(24px) translateY(-4px); }
+    .testimonial:nth-child(even) { transform: translateX(20px); }
+    .testimonial:nth-child(even):hover { transform: translateX(20px) translateY(-4px); }
     
     .testimonial-header { display: flex; gap: 16px; align-items: center; }
-    .testimonial-avatar { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--surface-soft), rgba(255,255,255,0.08)); display: grid; place-items: center; color: var(--text-main); font-weight: 600; font-size: 1.15rem; border: 1px solid var(--border-soft); }
+    .testimonial-avatar { width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, var(--surface-soft), rgba(255,255,255,0.08)); display: grid; place-items: center; color: var(--text-main); font-weight: 600; font-size: 1.1rem; border: 1px solid var(--border-soft); }
     .testimonial::before { content: '"'; position: absolute; top: 16px; right: 24px; font-size: 5rem; color: rgba(255,255,255,0.03); font-family: Georgia, serif; line-height: 1; pointer-events: none; }
-    .testimonial p { font-size: 1.1rem; font-style: italic; z-index: 1; position: relative; margin-top: 5px; color: #e2e8f0; line-height: 1.6;}
-    .testimonial footer { margin-top: 14px; display: flex; justify-content: space-between; align-items: flex-end;}
-    .testimonial footer strong { color: var(--text-main); font-size: 1.05rem; display: block; margin-bottom: 2px;}
-    .testimonial footer span { font-size: 0.9rem; color: var(--text-muted); }
-    .testimonial-rating { color: var(--accent-yellow); font-size: 1rem; letter-spacing: 2px; }
+    .testimonial p { font-size: 1.05rem; font-style: italic; z-index: 1; position: relative; margin-top: 5px; color: #e2e8f0; line-height: 1.6;}
+    .testimonial footer { margin-top: 10px; display: flex; justify-content: space-between; align-items: flex-end;}
+    .testimonial footer strong { color: var(--text-main); font-size: 1rem; display: block; margin-bottom: 2px;}
+    .testimonial footer span { font-size: 0.85rem; color: var(--text-muted); }
+    .testimonial-rating { color: var(--accent-yellow); font-size: 0.9rem; letter-spacing: 2px; }
 
     /* TEAM SECTION STYLES */
-    .team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
-    .team-card-new { position: relative; display: flex; flex-direction: column; overflow: hidden; padding: 0;}
+    .team-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+    .team-card-new { position: relative; display: flex; flex-direction: column; overflow: hidden; }
     .team-card-new:hover { transform: translateY(-8px); box-shadow: 0 20px 40px var(--shadow-color); }
     .team-card-new:hover .team-photo-container img { transform: scale(1.05); }
     .team-photo-container { width: 100%; aspect-ratio: 4/5; background: var(--surface-glass); position: relative; overflow: hidden; border-bottom: 1px solid var(--border-soft); }
     .team-photo-container::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(4,8,18,0.8) 100%); z-index: 1; pointer-events: none; }
     .team-photo-container img { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform .5s var(--ease); display: block; }
     .team-placeholder { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--surface-soft), var(--surface-glass)); color: var(--text-muted); }
-    .team-placeholder svg { width: 56px; height: 56px; opacity: 0.5; }
-    .team-info-new { padding: 32px; display: flex; flex-direction: column; gap: 10px; flex-grow: 1; position: relative; z-index: 2; }
+    .team-placeholder svg { width: 48px; height: 48px; opacity: 0.5; }
+    .team-info-new { padding: 24px; display: flex; flex-direction: column; gap: 8px; flex-grow: 1; position: relative; z-index: 2; }
     
-    .team-role { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; }
+    .team-role { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; }
     .role-digital { color: var(--primary-cyan); }
     .role-graphic { color: var(--accent-yellow); }
-    .team-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
-    .team-tag { font-size: 0.75rem; padding: 4px 10px; background: var(--surface-soft); border: 1px solid var(--border-soft); border-radius: 999px; color: var(--text-muted); }
+    .team-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+    .team-tag { font-size: 0.7rem; padding: 2px 8px; background: var(--surface-soft); border: 1px solid var(--border-soft); border-radius: 999px; color: var(--text-muted); }
 
-    .team-info-new h3 { font-size: 1.5rem; margin: 0; color: var(--text-main); }
-    .team-desc { color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-top: 8px; margin-bottom: 20px; }
-    .team-socials-new { display: flex; gap: 12px; margin-top: auto; border-top: 1px solid var(--border-soft); padding-top: 20px; }
-    .team-social-icon { width: 40px; height: 40px; border-radius: 50%; background: var(--surface-soft); display: grid; place-items: center; color: var(--text-muted); transition: background-color .2s, color .2s; }
+    .team-info-new h3 { font-size: 1.4rem; margin: 0; color: var(--text-main); }
+    .team-desc { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; margin-top: 8px; margin-bottom: 16px; }
+    .team-socials-new { display: flex; gap: 12px; margin-top: auto; border-top: 1px solid var(--border-soft); padding-top: 16px; }
+    .team-social-icon { width: 36px; height: 36px; border-radius: 50%; background: var(--surface-soft); display: grid; place-items: center; color: var(--text-muted); transition: background-color .2s, color .2s; }
     .team-social-icon:hover { background: var(--primary-blue); color: white; }
 
     /* Contact */
-    .contact-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 48px; align-items: start; }
-    .contact-card { padding: 36px; display: flex; flex-direction: column; gap: 24px; }
-    .contact-list { display: flex; flex-direction: column; gap: 16px; }
-    .contact-item { display: flex; flex-direction: column; gap: 6px; padding: 20px; border-radius: 18px; border: 1px solid var(--border-soft); background: var(--surface-soft); }
-    .form-grid { display: flex; flex-direction: column; gap: 20px; }
-    .form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-    label { display: flex; flex-direction: column; gap: 10px; font-weight: 600; font-size: 1rem; }
+    .contact-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 24px; align-items: start; }
+    .contact-card { padding: 24px; display: grid; gap: 18px; }
+    .contact-list { display: grid; gap: 14px; }
+    .contact-item { display: grid; gap: 4px; padding: 16px; border-radius: 18px; border: 1px solid var(--border-soft); background: var(--surface-soft); }
+    .form-grid { display: grid; gap: 14px; }
+    .form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    label { display: grid; gap: 8px; font-weight: 600; font-size: .95rem; }
     input, textarea, select {
       width: 100%; border: 1px solid var(--border-soft); background: var(--input-bg);
-      color: var(--text-main); border-radius: 16px; padding: 16px 20px;
+      color: var(--text-main); border-radius: 16px; padding: 15px 16px;
       transition: border-color .26s ease, background-color .26s ease, box-shadow .26s ease;
     }
     input:hover, textarea:hover, select:hover, input:focus, textarea:focus, select:focus {
       border-color: var(--border-glow-blue); background: var(--surface-soft);
       box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary-cyan) 10%, transparent); outline: none;
     }
-    .input-hint { font-size: 0.8rem; color: var(--text-muted); font-weight: normal; margin-top: -2px; }
+    .input-hint { font-size: 0.75rem; color: var(--text-muted); font-weight: normal; margin-top: -2px; }
     select { appearance: none; cursor: pointer;}
-    textarea { min-height: 180px; resize: vertical; }
+    textarea { min-height: 160px; resize: vertical; }
     .form-status { padding: 16px; border-radius: 12px; display: none; margin-top: 10px; font-weight: 600; text-align: center; }
     .form-status.success { display: block; background: rgba(37, 211, 102, 0.1); color: #25D366; border: 1px solid #25D366; }
     .form-status.error { display: block; background: rgba(255, 68, 68, 0.1); color: #ff4444; border: 1px solid #ff4444; }
@@ -642,26 +567,26 @@
     .modal-overlay.active { opacity: 1; visibility: visible; }
     .modal-box {
       width: 90%; max-width: 800px; background: var(--bg-secondary);
-      border: 1px solid var(--border-soft); border-radius: 24px; padding: 48px;
+      border: 1px solid var(--border-soft); border-radius: 24px; padding: 40px;
       box-shadow: 0 30px 60px rgba(0,0,0,0.8); position: relative;
       transform: translateY(20px); transition: transform 0.3s var(--ease);
       max-height: 90vh; overflow-y: auto;
     }
     .modal-overlay.active .modal-box { transform: translateY(0); }
     .modal-close {
-      position: absolute; top: 24px; right: 24px; width: 40px; height: 40px;
+      position: absolute; top: 20px; right: 20px; width: 36px; height: 36px;
       border-radius: 50%; background: var(--surface-soft); display: grid; place-items: center;
       border: 1px solid var(--border-soft); cursor: pointer; color: var(--text-muted);
     }
     .modal-close:hover { background: var(--surface-strong); color: var(--text-main);}
-    .modal-brand-name { font-size: 2.4rem; margin-bottom: 12px;}
-    .modal-tags { display: flex; gap: 10px; margin-bottom: 32px;}
-    .modal-content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 32px; }
-    .modal-section h4 { color: var(--primary-cyan); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
-    .modal-section p { color: var(--text-muted); line-height: 1.6; font-size: 1rem; }
-    .modal-tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-    .modal-tools span { font-size: 0.8rem; padding: 6px 12px; background: var(--surface-soft); border: 1px solid var(--border-soft); border-radius: 6px; color: var(--text-muted); }
-    .modal-footer { margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border-soft); display: flex; justify-content: space-between; align-items: center; }
+    .modal-brand-name { font-size: 2.2rem; margin-bottom: 8px;}
+    .modal-tags { display: flex; gap: 8px; margin-bottom: 24px;}
+    .modal-content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+    .modal-section h4 { color: var(--primary-cyan); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+    .modal-section p { color: var(--text-muted); line-height: 1.6; font-size: 0.95rem; }
+    .modal-tools { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .modal-tools span { font-size: 0.75rem; padding: 4px 10px; background: var(--surface-soft); border: 1px solid var(--border-soft); border-radius: 6px; color: var(--text-muted); }
+    .modal-footer { margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--border-soft); display: flex; justify-content: space-between; align-items: center; }
 
     /* Legal & FAQ Separate Page Overlays */
     .legal-page-overlay {
@@ -685,24 +610,24 @@
     .legal-content-area li { margin-bottom: 8px; }
 
     /* FAQ Grid (reused within legal overlay style) */
-    .faq-grid { display: grid; gap: 16px; }
-    .faq-item { padding: 0 28px; background: var(--surface-glass); border: 1px solid var(--border-soft); border-radius: 16px;}
-    .faq-item summary { font-weight: 600; font-size: 1.15rem; padding: 28px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; color: var(--text-main); }
+    .faq-grid { display: grid; gap: 14px; }
+    .faq-item { padding: 0 24px; background: var(--surface-glass); border: 1px solid var(--border-soft); border-radius: 16px;}
+    .faq-item summary { font-weight: 600; font-size: 1.1rem; padding: 24px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; color: var(--text-main); }
     .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::after { content: "+"; font-size: 1.6rem; color: var(--primary-cyan); transition: transform 0.3s ease; }
+    .faq-item summary::after { content: "+"; font-size: 1.5rem; color: var(--primary-cyan); transition: transform 0.3s ease; }
     .faq-item[open] summary::after { transform: rotate(45deg); }
-    .faq-item p { padding-bottom: 28px; color: var(--text-muted); line-height: 1.6; font-size: 1.05rem; }
+    .faq-item p { padding-bottom: 24px; color: var(--text-muted); line-height: 1.6; }
 
     /* Footer */
-    footer.site-footer { padding: 40px 0 60px; }
-    .footer-wrap { display: grid; gap: 24px; padding: 36px; border-radius: 28px; border: 1px solid var(--border-soft); background: var(--surface-glass); box-shadow: var(--shadow-md); backdrop-filter: blur(18px); }
-    .footer-top { display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; align-items: start; }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-end; }
-    .footer-links a { padding: 12px 20px; border-radius: 999px; color: var(--text-muted); border: 1px solid var(--border-soft); background: var(--surface-soft); transition: color 0.3s, border-color 0.3s; font-weight: 600;}
+    footer.site-footer { padding: 30px 0 50px; }
+    .footer-wrap { display: grid; gap: 20px; padding: 24px; border-radius: 28px; border: 1px solid var(--border-soft); background: var(--surface-glass); box-shadow: var(--shadow-md); backdrop-filter: blur(18px); }
+    .footer-top { display: grid; grid-template-columns: 1.1fr .9fr; gap: 20px; align-items: start; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+    .footer-links a { padding: 10px 16px; border-radius: 999px; color: var(--text-muted); border: 1px solid var(--border-soft); background: var(--surface-soft); transition: color 0.3s, border-color 0.3s; font-weight: 600;}
     .footer-links a:hover { color: var(--text-main); border-color: var(--border-glow-blue); }
-    .footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; padding-top: 12px; border-top: 1px solid var(--border-soft); color: var(--text-muted); font-size: .95rem; }
+    .footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; padding-top: 6px; border-top: 1px solid var(--border-soft); color: var(--text-muted); font-size: .94rem; }
 
-    .to-top { position: fixed; right: 24px; bottom: 24px; width: 56px; height: 56px; border-radius: 18px; display: grid; place-items: center; border: 1px solid var(--border-soft); background: var(--surface-strong); box-shadow: var(--shadow-md); backdrop-filter: blur(18px); opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity .28s ease, transform .28s ease, visibility .28s ease; z-index: 880; }
+    .to-top { position: fixed; right: 18px; bottom: 18px; width: 52px; height: 52px; border-radius: 18px; display: grid; place-items: center; border: 1px solid var(--border-soft); background: var(--surface-strong); box-shadow: var(--shadow-md); backdrop-filter: blur(18px); opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity .28s ease, transform .28s ease, visibility .28s ease; z-index: 880; }
     .to-top:hover { border-color: var(--border-glow-blue); }
     .to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
 
@@ -713,9 +638,7 @@
     
     @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* =========================================
-       MEDIA QUERIES - STRICTLY UNTOUCHED FOR MOBILE
-       ========================================= */
+    /* Media Queries */
     @media (max-width: 1120px) {
       .hero-grid, .about-grid, .credibility-container, .contact-grid, .footer-top { grid-template-columns: 1fr; }
       .hero-grid { min-height: auto; }
@@ -726,83 +649,26 @@
       .testimonial:nth-child(even) { transform: none; }
       .testimonial:nth-child(even):hover { transform: translateY(-4px); }
     }
-    
-    /* MOBILE RE-ARRANGEMENT & HORIZONTAL SCROLLING */
     @media (max-width: 840px) {
-      .topbar.scrolled { padding-top: 10px; }
+      .topbar { top: 10px; }
       .nav { min-height: 68px; }
       .nav-links, .cta-mini.desktop-only { display: none; }
       .menu-btn { display: grid; }
       .hero { padding-top: 118px; }
       .hero-visual { min-height: auto; }
+      .services-grid, .portfolio-grid, .team-grid, .logo-grid, .stats-dashboard { grid-template-columns: 1fr; }
+      .timeline { grid-template-columns: 1fr; }
       .hero-dual-panel { flex-direction: column; height: 500px; }
       .panel-digital { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
       .modal-content-grid { grid-template-columns: 1fr; }
-
-      /* Convert stacking grids into native horizontal sliders */
-      .services-grid, .portfolio-grid, .team-grid, .timeline, .testimonial-track, .logo-grid, .stats-dashboard {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: none; /* Hide scrollbar Firefox */
-        -webkit-overflow-scrolling: touch;
-        gap: 16px;
-        
-        /* Bleed edge-to-edge technique to make swiping feel native */
-        width: 100vw;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 0 20px 24px 20px; 
-      }
       
-      /* Hide scrollbar Chrome/Safari */
-      .services-grid::-webkit-scrollbar, .portfolio-grid::-webkit-scrollbar, .team-grid::-webkit-scrollbar, 
-      .timeline::-webkit-scrollbar, .testimonial-track::-webkit-scrollbar, .logo-grid::-webkit-scrollbar, 
-      .stats-dashboard::-webkit-scrollbar { 
-        display: none; 
-      }
-
-      /* Base card size for the swipeable sections (85% shows a peek of the next card) */
-      .services-grid > article, 
-      .portfolio-grid > article, 
-      .team-grid > article, 
-      .timeline > article, 
-      .testimonial-track > article {
-        flex: 0 0 85%;
-        scroll-snap-align: center;
-      }
-      
-      /* Specific sizes for smaller cards */
-      .stats-dashboard > div {
-        flex: 0 0 75%;
-        scroll-snap-align: center;
-      }
-      .logo-grid > div {
-        flex: 0 0 45%;
-        scroll-snap-align: start;
-      }
-
-      /* Horizontal Tabs */
-      .service-tabs {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        white-space: nowrap;
-        scrollbar-width: none;
-      }
-      .service-tabs::-webkit-scrollbar { display: none; }
-      
-      /* Reset hover offsets for mobile swipe alignment */
-      .testimonial:nth-child(even) { transform: none; }
-      .testimonial:nth-child(even):hover { transform: translateY(-4px); }
+      /* On mobile, make the logo grid 2 columns instead of 1 so it's not too long */
+      .logo-grid { grid-template-columns: repeat(2, 1fr); }
     }
-    
     @media (max-width: 600px) {
       .container { width: min(100% - 20px, var(--max)); }
       .section { padding: 84px 0; }
-      .nav { padding: 10px max(16px, calc((100% - var(--max)) / 2)); }
-      .nav.scrolled { padding: 10px 12px; border-radius: 18px; }
+      .nav { padding: 10px 12px; border-radius: 18px; }
       .brand-mark { width: 38px; height: 38px; border-radius: 12px; }
       .brand span { font-size: .95rem; }
       .hero-copy, .section-head { gap: 18px; }
@@ -814,7 +680,6 @@
       .glass-card, .contact-card, .info-panel, .banner, .portfolio-body, .team-info-new, .testimonial, .service-card { padding: 20px; }
       .modal-box { padding: 20px; }
     }
-    
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -849,12 +714,201 @@
     }
   </style>
 
+
+  <style id="alpha-solutions-update">
+    body.nav-hero .topbar {
+      top: 0;
+      width: min(calc(100% - 32px), var(--max));
+    }
+    body.nav-hero .nav {
+      background: transparent;
+      border-color: transparent;
+      box-shadow: none;
+      backdrop-filter: none;
+      border-radius: 0;
+      padding-inline: 0;
+    }
+    body.nav-hero .brand,
+    body.nav-hero .nav-link,
+    body.nav-hero .icon-btn,
+    body.nav-hero .menu-btn {
+      color: var(--text-main);
+    }
+    body.nav-hero .nav-link:hover,
+    body.nav-hero .nav-link.active {
+      background: transparent;
+      color: var(--text-main);
+    }
+    body.nav-hero .brand-mark {
+      box-shadow: none;
+      background: linear-gradient(145deg, color-mix(in srgb, var(--primary-cyan) 12%, transparent), color-mix(in srgb, var(--accent-yellow) 14%, transparent));
+    }
+    .portfolio-visual {
+      min-height: 248px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    }
+    .portfolio-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(4,8,18,0.48) 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .portfolio-visual img,
+    .portfolio-visual video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 1;
+      display: block;
+    }
+    .tag.automation {
+      color: #8fd0ff;
+      border-color: rgba(143, 208, 255, 0.26);
+    }
+    .logo-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .logo-chip {
+      height: 88px;
+      gap: 8px;
+      padding: 10px;
+      justify-content: center;
+    }
+    .logo-chip img {
+      max-width: 112px;
+      max-height: 32px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      filter: grayscale(1) brightness(1.95) contrast(0.94);
+      opacity: 0.88;
+    }
+    .logo-chip:hover img {
+      opacity: 1;
+      filter: grayscale(1) brightness(2.12) contrast(0.96);
+    }
+    .logo-chip span {
+      margin-top: 0;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      text-transform: none;
+    }
+    .proof-card::before {
+      display: none;
+    }
+    .team-photo-container img {
+      filter: grayscale(1) contrast(1.06) brightness(0.92);
+      object-position: center center;
+    }
+    .modal-box {
+      max-width: 1040px;
+    }
+    .modal-media-shell {
+      margin: 20px 0 24px;
+    }
+    .modal-media-stage {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      border-radius: 20px;
+      overflow: hidden;
+      background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid var(--border-soft);
+    }
+    .modal-media-stage img,
+    .modal-media-stage video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .modal-media-thumbs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(86px, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .modal-thumb {
+      border: 1px solid var(--border-soft);
+      background: var(--surface-soft);
+      border-radius: 14px;
+      overflow: hidden;
+      padding: 0;
+      min-height: 72px;
+      transition: border-color .25s ease, transform .25s ease;
+    }
+    .modal-thumb:hover,
+    .modal-thumb.active {
+      border-color: var(--border-glow-blue);
+      transform: translateY(-2px);
+    }
+    .modal-thumb img,
+    .modal-thumb video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .modal-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .modal-link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background: var(--surface-glass);
+      color: var(--text-main);
+      font-weight: 600;
+      backdrop-filter: blur(12px);
+    }
+    .modal-link-btn:hover {
+      border-color: var(--border-glow-blue);
+      transform: translateY(-2px);
+    }
+    @media (max-width: 840px) {
+      body.nav-hero .topbar {
+        top: 10px;
+      }
+      body.nav-hero .nav {
+        padding-inline: 12px;
+      }
+      .logo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .modal-footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+      }
+    }
+    @media (max-width: 600px) {
+      .modal-media-thumbs {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .logo-chip {
+        height: 82px;
+      }
+    }
+  </style>
+
 </head>
 <body>
   <div class="preloader" id="preloader" aria-hidden="true">
     <div class="loader-mark">
       <div class="loader-logo"></div>
-      <div class="loader-text">Alpha Digital Solutions</div>
+      <div class="loader-text">Alpha Solutions</div>
     </div>
   </div>
 
@@ -865,6 +919,11 @@
       <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
       <h3 class="modal-brand-name" id="modalBrandName">Project Title</h3>
       <div class="modal-tags" id="modalTags"></div>
+
+      <div class="modal-media-shell" id="modalMediaShell" hidden>
+        <div class="modal-media-stage" id="modalMediaStage"></div>
+        <div class="modal-media-thumbs" id="modalMediaThumbs"></div>
+      </div>
       
       <div class="modal-content-grid">
         <div class="modal-section">
@@ -888,7 +947,7 @@
       </div>
       
       <div class="modal-footer">
-        <span class="muted" style="font-size: 0.9rem;">Want to build something similar?</span>
+        <div class="modal-links" id="modalLinks"></div>
         <a href="#contact" class="btn btn-primary" onclick="closeModal()">Discuss a Project</a>
       </div>
     </div>
@@ -907,7 +966,7 @@
       <div class="faq-grid">
         <details class="faq-item">
           <summary>Can I hire only digital services or only graphic services?</summary>
-          <p>Yes. While we highly recommend combining both for the strongest result, you can engage strictly with Alpha Digital for development/systems, or Alpha Graphic for purely visual and motion deliverables.</p>
+          <p>Yes. While we highly recommend combining both for the strongest result, you can engage strictly with Alpha Digital for development/systems, or Alpha Graphix for purely visual and motion deliverables.</p>
         </details>
         <div class="divider" style="margin:0; opacity:0.3"></div>
         
@@ -947,7 +1006,7 @@
     </header>
     
     <div class="legal-content-area">
-      <p>At Alpha Digital Solutions, we respect your privacy and are committed to protecting the personal information you share with us while navigating our website or inquiring about our Digital and Graphic services.</p>
+      <p>At Alpha Solutions, we respect your privacy and are committed to protecting the personal information you share with us while navigating our website or inquiring about our Digital and Graphic services.</p>
       
       <h3>1. Information We Collect</h3>
       <p>Because we offer custom agency services, the information we collect is strictly related to providing those services. We may collect:</p>
@@ -961,7 +1020,7 @@
       <p>We use the collected information exclusively to:</p>
       <ul>
         <li>Respond to your project inquiries and provide accurate quotes.</li>
-        <li>Deliver the requested Alpha Digital (software, hosting, web) or Alpha Graphic (design, video, 3D) services.</li>
+        <li>Deliver the requested Alpha Digital (software, hosting, web) or Alpha Graphix (design, video, 3D) services.</li>
         <li>Improve our website's performance and usability.</li>
       </ul>
 
@@ -983,7 +1042,7 @@
     </header>
     
     <div class="legal-content-area">
-      <p>Welcome to Alpha Digital Solutions. Because our services range from complex software engineering (Alpha Digital) to creative brand identity and motion (Alpha Graphic), specific project rules and deliverables will always be defined in your individual project proposal. However, these general terms apply to our engagements.</p>
+      <p>Welcome to Alpha Solutions. Because our services range from complex software engineering (Alpha Digital) to creative brand identity and motion (Alpha Graphix), specific project rules and deliverables will always be defined in your individual project proposal. However, these general terms apply to our engagements.</p>
       
       <h3>1. General Project Scope</h3>
       <p>The exact scope of work, deliverables, timeline, and cost will be outlined in a custom Statement of Work (SOW) or Proposal before any work begins. Any requests outside of the agreed scope will be subject to additional estimates.</p>
@@ -994,10 +1053,10 @@
         <li><strong>Maintenance:</strong> Post-launch support, security updates, and hosting management require a separate, ongoing maintenance agreement. Without this, Alpha Digital is not liable for future server or software degradation.</li>
       </ul>
 
-      <h3>3. Alpha Graphic Services (Design & Content)</h3>
+      <h3>3. Alpha Graphix Services (Design & Content)</h3>
       <ul>
         <li><strong>Revisions:</strong> Graphic design and video projects include a set number of revision rounds as defined in the proposal. Further changes will be billed at an hourly rate.</li>
-        <li><strong>Asset Ownership:</strong> Upon final and full payment, intellectual property rights for the finalized visual assets are transferred to the client. Alpha Digital Solutions retains the right to display the work in our portfolio.</li>
+        <li><strong>Asset Ownership:</strong> Upon final and full payment, intellectual property rights for the finalized visual assets are transferred to the client. Alpha Solutions retains the right to display the work in our portfolio.</li>
       </ul>
 
       <h3>4. Payment Terms</h3>
@@ -1011,9 +1070,9 @@
     </svg>
   </a>
 
-  <header class="topbar">
+  <header class="topbar" id="topbar">
     <nav class="nav" id="navbar" aria-label="Main navigation">
-      <a href="#home" class="brand" aria-label="Alpha Digital Solutions home">
+      <a href="#home" class="brand" aria-label="Alpha Solutions home">
         <span class="brand-mark" aria-hidden="true"></span>
         <span>Alpha Solutions</span>
       </a>
@@ -1029,7 +1088,7 @@
       </ul>
 
       <div class="nav-actions">
-        <a href="#contact" class="cta-mini desktop-only" data-track="cta-click">Start a Project</a>
+        <a href="#contact" class="cta-mini desktop-only" data-track="cta-click">Hire Us</a>
         <button class="menu-btn" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobilePanel">
           <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
@@ -1043,7 +1102,7 @@
         <a href="#credibility">Credibility</a>
         <a href="#team">Team</a>
         <a href="#contact">Contact</a>
-        <a href="#contact" class="cta-mini" style="margin-top: 6px; text-align: center;">Start a Project</a>
+        <a href="#contact" class="cta-mini" style="margin-top: 6px; text-align: center;">Hire Us</a>
       </div>
     </nav>
   </header>
@@ -1051,11 +1110,10 @@
   <main id="home" class="hero">
     <div class="container hero-grid">
       <div class="hero-copy reveal">
-        <span class="eyebrow">Digital x Graphic Agency</span>
+        <span class="eyebrow">Alpha Digital × Alpha Graphix</span>
         <h1>Premium digital systems and creative execution.</h1>
         <p class="lead">
-          Alpha Digital Solutions helps businesses grow through high-performance websites, internal business tools,
-          automation systems, and refined visual content built to look sharp and work hard.
+          Alpha Solutions helps businesses grow through Alpha Digital websites, automation systems, internal business tools, and Alpha Graphix creative execution built to look sharp and work hard.
         </p>
 
         <div class="hero-actions">
@@ -1108,7 +1166,7 @@
         <span class="eyebrow">About</span>
         <h2>Built where systems thinking meets creative precision.</h2>
         <p class="lead">
-          Alpha Digital Solutions is a modern agency combining technical problem-solving with strong visual execution.
+          Alpha Solutions is a modern agency combining technical problem-solving with strong visual execution.
           We build business-facing experiences that look premium, operate clearly, and generate measurable operational growth.
         </p>
         <div class="divider"></div>
@@ -1183,7 +1241,7 @@
       <div class="reveal">
         <div class="service-tabs" role="tablist" aria-label="Service categories">
           <button class="tab-btn active" data-target="digital-services" role="tab" aria-selected="true">Alpha Digital</button>
-          <button class="tab-btn" data-target="graphic-services" role="tab" aria-selected="false">Alpha Graphic</button>
+          <button class="tab-btn" data-target="graphic-services" role="tab" aria-selected="false">Alpha Graphix</button>
         </div>
 
         <div class="services-panel active" id="digital-services">
@@ -1330,7 +1388,7 @@
       <div class="banner reveal glass-card">
         <div>
           <h3>Ready to upgrade your business infrastructure?</h3>
-          <p class="muted" style="margin-top: 12px;">Whether you need to generate more leads or streamline your team's workflow, we have the systems to support you.</p>
+          <p class="muted" style="margin-top: 8px;">Whether you need to generate more leads or streamline your team's workflow, we have the systems to support you.</p>
         </div>
         <a href="#contact" class="btn btn-primary" data-track="cta-click">Start a Conversation</a>
       </div>
@@ -1388,9 +1446,9 @@
     <div class="container section-grid">
       <div class="section-head reveal">
         <span class="eyebrow">Portfolio</span>
-        <h2>Selected directions for premium digital and visual work.</h2>
+        <h2>Real website launches, automation systems, and visual production.</h2>
         <p class="lead">
-          Explore case studies of how we combine technical depth with creative polish to solve real business challenges. Click a project to read the full case study.
+          This portfolio now reflects the exact digital and graphic project list you provided, using your real brand names, live links, videos, and image filenames.
         </p>
         <div class="divider"></div>
       </div>
@@ -1398,79 +1456,369 @@
       <div class="reveal">
         <div class="filters" role="tablist" aria-label="Portfolio filters">
           <button class="chip active" data-filter="all">All Projects</button>
-          <button class="chip" data-filter="digital">Digital (Web & Systems)</button>
-          <button class="chip" data-filter="graphic">Graphic (Visual & Motion)</button>
-          <button class="chip" data-filter="hybrid">Hybrid Delivery</button>
+          <button class="chip" data-filter="digital">Alpha Digital</button>
+          <button class="chip" data-filter="graphic">Alpha Graphix</button>
+          <button class="chip" data-filter="automation">Automation & Workflows</button>
         </div>
 
         <div class="portfolio-grid" id="portfolioGrid">
           <article class="portfolio-card glass-card" data-category="digital" tabindex="0"
-            data-brand="Nexus Systems Dashboard"
-            data-tags="digital"
-            data-challenge="Nexus Systems was relying on manual spreadsheets scattered across departments, leading to a 48-hour delay in reporting visibility for executives."
-            data-approach="We architected a centralized React-based dashboard connected via custom APIs to their existing databases, automating data aggregation in real-time."
-            data-outcome="Reporting time was reduced from 48 hours to instant access, saving the operations team 15 hours a week."
-            data-tools="React, Node.js, REST APIs, PostgreSQL">
+            data-brand="Biseka Cosmetics Website"
+            data-tags="digital,digital"
+            data-challenge="The brand needed a professional digital home that could present products clearly, strengthen trust, and support day-to-day online visibility."
+            data-approach="We planned and built a focused brand website experience with clean structure, responsive layouts, and presentation aligned with the Biseka Cosmetics identity."
+            data-outcome="Live website launched for the Biseka Cosmetics brand."
+            data-tools="Website Design, Front-End Development, Responsive UI, Brand Presentation"
+            data-media-kind="video"
+            data-media="assets/digital/biseka.mp4"
+            data-link="https://biseka.co/"
+            data-link-label="Visit live site">
             <div class="portfolio-visual">
-              <span style="z-index: 1;">Project Preview Image</span>
+              <video src="assets/digital/biseka.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Biseka Cosmetics Website preview"></video>
             </div>
             <div class="portfolio-body">
-              <div class="tag-row">
-                <span class="tag digital">Internal Tool</span>
-              </div>
-              <h3>Nexus Operations Dashboard</h3>
-              <p class="muted" style="flex-grow: 1;">A clean internal system for tracking tasks, team workflows, and real-time process visibility.</p>
+              <div class="tag-row"><span class="tag digital">Website</span><span class="tag digital">Alpha Digital</span></div>
+              <h3>Biseka Cosmetics Website</h3>
+              <p class="muted" style="flex-grow: 1;">Custom website delivery for Biseka Cosmetics with a polished brand presence and product-focused storefront experience.</p>
               <div class="portfolio-metrics">
-                <span>Outcome:</span>
-                <strong>15h saved/week</strong>
+                <span>Highlight:</span>
+                <strong>Website launch</strong>
               </div>
             </div>
           </article>
-
-          <article class="portfolio-card glass-card" data-category="hybrid" tabindex="0"
-            data-brand="Aura Health Redesign"
-            data-tags="digital,graphic"
-            data-challenge="Aura Health had a dated web presence that failed to communicate their premium market position, resulting in low inbound conversion."
-            data-approach="A full hybrid delivery. We refreshed the brand identity, produced custom 3D renders of their tech, and built a lightning-fast custom CMS website focused on lead generation."
-            data-outcome="A 210% increase in qualified inbound leads within the first 60 days post-launch."
-            data-tools="Next.js, Tailwind, Blender, Figma">
+          <article class="portfolio-card glass-card" data-category="digital" tabindex="0"
+            data-brand="Exact Extract Website"
+            data-tags="digital,digital"
+            data-challenge="Exact Extract needed a stronger digital presentation that could represent the brand with more clarity and modern polish online."
+            data-approach="We created a responsive website structure that organizes the brand experience cleanly while keeping the presentation sharp and visually premium."
+            data-outcome="Live website published for Exact Extract."
+            data-tools="Website Design, Front-End Development, Responsive UI, Brand Presentation"
+            data-media-kind="video"
+            data-media="assets/digital/exact-extract.mp4"
+            data-link="https://exactextract.lk/"
+            data-link-label="Visit live site">
             <div class="portfolio-visual">
-              <span style="z-index: 1;">Project Preview Image</span>
+              <video src="assets/digital/exact-extract.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Exact Extract Website preview"></video>
             </div>
             <div class="portfolio-body">
-              <div class="tag-row">
-                <span class="tag digital">Website</span>
-                <span class="tag graphic">Brand & 3D</span>
-              </div>
-              <h3>Aura Health Rebrand</h3>
-              <p class="muted" style="flex-grow: 1;">A polished digital experience combining structured messaging with a refined visual identity.</p>
+              <div class="tag-row"><span class="tag digital">Website</span><span class="tag digital">Alpha Digital</span></div>
+              <h3>Exact Extract Website</h3>
+              <p class="muted" style="flex-grow: 1;">A live website experience created for Exact Extract to communicate the brand clearly and elevate its digital presence.</p>
               <div class="portfolio-metrics">
-                <span>Outcome:</span>
-                <strong>+210% Inbound Leads</strong>
+                <span>Highlight:</span>
+                <strong>Website launch</strong>
               </div>
             </div>
           </article>
-
+          <article class="portfolio-card glass-card" data-category="digital" tabindex="0"
+            data-brand="MOB Surfskate Website"
+            data-tags="digital,digital"
+            data-challenge="The brand needed a cleaner digital space to present its surfskate products, style, and overall business presence online."
+            data-approach="We developed a responsive website with product-forward layout decisions and a brand-led presentation style that suits the MOB Surfskate identity."
+            data-outcome="Live website launched for MOB Surfskate."
+            data-tools="Website Design, Front-End Development, Responsive UI, Brand Presentation"
+            data-media-kind="video"
+            data-media="assets/digital/mob-surfskate.mp4"
+            data-link="https://mobsurfskate.com/"
+            data-link-label="Visit live site">
+            <div class="portfolio-visual">
+              <video src="assets/digital/mob-surfskate.mp4" autoplay muted loop playsinline preload="metadata" aria-label="MOB Surfskate Website preview"></video>
+            </div>
+            <div class="portfolio-body">
+              <div class="tag-row"><span class="tag digital">Website</span><span class="tag digital">Alpha Digital</span></div>
+              <h3>MOB Surfskate Website</h3>
+              <p class="muted" style="flex-grow: 1;">A custom website experience for the MOB Surfskate brand built to give the products and identity a stronger online presence.</p>
+              <div class="portfolio-metrics">
+                <span>Highlight:</span>
+                <strong>Website launch</strong>
+              </div>
+            </div>
+          </article>
+          <article class="portfolio-card glass-card" data-category="digital" tabindex="0"
+            data-brand="Love&amp;Lab Website"
+            data-tags="digital,digital"
+            data-challenge="Love&amp;Lab needed a visually stronger website presence to support the brand with a cleaner and more modern public-facing experience."
+            data-approach="We structured and built the site around clarity, responsive behavior, and a more premium product-first presentation for the brand."
+            data-outcome="Live website launched for Love&amp;Lab."
+            data-tools="Website Design, Front-End Development, Responsive UI, Brand Presentation"
+            data-media-kind="video"
+            data-media="assets/digital/loveandlab.mp4"
+            data-link="https://loveandlab.com/"
+            data-link-label="Visit live site">
+            <div class="portfolio-visual">
+              <video src="assets/digital/loveandlab.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Love&amp;Lab Website preview"></video>
+            </div>
+            <div class="portfolio-body">
+              <div class="tag-row"><span class="tag digital">Website</span><span class="tag digital">Alpha Digital</span></div>
+              <h3>Love&amp;Lab Website</h3>
+              <p class="muted" style="flex-grow: 1;">A responsive website delivery for Love&amp;Lab that improves presentation quality and gives the brand a refined web presence.</p>
+              <div class="portfolio-metrics">
+                <span>Highlight:</span>
+                <strong>Website launch</strong>
+              </div>
+            </div>
+          </article>
+          <article class="portfolio-card glass-card" data-category="digital" tabindex="0"
+            data-brand="Scrub &amp; Butter Website"
+            data-tags="digital,digital"
+            data-challenge="The brand needed a dedicated web experience that could present products more clearly and improve overall digital credibility."
+            data-approach="We designed and developed a responsive website structure that keeps the brand presentation clean, approachable, and easy to navigate."
+            data-outcome="Live website launched for Scrub &amp; Butter."
+            data-tools="Website Design, Front-End Development, Responsive UI, Brand Presentation"
+            data-media-kind="video"
+            data-media="assets/digital/scrub-and-butter.mp4"
+            data-link="https://scrubnbutter.com/"
+            data-link-label="Visit live site">
+            <div class="portfolio-visual">
+              <video src="assets/digital/scrub-and-butter.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Scrub &amp; Butter Website preview"></video>
+            </div>
+            <div class="portfolio-body">
+              <div class="tag-row"><span class="tag digital">Website</span><span class="tag digital">Alpha Digital</span></div>
+              <h3>Scrub &amp; Butter Website</h3>
+              <p class="muted" style="flex-grow: 1;">Custom website creation for Scrub &amp; Butter with a modern storefront feel and stronger visual presentation.</p>
+              <div class="portfolio-metrics">
+                <span>Highlight:</span>
+                <strong>Website launch</strong>
+              </div>
+            </div>
+          </article>
+          <article class="portfolio-card glass-card" data-category="digital" tabindex="0"
+            data-brand="OLA Tangalle Hotel Website"
+            data-tags="digital,digital"
+            data-challenge="The hotel needed a stronger web presence that could communicate the brand atmosphere and present the property in a cleaner digital format."
+            data-approach="We created a responsive hospitality-focused website layout with clear structure and presentation designed around the hotel brand."
+            data-outcome="Live website launched for OLA Tangalle Hotel."
+            data-tools="Website Design, Front-End Development, Responsive UI, Brand Presentation"
+            data-media-kind="video"
+            data-media="assets/digital/ola-tangalle.mp4"
+            data-link="https://olatangalle.com/"
+            data-link-label="Visit live site">
+            <div class="portfolio-visual">
+              <video src="assets/digital/ola-tangalle.mp4" autoplay muted loop playsinline preload="metadata" aria-label="OLA Tangalle Hotel Website preview"></video>
+            </div>
+            <div class="portfolio-body">
+              <div class="tag-row"><span class="tag digital">Website</span><span class="tag digital">Alpha Digital</span></div>
+              <h3>OLA Tangalle Hotel Website</h3>
+              <p class="muted" style="flex-grow: 1;">A public-facing website built for OLA Tangalle Hotel to support brand presence, information delivery, and polished presentation.</p>
+              <div class="portfolio-metrics">
+                <span>Highlight:</span>
+                <strong>Website launch</strong>
+              </div>
+            </div>
+          </article>
+          <article class="portfolio-card glass-card" data-category="automation" tabindex="0"
+            data-brand="WooCommerce to Google Sheets Automation"
+            data-tags="automation,digital"
+            data-challenge="The business was spending money on subscription-based automation tools while also dealing with manual exports, formatting work, and mixed active/completed order visibility."
+            data-approach="We connected WooCommerce to Google Sheets using Google Apps Script and a webhook-driven flow. Only Processing orders remain in the main sheet, while Completed orders are automatically moved to a dedicated archive sheet."
+            data-outcome="Real-time sync, completed-order archiving, and a 100% reduction in paid automation tool cost."
+            data-tools="WooCommerce, Google Apps Script, Google Sheets, Webhooks, Workflow Automation"
+            data-media-kind="image"
+            data-media="assets/logos/biseka.png"
+            data-link="https://biseka.co/"
+            data-link-label="View brand site">
+            <div class="portfolio-visual">
+              <img src="assets/logos/biseka.png" alt="WooCommerce → Google Sheets Automation preview" loading="lazy">
+            </div>
+            <div class="portfolio-body">
+              <div class="tag-row"><span class="tag automation">Automation</span><span class="tag digital">Alpha Digital</span></div>
+              <h3>WooCommerce → Google Sheets Automation</h3>
+              <p class="muted" style="flex-grow: 1;">A workflow automation case study for Biseka Cosmetics that replaces paid sync tools with a Google Apps Script driven order pipeline.</p>
+              <div class="portfolio-metrics">
+                <span>Highlight:</span>
+                <strong>100% tool cost cut</strong>
+              </div>
+            </div>
+          </article>
           <article class="portfolio-card glass-card" data-category="graphic" tabindex="0"
-            data-brand="Studio Alpha Campaign"
-            data-tags="graphic"
-            data-challenge="The client needed to launch a new product line on social media but lacked consistent, high-end motion assets to capture attention."
-            data-approach="We developed a comprehensive motion graphics kit and editorial photography suite that maintained strict brand consistency across all aspect ratios."
-            data-outcome="The campaign achieved a 4.2x higher click-through rate compared to their previous static image ads."
-            data-tools="After Effects, Premiere Pro, Lightroom">
+            data-brand="Biseka Product Shoot 01"
+            data-tags="graphic,graphic"
+            data-challenge="The products needed sharper visual presentation for brand communication and content use across digital channels."
+            data-approach="We created a structured product shoot set focused on clean framing, product visibility, and premium cosmetic presentation."
+            data-outcome="9-image visual collection prepared for brand use."
+            data-tools="Product Photography, Creative Direction, Image Selection"
+            data-media-kind="image"
+            data-media="assets/graphic/biseka-product-shoot-01/Bis (1).webp,assets/graphic/biseka-product-shoot-01/Bis (2).webp,assets/graphic/biseka-product-shoot-01/Bis (3).webp,assets/graphic/biseka-product-shoot-01/Bis (4).webp,assets/graphic/biseka-product-shoot-01/Bis (5).webp,assets/graphic/biseka-product-shoot-01/Bis (6).webp,assets/graphic/biseka-product-shoot-01/Bis (7).webp,assets/graphic/biseka-product-shoot-01/Bis (8).webp,assets/graphic/biseka-product-shoot-01/Bis (9).webp"
+            data-link="https://www.behance.net/akalankagomez?tracking_source=search_users|akalanka%20gomes"
+            data-link-label="See more on Behance">
             <div class="portfolio-visual">
-              <span style="z-index: 1;">Project Preview Image</span>
+              <img src="assets/graphic/biseka-product-shoot-01/Bis (1).webp" alt="Biseka Product Shoot 01 preview" loading="lazy">
             </div>
             <div class="portfolio-body">
-              <div class="tag-row">
-                <span class="tag graphic">Motion</span>
-                <span class="tag graphic">Photography</span>
-              </div>
-              <h3>Q3 Launch Motion Kit</h3>
-              <p class="muted" style="flex-grow: 1;">Motion graphic direction for product announcements, social content, and brand consistency.</p>
+              <div class="tag-row"><span class="tag graphic">Product Shoot</span><span class="tag graphic">Alpha Graphix</span></div>
+              <h3>Biseka Product Shoot 01</h3>
+              <p class="muted" style="flex-grow: 1;">A product photography set created for Biseka Cosmetics, using the first visual collection provided for the brand.</p>
               <div class="portfolio-metrics">
-                <span>Outcome:</span>
-                <strong>4.2x Higher CTR</strong>
+                <span>Highlight:</span>
+                <strong>9-image gallery</strong>
+              </div>
+            </div>
+          </article>
+          <article class="portfolio-card glass-card" data-category="graphic" tabindex="0"
+            data-brand="Biseka Product Shoot 02"
+            data-tags="graphic,graphic"
+            data-challenge="The brand needed an additional round of product imagery to expand content options while keeping the presentation polished and consistent."
+            data-approach="We produced a second product-focused photography set with attention to clean composition, usable framing, and repeatable visual quality."
+            data-outcome="12-image visual collection prepared for brand use."
+            data-tools="Product Photography, Creative Direction, Image Selection"
+            data-media-kind="image"
+            data-media="assets/graphic/biseka-product-shoot-02/Bis001 (1).JPG,assets/graphic/biseka-product-shoot-02/Bis001 (2).JPG,assets/graphic/biseka-product-shoot-02/Bis001 (3).JPG,assets/graphic/biseka-product-shoot-02/Bis001 (4).JPG,assets/graphic/biseka-product-shoot-02/Bis001 (5).JPG,assets/graphic/biseka-product-shoot-02/Bis001 (6).JPG,assets/graphic/biseka-product-shoot-02/Bis001 (7).JPG,assets/graphic/biseka-product-shoot-02/Bis001 (8).JPG,assets/graphic/biseka-product-shoot-02/Bis001 (9).JPG,assets/graphic/biseka-product-shoot-02/Bis001 (10).JPG,assets/graphic/biseka-product-shoot-02/Bis001 (11).JPG,assets/graphic/biseka-product-shoot-02/Bis001 (12).JPG"
+            data-link="https://www.behance.net/akalankagomez?tracking_source=search_users|akalanka%20gomes"
+            data-link-label="See more on Behance">
+            <div class="portfolio-visual">
+              <img src="assets/graphic/biseka-product-shoot-02/Bis001 (1).JPG" alt="Biseka Product Shoot 02 preview" loading="lazy">
+            </div>
+            <div class="portfolio-body">
+              <div class="tag-row"><span class="tag graphic">Product Shoot</span><span class="tag graphic">Alpha Graphix</span></div>
+              <h3>Biseka Product Shoot 02</h3>
+              <p class="muted" style="flex-grow: 1;">A second Biseka Cosmetics product shoot collection, built from the exact image set provided for the follow-up shoot.</p>
+              <div class="portfolio-metrics">
+                <span>Highlight:</span>
+                <strong>12-image gallery</strong>
+              </div>
+            </div>
+          </article>
+          <article class="portfolio-card glass-card" data-category="graphic" tabindex="0"
+            data-brand="Biseka Model Photoshoot"
+            data-tags="graphic,graphic"
+            data-challenge="The brand needed imagery that could present products in a more lifestyle-driven and visually elevated way."
+            data-approach="We produced a model-focused photoshoot that blends subject presentation and brand aesthetics for stronger social and promotional use."
+            data-outcome="12-image model shoot collection prepared for brand presentation."
+            data-tools="Creative Direction, Photoshoot Production, Image Selection"
+            data-media-kind="image"
+            data-media="assets/graphic/biseka-model-shoot/sample (1).jpg,assets/graphic/biseka-model-shoot/sample (2).jpg,assets/graphic/biseka-model-shoot/sample (3).jpg,assets/graphic/biseka-model-shoot/sample (4).jpg,assets/graphic/biseka-model-shoot/sample (5).jpg,assets/graphic/biseka-model-shoot/sample (6).jpg,assets/graphic/biseka-model-shoot/sample (7).jpg,assets/graphic/biseka-model-shoot/sample (8).jpg,assets/graphic/biseka-model-shoot/sample (9).jpg,assets/graphic/biseka-model-shoot/sample (10).jpg,assets/graphic/biseka-model-shoot/sample (11).jpg,assets/graphic/biseka-model-shoot/sample (12).jpg"
+            data-link="https://www.behance.net/akalankagomez?tracking_source=search_users|akalanka%20gomes"
+            data-link-label="See more on Behance">
+            <div class="portfolio-visual">
+              <img src="assets/graphic/biseka-model-shoot/sample (1).jpg" alt="Biseka Model Photoshoot preview" loading="lazy">
+            </div>
+            <div class="portfolio-body">
+              <div class="tag-row"><span class="tag graphic">Photoshoot</span><span class="tag graphic">Alpha Graphix</span></div>
+              <h3>Biseka Model Photoshoot</h3>
+              <p class="muted" style="flex-grow: 1;">A model-based Biseka Cosmetics shoot built from the supplied sample image set.</p>
+              <div class="portfolio-metrics">
+                <span>Highlight:</span>
+                <strong>12-image gallery</strong>
+              </div>
+            </div>
+          </article>
+          <article class="portfolio-card glass-card" data-category="graphic" tabindex="0"
+            data-brand="Exact Extract Campaign Designs"
+            data-tags="graphic,graphic"
+            data-challenge="The brand needed multiple visual assets for fragrance promotion while maintaining recognizable styling across posts."
+            data-approach="We developed a series of branded post designs and shoot-based visuals that keep the product line visually consistent across content pieces."
+            data-outcome="14-piece visual campaign set prepared for social use."
+            data-tools="Post Design, Creative Direction, Campaign Visuals"
+            data-media-kind="image"
+            data-media="assets/graphic/exact-extract/Azaro.png,assets/graphic/exact-extract/Versace Eros inst.jpg,assets/graphic/exact-extract/Ex Ex Bleu De Chanel Instagram.jpg,assets/graphic/exact-extract/Creed Ventus Insta.png,assets/graphic/exact-extract/EXEX Red Tob Instagram .jpg,assets/graphic/exact-extract/ExEx Cool Water Inst.jpg,assets/graphic/exact-extract/Azaro Most Wanted Inst.jpg,assets/graphic/exact-extract/Extract Exact Instagram.jpg,assets/graphic/exact-extract/Dior Sauvage inst.jpg,assets/graphic/exact-extract/One Million Inst.jpg,assets/graphic/exact-extract/Red Tobacco inst.jpg,assets/graphic/exact-extract/Creed Aventus Ins.jpg,assets/graphic/exact-extract/om in.jpg,assets/graphic/exact-extract/Versace Eros.png"
+            data-link="https://www.behance.net/akalankagomez?tracking_source=search_users|akalanka%20gomes"
+            data-link-label="See more on Behance">
+            <div class="portfolio-visual">
+              <img src="assets/graphic/exact-extract/Azaro.png" alt="Exact Extract Campaign Designs preview" loading="lazy">
+            </div>
+            <div class="portfolio-body">
+              <div class="tag-row"><span class="tag graphic">Post Design</span><span class="tag graphic">Alpha Graphix</span></div>
+              <h3>Exact Extract Campaign Designs</h3>
+              <p class="muted" style="flex-grow: 1;">A multi-post creative set for Exact Extract using the exact campaign design files you listed.</p>
+              <div class="portfolio-metrics">
+                <span>Highlight:</span>
+                <strong>14-piece campaign set</strong>
+              </div>
+            </div>
+          </article>
+          <article class="portfolio-card glass-card" data-category="graphic" tabindex="0"
+            data-brand="Love&amp;Lab Product Shoot"
+            data-tags="graphic,graphic"
+            data-challenge="The brand needed a product-focused image set that could support both presentation quality and content versatility."
+            data-approach="We produced a clean product shoot collection designed around product clarity, composition balance, and brand-focused presentation."
+            data-outcome="12-image visual collection prepared for Love&amp;Lab."
+            data-tools="Product Photography, Creative Direction, Image Selection"
+            data-media-kind="image"
+            data-media="assets/graphic/loveandlab/4 sq.jpg,assets/graphic/loveandlab/3.jpg,assets/graphic/loveandlab/12.jpg,assets/graphic/loveandlab/1.jpg,assets/graphic/loveandlab/4.jpg,assets/graphic/loveandlab/14.jpg,assets/graphic/loveandlab/3.2.jpg,assets/graphic/loveandlab/L4.jpg,assets/graphic/loveandlab/2.jpg,assets/graphic/loveandlab/L2.jpg,assets/graphic/loveandlab/29.jpg,assets/graphic/loveandlab/27.jpg"
+            data-link="https://www.behance.net/akalankagomez?tracking_source=search_users|akalanka%20gomes"
+            data-link-label="See more on Behance">
+            <div class="portfolio-visual">
+              <img src="assets/graphic/loveandlab/4 sq.jpg" alt="Love&amp;Lab Product Shoot preview" loading="lazy">
+            </div>
+            <div class="portfolio-body">
+              <div class="tag-row"><span class="tag graphic">Product Shoot</span><span class="tag graphic">Alpha Graphix</span></div>
+              <h3>Love&amp;Lab Product Shoot</h3>
+              <p class="muted" style="flex-grow: 1;">A Love&amp;Lab product photography collection assembled from the exact images you supplied for the brand.</p>
+              <div class="portfolio-metrics">
+                <span>Highlight:</span>
+                <strong>12-image gallery</strong>
+              </div>
+            </div>
+          </article>
+          <article class="portfolio-card glass-card" data-category="graphic" tabindex="0"
+            data-brand="MOB Surfskate Product Shoot"
+            data-tags="graphic,graphic"
+            data-challenge="The brand needed sharper, more usable product visuals to support a more focused visual presence."
+            data-approach="We created a condensed product shoot set centered on bold framing and clean presentation of the surfskate products."
+            data-outcome="4-image visual collection prepared for MOB Surfskate."
+            data-tools="Product Photography, Creative Direction, Image Selection"
+            data-media-kind="image"
+            data-media="assets/graphic/mob-surfskate/14.jpg,assets/graphic/mob-surfskate/13.jpg,assets/graphic/mob-surfskate/12.jpg,assets/graphic/mob-surfskate/1.jpg"
+            data-link="https://www.behance.net/akalankagomez?tracking_source=search_users|akalanka%20gomes"
+            data-link-label="See more on Behance">
+            <div class="portfolio-visual">
+              <img src="assets/graphic/mob-surfskate/14.jpg" alt="MOB Surfskate Product Shoot preview" loading="lazy">
+            </div>
+            <div class="portfolio-body">
+              <div class="tag-row"><span class="tag graphic">Product Shoot</span><span class="tag graphic">Alpha Graphix</span></div>
+              <h3>MOB Surfskate Product Shoot</h3>
+              <p class="muted" style="flex-grow: 1;">A product photography set for the MOB Surfskate brand based on the provided image collection.</p>
+              <div class="portfolio-metrics">
+                <span>Highlight:</span>
+                <strong>4-image gallery</strong>
+              </div>
+            </div>
+          </article>
+          <article class="portfolio-card glass-card" data-category="graphic" tabindex="0"
+            data-brand="Scrub &amp; Butter Product Shoot"
+            data-tags="graphic,graphic"
+            data-challenge="The products needed clearer and more polished imagery to support content creation and brand presentation."
+            data-approach="We produced a product-focused image set with clean framing and brand-conscious presentation for ongoing visual use."
+            data-outcome="8-image visual collection prepared for Scrub &amp; Butter."
+            data-tools="Product Photography, Creative Direction, Image Selection"
+            data-media-kind="image"
+            data-media="assets/graphic/scrub-and-butter/B4.jpg,assets/graphic/scrub-and-butter/B1.jpg,assets/graphic/scrub-and-butter/P6.jpg,assets/graphic/scrub-and-butter/P5.jpg,assets/graphic/scrub-and-butter/Y7.jpg,assets/graphic/scrub-and-butter/Y2.jpg,assets/graphic/scrub-and-butter/Green_0003_Layer 6.jpg,assets/graphic/scrub-and-butter/Green_0003_Layer 1.jpg"
+            data-link="https://www.behance.net/akalankagomez?tracking_source=search_users|akalanka%20gomes"
+            data-link-label="See more on Behance">
+            <div class="portfolio-visual">
+              <img src="assets/graphic/scrub-and-butter/B4.jpg" alt="Scrub &amp; Butter Product Shoot preview" loading="lazy">
+            </div>
+            <div class="portfolio-body">
+              <div class="tag-row"><span class="tag graphic">Product Shoot</span><span class="tag graphic">Alpha Graphix</span></div>
+              <h3>Scrub &amp; Butter Product Shoot</h3>
+              <p class="muted" style="flex-grow: 1;">A product shoot collection for Scrub &amp; Butter using the exact files provided for the brand.</p>
+              <div class="portfolio-metrics">
+                <span>Highlight:</span>
+                <strong>8-image gallery</strong>
+              </div>
+            </div>
+          </article>
+          <article class="portfolio-card glass-card" data-category="graphic" tabindex="0"
+            data-brand="Travelco Logo Design"
+            data-tags="graphic,graphic"
+            data-challenge="The brand needed a logo-focused visual asset that could communicate identity in a clear and polished way."
+            data-approach="We developed the logo presentation around clarity, brand recall, and a cleaner final visual for showcasing the identity."
+            data-outcome="Logo presentation asset prepared for the Travelco brand."
+            data-tools="Logo Design, Brand Presentation, Visual Direction"
+            data-media-kind="image"
+            data-media="assets/graphic/travelco/Slogan.jpg"
+            data-link="https://www.behance.net/akalankagomez?tracking_source=search_users|akalanka%20gomes"
+            data-link-label="See more on Behance">
+            <div class="portfolio-visual">
+              <img src="assets/graphic/travelco/Slogan.jpg" alt="Travelco Logo Design preview" loading="lazy">
+            </div>
+            <div class="portfolio-body">
+              <div class="tag-row"><span class="tag graphic">Logo Design</span><span class="tag graphic">Alpha Graphix</span></div>
+              <h3>Travelco Logo Design</h3>
+              <p class="muted" style="flex-grow: 1;">Logo design work for Travelco based on the supplied Slogan.jpg asset.</p>
+              <div class="portfolio-metrics">
+                <span>Highlight:</span>
+                <strong>Logo delivery</strong>
               </div>
             </div>
           </article>
@@ -1483,137 +1831,106 @@
     <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">Credibility</span>
-        <h2>Proven execution across Digital & Graphic.</h2>
+        <h2>Execution backed by real brand work across Alpha Digital and Alpha Graphix.</h2>
         <p class="lead">
-          We partner with ambitious companies to build systems that scale and creative that stands out. Our approach is measurable, reliable, and designed to earn trust.
+          Instead of placeholder brand names, this section now reflects the actual logos and work relationships you listed for the site.
         </p>
         <div class="divider"></div>
       </div>
 
       <div class="credibility-container">
-        
         <div class="cred-left-col reveal">
           <div class="stats-dashboard">
             <div class="dash-stat">
-              <span class="dash-stat-val" data-count="24">0</span>
-              <span class="dash-stat-label">Hours max to get a responsive project update.</span>
-            </div>
-            <div class="dash-stat">
-              <span class="dash-stat-val" data-count="100">0</span>
-              <span class="dash-stat-label">Percent custom-built around your specific needs.</span>
-            </div>
-            <div class="dash-stat">
               <span class="dash-stat-val" data-count="6">0</span>
-              <span class="dash-stat-label">Structured stages from discovery to final delivery.</span>
+              <span class="dash-stat-label">Live websites listed under Alpha Digital.</span>
             </div>
             <div class="dash-stat">
-              <span class="dash-stat-val" data-count="2">0</span>
-              <span class="dash-stat-label">Disciplines (Tech & Creative) in one seamless workflow.</span>
+              <span class="dash-stat-val" data-count="8">0</span>
+              <span class="dash-stat-label">Graphic project collections added under Alpha Graphix.</span>
+            </div>
+            <div class="dash-stat">
+              <span class="dash-stat-val" data-count="1">0</span>
+              <span class="dash-stat-label">Workflow automation case study integrated into the portfolio.</span>
+            </div>
+            <div class="dash-stat">
+              <span class="dash-stat-val" data-count="3">0</span>
+              <span class="dash-stat-label">Core team members presented with matched monochrome portraits.</span>
             </div>
           </div>
 
           <div class="trust-roster">
-            <h4>Trusted by 12+ Growing Brands</h4>
-            
+            <h4>Brands featured across the current Alpha Solutions portfolio</h4>
             <div class="logo-grid">
-              <div class="logo-chip" title="TechFlow Inc." data-brand="TechFlow Inc." data-tags="digital,graphic" data-desc="Complete digital transformation including custom internal dashboards and a total brand identity refresh." onclick="openModal(this.dataset)">
-                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                <span>TechFlow</span>
+              <div class="logo-chip" title="Biseka Cosmetics" data-brand="Biseka Cosmetics" data-tags="digital,graphic" data-desc="Website delivery, product photography, and the WooCommerce to Google Sheets automation case study all connect to the Biseka Cosmetics work shown on this site." data-link="https://biseka.co/" data-link-label="Visit brand site" data-media-kind="image" data-media="assets/logos/biseka.png" onclick="openModal(this.dataset)">
+                <img src="assets/logos/biseka.png" alt="Biseka logo" loading="lazy">
+                <span>Biseka</span>
               </div>
-              <div class="logo-chip" title="Studio Alpha" data-brand="Studio Alpha" data-tags="graphic" data-desc="Produced a high-fidelity motion graphics kit and editorial photography suite for their Q3 launch campaign." onclick="openModal(this.dataset)">
-                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
-                <span>Studio Alpha</span>
+              <div class="logo-chip" title="Exact Extract" data-brand="Exact Extract" data-tags="digital,graphic" data-desc="Website creation plus a separate campaign design collection for product-focused visual content." data-link="https://exactextract.lk/" data-link-label="Visit brand site" data-media-kind="image" data-media="assets/logos/ex.png" onclick="openModal(this.dataset)">
+                <img src="assets/logos/ex.png" alt="Exact Extract logo" loading="lazy">
+                <span>Exact Extract</span>
               </div>
-              <div class="logo-chip" title="Nexus Systems" data-brand="Nexus Systems" data-tags="digital" data-desc="Built a fully automated reporting pipeline and employee portal to reduce manual operations by 80%." onclick="openModal(this.dataset)">
-                <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M9 3v18M15 3v18"/></svg>
-                <span>Nexus</span>
+              <div class="logo-chip" title="Scrub &amp; Butter" data-brand="Scrub &amp; Butter" data-tags="digital,graphic" data-desc="Website delivery and a dedicated product shoot collection are both represented in the portfolio." data-link="https://scrubnbutter.com/" data-link-label="Visit brand site" data-media-kind="image" data-media="assets/logos/ss.png" onclick="openModal(this.dataset)">
+                <img src="assets/logos/ss.png" alt="Scrub &amp; Butter logo" loading="lazy">
+                <span>Scrub &amp; Butter</span>
               </div>
-              <div class="logo-chip" title="Aura Health" data-brand="Aura Health" data-tags="digital,graphic" data-desc="Designed and developed a premium front-end web experience paired with customized 3D product renders." onclick="openModal(this.dataset)">
-                <svg viewBox="0 0 24 24"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/></svg>
-                <span>Aura Health</span>
+              <div class="logo-chip" title="OLA Tangalle Hotel" data-brand="OLA Tangalle Hotel" data-tags="digital" data-desc="Hospitality website delivery focused on stronger online presentation for the hotel brand." data-link="https://olatangalle.com/" data-link-label="Visit brand site" data-media-kind="image" data-media="assets/logos/Ola Logo a copy.png" onclick="openModal(this.dataset)">
+                <img src="assets/logos/Ola Logo a copy.png" alt="OLA Tangalle Hotel logo" loading="lazy">
+                <span>OLA Tangalle Hotel</span>
               </div>
-              <div class="logo-chip" title="Apex Finance" data-brand="Apex Finance" data-tags="digital" data-desc="Developed a secure, high-performance web portal for client document management and real-time portfolio tracking." onclick="openModal(this.dataset)">
-                <svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-                <span>Apex Fin</span>
+              <div class="logo-chip" title="MOB Surfskate" data-brand="MOB Surfskate" data-tags="digital,graphic" data-desc="Website creation alongside a dedicated surfskate product shoot collection." data-link="https://mobsurfskate.com/" data-link-label="Visit brand site" data-media-kind="image" data-media="assets/logos/mob.png" onclick="openModal(this.dataset)">
+                <img src="assets/logos/mob.png" alt="MOB Surfskate logo" loading="lazy">
+                <span>MOB Surfskate</span>
               </div>
-              <div class="logo-chip" title="Lumina" data-brand="Lumina" data-tags="graphic" data-desc="Complete brand identity creation including logo design, color systems, typography, and initial packaging 3D renders." onclick="openModal(this.dataset)">
-                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-                <span>Lumina</span>
-              </div>
-              <div class="logo-chip" title="Vertex Tech" data-brand="Vertex Tech" data-tags="digital" data-desc="Engineered an internal tool to automate employee onboarding workflows and integrate with their existing HR software." onclick="openModal(this.dataset)">
-                <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-                <span>Vertex</span>
-              </div>
-              <div class="logo-chip" title="Nova Retail" data-brand="Nova Retail" data-tags="digital,graphic" data-desc="Built a high-conversion e-commerce platform and directed the photography and motion assets for their flagship product." onclick="openModal(this.dataset)">
-                <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                <span>Nova</span>
-              </div>
-              <div class="logo-chip" title="Zenith" data-brand="Zenith" data-tags="graphic" data-desc="Directed and produced a series of short-form promotional videos optimized for cross-platform social media engagement." onclick="openModal(this.dataset)">
-                <svg viewBox="0 0 24 24"><path d="M2 12h4l3-9 5 18 3-9h5"/></svg>
-                <span>Zenith</span>
-              </div>
-              <div class="logo-chip" title="Horizon" data-brand="Horizon" data-tags="digital" data-desc="Developed a custom lead generation landing page with deep analytics tracking and automated CRM routing." onclick="openModal(this.dataset)">
-                <svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
-                <span>Horizon</span>
-              </div>
-              <div class="logo-chip" title="Quantum" data-brand="Quantum" data-tags="digital,graphic" data-desc="Created a dynamic corporate website with custom-coded animations and integrated internal application portals." onclick="openModal(this.dataset)">
-                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
-                <span>Quantum</span>
-              </div>
-              <div class="logo-chip" title="Echo Dynamics" data-brand="Echo Dynamics" data-tags="graphic" data-desc="Designed comprehensive 3D environments to showcase their audio products in hyper-realistic architectural settings." onclick="openModal(this.dataset)">
-                <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-10 10 10 10 0 0 0 10 10 10 10 0 0 0 10-10 10 10 0 0 0-10-10zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6a6 6 0 0 0-6 6 6 6 0 0 0 6 6 6 6 0 0 0 6-6 6 6 0 0 0-6-6z"/></svg>
-                <span>Echo</span>
+              <div class="logo-chip" title="Love&amp;Lab" data-brand="Love&amp;Lab" data-tags="digital,graphic" data-desc="Website launch plus a separate product shoot gallery for the brand’s visual content." data-link="https://loveandlab.com/" data-link-label="Visit brand site" data-media-kind="image" data-media="assets/logos/ll.png" onclick="openModal(this.dataset)">
+                <img src="assets/logos/ll.png" alt="Love&amp;Lab logo" loading="lazy">
+                <span>Love&amp;Lab</span>
               </div>
             </div>
-            
-            <p class="muted" style="font-size: 0.85rem; margin-top: 24px; text-align: center;">Click any brand above to view collaboration details.</p>
+            <p class="muted" style="font-size: 0.8rem; margin-top: 18px; text-align: center;">Click any logo above to open the related brand context.</p>
           </div>
         </div>
 
         <div class="testimonial-track reveal" style="transition-delay: 0.1s;">
-          <article class="testimonial">
-            <p>The mix of technical depth and creative polish made the final output feel far more complete than a standard agency handoff. They actually understood our business model before writing a single line of code.</p>
+          <article class="testimonial proof-card">
+            <p>Alpha Digital work on this site now includes the live website launches for Biseka Cosmetics, Exact Extract, MOB Surfskate, Love&Lab, Scrub & Butter, and OLA Tangalle Hotel.</p>
             <footer>
               <div class="testimonial-header">
-                <div class="testimonial-avatar">SJ</div>
+                <div class="testimonial-avatar">06</div>
                 <div>
-                  <strong>Sarah Jenkins</strong>
-                  <span>Brand Lead, Aura Health</span>
+                  <strong>Digital Delivery</strong>
+                  <span>Live websites and public brand presence</span>
                 </div>
               </div>
-              <div class="testimonial-rating">★★★★★</div>
             </footer>
           </article>
 
-          <article class="testimonial">
-            <p>Communication was structured, the workflow felt controlled, and the delivery quality gave our brand a much stronger digital presence to compete on an enterprise level. Truly a game-changer for our internal reporting.</p>
+          <article class="testimonial proof-card">
+            <p>Alpha Graphix work now includes Biseka product shoots, a Biseka model shoot, Exact Extract campaign designs, Love&Lab photography, MOB Surfskate visuals, Scrub & Butter imagery, and the Travelco logo piece.</p>
             <footer>
               <div class="testimonial-header">
-                <div class="testimonial-avatar">DC</div>
+                <div class="testimonial-avatar">08</div>
                 <div>
-                  <strong>David Chen</strong>
-                  <span>Operations Director, Nexus</span>
+                  <strong>Creative Production</strong>
+                  <span>Real image galleries tied to each project</span>
                 </div>
               </div>
-              <div class="testimonial-rating">★★★★★</div>
             </footer>
           </article>
 
-          <article class="testimonial">
-            <p>The result was clean, modern, and practical. It looked premium to our clients and dramatically improved how our internal process actually worked behind the scenes. Best agency investment we've made.</p>
+          <article class="testimonial proof-card">
+            <p>The WooCommerce to Google Sheets automation case study has also been added, using the business problem, workflow logic, and outcome details you provided for Biseka Cosmetics.</p>
             <footer>
               <div class="testimonial-header">
-                <div class="testimonial-avatar">MW</div>
+                <div class="testimonial-avatar">01</div>
                 <div>
-                  <strong>Marcus Wright</strong>
-                  <span>Founder, TechFlow Inc.</span>
+                  <strong>Systems Case Study</strong>
+                  <span>Workflow automation and process improvement</span>
                 </div>
               </div>
-              <div class="testimonial-rating">★★★★★</div>
             </footer>
           </article>
         </div>
-
       </div>
     </div>
   </section>
@@ -1624,85 +1941,55 @@
         <span class="eyebrow">Leadership</span>
         <h2>A compact team with technical depth and creative range.</h2>
         <p class="lead">
-          Alpha Digital Solutions is led by a focused team that balances systems, development, and visual execution
-          to produce premium, business-ready outcomes without the corporate bloat.
+          Alpha Solutions is presented here with your three team members using matched image sizing, monochrome treatment, and the exact image filenames you requested.
         </p>
         <div class="divider"></div>
       </div>
 
       <div class="team-grid">
-        <article class="team-card-new glass-card reveal">
+        <article class="team-card-new glass-card reveal" style="transition-delay: 0s;">
           <div class="team-photo-container">
             <div class="team-placeholder">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
             </div>
-            <img src="https://via.placeholder.com/400x500/0a0e16/ffffff?text=AG" alt="Akalanka Gomez" loading="lazy" style="opacity: 0;" onload="this.style.opacity=1; this.previousElementSibling.style.display='none';">
+            <img src="assets/team/akalnka.webp" alt="Akalanka Gomez" loading="lazy" style="opacity: 0;" onload="this.style.opacity=1; this.previousElementSibling.style.display='none';">
           </div>
           <div class="team-info-new">
-            <span class="team-role role-graphic">Founder & Creative Director</span>
+            <span class="team-role role-graphic">Founder &amp; Creative Director</span>
             <h3>Akalanka Gomez</h3>
-            <div class="team-tags">
-              <span class="team-tag">Brand Strategy</span>
-              <span class="team-tag">Motion Design</span>
-            </div>
-            <p class="team-desc">Leads visual direction, creative assets, and polished design execution across all visual touchpoints.</p>
-            <div class="team-socials-new">
-              <a href="https://www.linkedin.com/in/akalankagomes?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="team-social-icon" aria-label="LinkedIn Profile">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-              </a>
-              <a href="https://www.facebook.com/share/17avus3feU/" target="_blank" class="team-social-icon" aria-label="Facebook Profile">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-              </a>
-            </div>
+            <div class="team-tags"><span class="team-tag">Brand Strategy</span><span class="team-tag">Direction</span><span class="team-tag">Creative</span></div>
+            <p class="team-desc">Leads Alpha Graphix work across visual direction, product shoots, campaign design, and brand-facing creative output.</p>
+            <div class="team-socials-new"><a href="https://www.linkedin.com/in/akalankagomes?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" target="_blank" rel="noopener" class="team-social-icon" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><a href="https://www.facebook.com/share/17avus3feU/" target="_blank" rel="noopener" class="team-social-icon" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a><a href="https://www.behance.net/akalankagomez?tracking_source=search_users|akalanka%20gomes" target="_blank" rel="noopener" class="team-social-icon" aria-label="Behance"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h7a4 4 0 1 1 0 8H4z"></path><path d="M4 11h8"></path><path d="M16 10h4a3 3 0 0 1 0 6h-4a3 3 0 1 1 0-6z"></path><path d="M15 6h6"></path></svg></a></div>
           </div>
         </article>
-
         <article class="team-card-new glass-card reveal" style="transition-delay: 0.1s;">
           <div class="team-photo-container">
             <div class="team-placeholder">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
             </div>
-            <img src="https://via.placeholder.com/400x500/0a0e16/ffffff?text=NG" alt="Nikitha Gomes" loading="lazy" style="opacity: 0;" onload="this.style.opacity=1; this.previousElementSibling.style.display='none';">
+            <img src="assets/team/nikitha.webp" alt="Nikitha Gomes" loading="lazy" style="opacity: 0;" onload="this.style.opacity=1; this.previousElementSibling.style.display='none';">
           </div>
           <div class="team-info-new">
-            <span class="team-role role-digital">Co-Founder & Digital Lead</span>
+            <span class="team-role role-digital">Co-Founder &amp; Tech Lead</span>
             <h3>Nikitha Gomes</h3>
-            <div class="team-tags">
-              <span class="team-tag">Systems Architecture</span>
-              <span class="team-tag">Automation</span>
-            </div>
-            <p class="team-desc">Focuses on web systems, automation, internal tools, reporting, and practical digital problem-solving.</p>
-            <div class="team-socials-new">
-              <a href="https://www.linkedin.com/in/nikitha-keshan-640927325/" target="_blank" class="team-social-icon" aria-label="LinkedIn Profile">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-              </a>
-              <a href="https://nikithakeshan.netlify.app/" target="_blank" class="team-social-icon" aria-label="Portfolio">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-              </a>
-            </div>
+            <div class="team-tags"><span class="team-tag">Web Systems</span><span class="team-tag">Automation</span><span class="team-tag">Delivery</span></div>
+            <p class="team-desc">Drives Alpha Digital work across websites, workflow automation, business systems, and technical implementation.</p>
+            <div class="team-socials-new"><a href="https://www.linkedin.com/in/nikitha-keshan-640927325/" target="_blank" rel="noopener" class="team-social-icon" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><a href="https://nikithakeshan.netlify.app/" target="_blank" rel="noopener" class="team-social-icon" aria-label="Portfolio"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></a></div>
           </div>
         </article>
-
         <article class="team-card-new glass-card reveal" style="transition-delay: 0.2s;">
           <div class="team-photo-container">
-             <div class="team-placeholder">
+            <div class="team-placeholder">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
             </div>
-            <img src="https://via.placeholder.com/400x500/0a0e16/ffffff?text=EH" alt="Eranda Hettiarachchi" loading="lazy" style="opacity: 0;" onload="this.style.opacity=1; this.previousElementSibling.style.display='none';">
+            <img src="assets/team/eranda.webp" alt="Eranda Hettiarachchi" loading="lazy" style="opacity: 0;" onload="this.style.opacity=1; this.previousElementSibling.style.display='none';">
           </div>
           <div class="team-info-new">
-            <span class="team-role role-digital">Co-Founder & Tech Lead</span>
+            <span class="team-role role-digital">Co-Founder &amp; Tech Lead</span>
             <h3>Eranda Hettiarachchi</h3>
-            <div class="team-tags">
-              <span class="team-tag">Full-Stack Dev</span>
-              <span class="team-tag">QA</span>
-            </div>
-            <p class="team-desc">Supports technical execution with a focus on code quality, robust backend structures, and delivery scaling.</p>
-            <div class="team-socials-new">
-              <a href="https://www.linkedin.com/in/eranda-hettiarachchi-a9b912273?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="team-social-icon" aria-label="LinkedIn Profile">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-              </a>
-            </div>
+            <div class="team-tags"><span class="team-tag">Engineering</span><span class="team-tag">QA</span><span class="team-tag">Support</span></div>
+            <p class="team-desc">Supports the technical build path with development, implementation quality, and delivery-focused execution.</p>
+            <div class="team-socials-new"><a href="https://www.linkedin.com/in/eranda-hettiarachchi-a9b912273?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" target="_blank" rel="noopener" class="team-social-icon" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></div>
           </div>
         </article>
       </div>
@@ -1716,7 +2003,7 @@
         <h2>Let’s build something clear, useful, and visually strong.</h2>
         <p class="lead">
           Whether you need a premium website, an internal system, an automation workflow, or polished creative support,
-          Alpha Digital Solutions is ready to help shape the next move.
+          Alpha Solutions is ready to help shape the next move.
         </p>
         <div class="divider"></div>
       </div>
@@ -1737,14 +2024,14 @@
             </div>
           </div>
 
-          <div class="contact-item" style="margin-top: 16px; background: linear-gradient(145deg, var(--surface-soft), transparent);">
+          <div class="contact-item" style="margin-top: 10px; background: linear-gradient(145deg, var(--surface-soft), transparent);">
             <strong>Headquarters</strong>
-            <address class="muted" style="font-style: normal; margin-top: 8px; line-height: 1.6;">
+            <address class="muted" style="font-style: normal; margin-top: 6px; line-height: 1.6;">
               Colombo Innovation Hub<br>
               Colombo 03, Western Province<br>
               Sri Lanka
             </address>
-            <span class="muted" style="display: block; margin-top: 14px; font-size: 0.9rem;">
+            <span class="muted" style="display: block; margin-top: 12px; font-size: 0.85rem;">
               <strong style="color: var(--primary-cyan);">Hours:</strong> Mon - Fri, 9:00 AM - 6:00 PM (LKT)
             </span>
           </div>
@@ -1758,7 +2045,7 @@
               <select name="division" id="divisionSelect" required>
                 <option value="" disabled selected>Select the primary division...</option>
                 <option value="digital">Alpha Digital (Websites, Automation, Systems)</option>
-                <option value="graphic">Alpha Graphic (Photography, Branding, 3D, Video)</option>
+                <option value="graphic">Alpha Graphix (Photography, Branding, 3D, Video)</option>
                 <option value="both">Both (Hybrid Project)</option>
               </select>
             </label>
@@ -1805,13 +2092,12 @@
       <div class="footer-wrap reveal">
         <div class="footer-top">
           <div>
-            <div class="brand" style="margin-bottom: 16px;">
+            <div class="brand" style="margin-bottom: 12px;">
               <span class="brand-mark" aria-hidden="true"></span>
-              <span>Alpha Digital Solutions</span>
+              <span>Alpha Solutions</span>
             </div>
-            <p class="muted" style="max-width: 58ch; line-height: 1.6;">
-              A premium Digital x Graphic agency building websites, internal systems, automation workflows,
-              reporting experiences, and creative assets for modern businesses.
+            <p class="muted" style="max-width: 58ch;">
+              A premium parent brand for Alpha Digital and Alpha Graphix, building websites, automation workflows, internal systems, and creative assets for modern businesses.
             </p>
           </div>
 
@@ -1821,8 +2107,8 @@
         </div>
 
         <div class="footer-bottom">
-          <span>© <span id="year"></span> Alpha Digital Solutions. All rights reserved.</span>
-          <div style="display: flex; gap: 20px;">
+          <span>© <span id="year"></span> Alpha Solutions. All rights reserved.</span>
+          <div style="display: flex; gap: 16px;">
             <a href="#" class="openOverlayBtn" data-target="privacyPageOverlay" style="text-decoration: underline; text-decoration-color: var(--border-soft); text-underline-offset: 4px;">Privacy Policy</a>
             <a href="#" class="openOverlayBtn" data-target="termsPageOverlay" style="text-decoration: underline; text-decoration-color: var(--border-soft); text-underline-offset: 4px;">Terms of Service</a>
           </div>
@@ -1842,7 +2128,8 @@
     const preloader = document.getElementById('preloader');
     const progressBar = document.getElementById('progressBar');
     const navbar = document.getElementById('navbar');
-    const topbar = document.querySelector('.topbar');
+    const topbar = document.getElementById('topbar');
+    const homeSection = document.getElementById('home');
     const menuToggle = document.getElementById('menuToggle');
     const mobilePanel = document.getElementById('mobilePanel');
     const toTop = document.getElementById('toTop');
@@ -1859,9 +2146,10 @@
       const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
       progressBar.style.width = progress + '%';
 
-      const isScrolled = scrollTop > 20;
-      navbar.classList.toggle('scrolled', isScrolled);
-      topbar.classList.toggle('scrolled', isScrolled);
+      const homeThreshold = homeSection ? Math.max(80, homeSection.offsetHeight - 140) : 120;
+      const heroMode = scrollTop < homeThreshold;
+      document.body.classList.toggle('nav-hero', heroMode);
+      navbar.classList.toggle('scrolled', scrollTop > 20 && !heroMode);
       toTop.classList.toggle('show', scrollTop > 500);
     };
 
@@ -1978,33 +2266,98 @@
     const mApproach = document.getElementById('modalApproach');
     const mOutcome = document.getElementById('modalOutcome');
     const mTools = document.getElementById('modalTools');
+    const mMediaShell = document.getElementById('modalMediaShell');
+    const mMediaStage = document.getElementById('modalMediaStage');
+    const mMediaThumbs = document.getElementById('modalMediaThumbs');
+    const mLinks = document.getElementById('modalLinks');
+
+    const mediaNode = (src, kind, label) => {
+      if (kind === 'video') {
+        const video = document.createElement('video');
+        video.src = src;
+        video.controls = true;
+        video.autoplay = true;
+        video.loop = true;
+        video.muted = true;
+        video.playsInline = true;
+        video.setAttribute('aria-label', label || 'Project video');
+        return video;
+      }
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = label || 'Project image';
+      img.loading = 'lazy';
+      return img;
+    };
+
+    const renderMediaGallery = (items, kind, labelBase) => {
+      mMediaStage.innerHTML = '';
+      mMediaThumbs.innerHTML = '';
+      if (!items.length) {
+        mMediaShell.hidden = true;
+        return;
+      }
+      mMediaShell.hidden = false;
+      const showMedia = (src, button) => {
+        mMediaStage.innerHTML = '';
+        mMediaStage.appendChild(mediaNode(src, kind, labelBase));
+        [...mMediaThumbs.children].forEach(child => child.classList.remove('active'));
+        if (button) button.classList.add('active');
+      };
+      items.forEach((src, index) => {
+        const thumb = document.createElement('button');
+        thumb.type = 'button';
+        thumb.className = 'modal-thumb' + (index === 0 ? ' active' : '');
+        thumb.appendChild(mediaNode(src, kind, `${labelBase} ${index + 1}`));
+        thumb.addEventListener('click', () => showMedia(src, thumb));
+        mMediaThumbs.appendChild(thumb);
+      });
+      showMedia(items[0], mMediaThumbs.children[0]);
+    };
 
     // Make openModal globally available for the onclick events on logos
     window.openModal = function(data) {
       mBrand.textContent = data.brand;
-      mChallenge.textContent = data.challenge || "Project scope defined during initial discovery.";
-      mApproach.textContent = data.approach || data.desc || "Custom execution strategy applied.";
-      mOutcome.textContent = data.outcome || "Delivered on schedule and within parameters.";
+      mChallenge.textContent = data.challenge || 'Project scope defined during initial discovery.';
+      mApproach.textContent = data.approach || data.desc || 'Custom execution strategy applied.';
+      mOutcome.textContent = data.outcome || 'Delivered on schedule and within parameters.';
       
       mTags.innerHTML = '';
-      if(data.tags) {
-        const tagsArr = data.tags.split(',');
-        tagsArr.forEach(t => {
-           let span = document.createElement('span');
-           span.className = `tag ${t.trim()}`;
-           span.textContent = t.trim() === 'digital' ? 'Digital Division' : 'Graphic Division';
-           mTags.appendChild(span);
+      if (data.tags) {
+        const tagLabelMap = {
+          digital: 'Alpha Digital',
+          graphic: 'Alpha Graphix',
+          automation: 'Automation'
+        };
+        data.tags.split(',').map(t => t.trim()).filter(Boolean).forEach(t => {
+          const span = document.createElement('span');
+          span.className = `tag ${t}`;
+          span.textContent = tagLabelMap[t] || t;
+          mTags.appendChild(span);
         });
       }
 
       mTools.innerHTML = '';
-      if(data.tools) {
-        const toolsArr = data.tools.split(',');
-        toolsArr.forEach(t => {
-           let span = document.createElement('span');
-           span.textContent = t.trim();
-           mTools.appendChild(span);
+      if (data.tools) {
+        data.tools.split(',').map(t => t.trim()).filter(Boolean).forEach(t => {
+          const span = document.createElement('span');
+          span.textContent = t;
+          mTools.appendChild(span);
         });
+      }
+
+      const mediaItems = (data.media || '').split(',').map(item => item.trim()).filter(Boolean);
+      renderMediaGallery(mediaItems, data.mediaKind || 'image', data.brand || 'Project media');
+
+      mLinks.innerHTML = '';
+      if (data.link) {
+        const a = document.createElement('a');
+        a.href = data.link;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.className = 'modal-link-btn';
+        a.textContent = data.linkLabel || 'Open project';
+        mLinks.appendChild(a);
       }
 
       modalOverlay.classList.add('active');
