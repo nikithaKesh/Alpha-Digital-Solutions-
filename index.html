@@ -1161,6 +1161,16 @@
     .contact-item a {
       word-break: break-all;
     }
+    
+    /* PREVENT CSS GRID BLOWOUT ON MOBILE */
+    /* This forces the CSS grids to respect the screen width, allowing horizontal scrollable content inside them to work without breaking the page layout. */
+    .section-grid > *,
+    .credibility-container > *,
+    .about-grid > *,
+    .contact-grid > *,
+    .hero-grid > * {
+      min-width: 0;
+    }
   </style>
 </head>
 <body>
